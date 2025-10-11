@@ -90,10 +90,16 @@ export default function GeneratePage() {
             Generate a rebuild-ready blueprint
           </h1>
           <p className="text-base text-slate-300 sm:text-lg">
-            Paste a live URL from a domain on your allowlist. We’ll crawl up to
+            Paste a live URL from a domain on your allowlist. We'll crawl up to
             25 pages, classify the site, and prep your GitHub issue with the
             blueprint and theme tokens.
           </p>
+          <div className="rounded-lg bg-amber-900/20 border border-amber-700/30 p-4">
+            <p className="text-sm text-amber-200">
+              <strong>Note:</strong> Sites with more than 20 pages will be rejected to prevent token limit issues. 
+              For large sites, try using a specific section or subdomain.
+            </p>
+          </div>
         </section>
 
         <form

@@ -35,10 +35,25 @@ export async function POST(request: NextRequest) {
         data: { status: "mapped" },
       });
 
-      // Step 4: Crawl pages
-      const crawledPages = await crawlPages(mappedUrls, limit);
+    // Step 4: Crawl pages
+    const crawledPages = await crawlPages(mappedUrls, limit);
 
-      // Save pages to database
+    // Validate page count to prevent token limit issues
+    if (crawledPages.length > 20) {
+      await prisma.job.update({
+        where: { id: job.id },
+        data: { status: "failed" },
+      });
+      return NextResponse.json(
+        { 
+          error: "Site too large", 
+          message: `Site has ${crawledPages.length} pages, maximum allowed is 20 to prevent token limit issues. Please try a smaller site.` 
+        }, 
+        { status: 400 }
+      );
+    }
+
+    // Save pages to database
       await Promise.all(
         crawledPages.map((page) =>
           prisma.page.create({

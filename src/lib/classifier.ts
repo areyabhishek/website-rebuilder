@@ -58,15 +58,15 @@ function classifyByRules(pages: FirecrawlPage[]): SiteCategory | null {
 }
 
 async function classifyWithLLM(pages: FirecrawlPage[]): Promise<SiteCategory> {
-  const sample = pages.slice(0, 5).map((p) => ({
+  const sample = pages.slice(0, 3).map((p) => ({
     url: p.url,
     title: p.title,
-    excerpt: p.markdown?.slice(0, 500),
+    excerpt: p.markdown?.slice(0, 200), // Reduced from 500 to 200 chars
   }));
 
   const message = await anthropic.messages.create({
-    model: "claude-sonnet-4-20250514",
-    max_tokens: 200,
+    model: "claude-haiku-3-20241022", // Much cheaper model
+    max_tokens: 50, // Reduced from 200
     messages: [
       {
         role: "user",
