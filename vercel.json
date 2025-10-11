@@ -1,5 +1,5 @@
 {
-  "buildCommand": "prisma generate && next build",
+  "buildCommand": "npm run db:generate && npm run build",
   "env": {
     "DATABASE_URL": "@database_url",
     "FIRECRAWL_API_KEY": "@firecrawl_api_key",
