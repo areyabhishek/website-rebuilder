@@ -2,6 +2,8 @@
 
 Automatically crawl, classify, and rebuild websites with a single URL. This tool uses Firecrawl for crawling, Claude 4.5 for classification and generation, and GitHub Actions to create fresh Astro sites.
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/areyabhishek/website-rebuilder)
+
 ## Features
 
 - **One-Click Generation**: Paste a URL, click Generate, get a PR with a new site
