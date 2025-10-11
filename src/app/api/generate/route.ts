@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { isAllowlisted, extractDomain } from "@/lib/allowlist";
+import { extractDomain } from "@/lib/allowlist";
 import { prisma } from "@/lib/prisma";
 import { mapSite, crawlPages } from "@/lib/firecrawl";
 import { generateBlueprint } from "@/lib/blueprint";
@@ -16,14 +16,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "URL is required" }, { status: 400 });
     }
 
-    // Step 1: Check allowlist
-    if (!isAllowlisted(url)) {
-      return NextResponse.json(
-        { error: "Domain not in allowlist" },
-        { status: 403 }
-      );
-    }
-
+    // Allowlist check removed - crawl any site
     const domain = extractDomain(url);
 
     // Step 2: Create Job

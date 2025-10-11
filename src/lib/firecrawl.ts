@@ -33,43 +33,69 @@ function shouldExcludeUrl(url: string): boolean {
 }
 
 export async function mapSite(url: string, limit = 500): Promise<string[]> {
-  const response = await firecrawl.map(url, {
-    limit,
-  });
+  try {
+    const response = await firecrawl.map(url, {
+      limit,
+    });
 
-  if (!response.success || !response.links) {
-    throw new Error("Failed to map site");
+    console.log("Firecrawl map response links count:", response.links?.length || 0);
+
+    if (!response.links || !Array.isArray(response.links)) {
+      throw new Error(`Failed to map site: No links returned`);
+    }
+
+    if (response.links.length === 0) {
+      throw new Error(`No pages found for ${url}. The site may be redirecting or unavailable.`);
+    }
+
+    // Extract URLs from link objects and filter out excluded URLs
+    const urls = response.links
+      .map((link: any) => link.url || link)
+      .filter((linkUrl: string) => !shouldExcludeUrl(linkUrl))
+      .slice(0, 60);
+
+    console.log(`Found ${urls.length} valid URLs after filtering`);
+    return urls;
+  } catch (error) {
+    console.error("Firecrawl map error:", error);
+    throw new Error(`Firecrawl map failed: ${error instanceof Error ? error.message : String(error)}`);
   }
-
-  // Filter out excluded URLs and return up to 60 internal URLs
-  const filtered = response.links
-    .filter((link) => !shouldExcludeUrl(link))
-    .slice(0, 60);
-
-  return filtered;
 }
 
 export async function crawlPages(
   urls: string[],
   limit = 25
 ): Promise<FirecrawlPage[]> {
-  const urlsToProcess = urls.slice(0, limit);
+  // Use the first URL as the base, and let Firecrawl crawl from there
+  const baseUrl = urls[0];
 
-  const response = await firecrawl.crawl(urlsToProcess[0], {
+  console.log(`Starting crawl from: ${baseUrl} with limit: ${limit}`);
+
+  const response = await firecrawl.crawl(baseUrl, {
     limit,
-    includePaths: urlsToProcess,
     scrapeOptions: {
       formats: ["markdown", "html", "links"],
       onlyMainContent: true,
     },
   });
 
-  if (!response.success || !response.data) {
-    throw new Error("Failed to crawl pages");
+  console.log("Firecrawl crawl response:", {
+    status: response.status,
+    completed: response.completed,
+    total: response.total,
+    dataLength: response.data?.length || 0,
+  });
+
+  if (!response.data || !Array.isArray(response.data)) {
+    throw new Error("Failed to crawl pages: No data returned");
+  }
+
+  if (response.data.length === 0) {
+    throw new Error("Crawl completed but returned 0 pages");
   }
 
   return response.data.map((page: any) => ({
-    url: page.metadata?.url || page.url,
+    url: page.metadata?.sourceURL || page.metadata?.url || page.url,
     title: page.metadata?.title,
     markdown: page.markdown,
     html: page.html,
