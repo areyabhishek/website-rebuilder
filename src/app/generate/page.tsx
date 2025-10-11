@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
 
 type SubmissionState = "idle" | "submitting" | "complete";
 
@@ -8,6 +9,7 @@ export default function GeneratePage() {
   const [url, setUrl] = useState("");
   const [status, setStatus] = useState<SubmissionState>("idle");
   const [error, setError] = useState<string | null>(null);
+  const router = useRouter();
 
   const submitDisabled = useMemo(
     () => status === "submitting" || url.trim().length === 0,
@@ -48,9 +50,9 @@ export default function GeneratePage() {
 
       setStatus("complete");
 
-      // Optionally redirect to issue or show links
-      if (data.issueUrl) {
-        window.open(data.issueUrl, "_blank");
+      // Redirect to status page
+      if (data.jobId) {
+        router.push(`/status/${data.jobId}`);
       }
     } catch (err) {
       setStatus("idle");
