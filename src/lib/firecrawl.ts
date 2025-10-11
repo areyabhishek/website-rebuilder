@@ -50,8 +50,8 @@ export async function mapSite(url: string, limit = 500): Promise<string[]> {
 
     // Extract URLs from link objects and filter out excluded URLs
     const urls = response.links
-      .map((link: any) => link.url || link)
-      .filter((linkUrl: string) => !shouldExcludeUrl(linkUrl))
+      .map((link: { url?: string } | string) => typeof link === 'string' ? link : link.url || '')
+      .filter((linkUrl: string) => linkUrl && !shouldExcludeUrl(linkUrl))
       .slice(0, 60);
 
     console.log(`Found ${urls.length} valid URLs after filtering`);
@@ -94,8 +94,18 @@ export async function crawlPages(
     throw new Error("Crawl completed but returned 0 pages");
   }
 
-  return response.data.map((page: any) => ({
-    url: page.metadata?.sourceURL || page.metadata?.url || page.url,
+  return response.data.map((page: {
+    url?: string;
+    metadata?: {
+      sourceURL?: string;
+      url?: string;
+      title?: string;
+    };
+    markdown?: string;
+    html?: string;
+    links?: string[];
+  }) => ({
+    url: page.metadata?.sourceURL || page.metadata?.url || page.url || '',
     title: page.metadata?.title,
     markdown: page.markdown,
     html: page.html,

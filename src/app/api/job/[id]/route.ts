@@ -25,7 +25,20 @@ export async function GET(
       return NextResponse.json({ error: "Job not found" }, { status: 404 });
     }
 
-    const response: any = {
+    const response: {
+      id: string;
+      domain: string;
+      status: string;
+      category: string | null;
+      pageCount: number;
+      createdAt: Date;
+      updatedAt: Date;
+      issueNumber?: number;
+      issueUrl?: string;
+      blueprintUrl?: string | null;
+      tokensUrl?: string | null;
+      prUrl?: string | null;
+    } = {
       id: job.id,
       domain: job.domain,
       status: job.status,
