@@ -50,7 +50,7 @@ export async function mapSite(url: string, limit = 500): Promise<string[]> {
 
     // Extract URLs from link objects and filter out excluded URLs
     const urls = response.links
-      .map((link: unknown) => {
+      .map((link: unknown): string => {
         if (typeof link === 'string') return link;
         if (typeof link === 'object' && link !== null && 'url' in link) {
           return (link as { url?: string }).url || '';
@@ -100,7 +100,7 @@ export async function crawlPages(
     throw new Error("Crawl completed but returned 0 pages");
   }
 
-  return response.data.map((page: {
+  interface FirecrawlPageResponse {
     url?: string;
     metadata?: {
       sourceURL?: string;
@@ -110,7 +110,9 @@ export async function crawlPages(
     markdown?: string;
     html?: string;
     links?: string[];
-  }) => ({
+  }
+
+  return response.data.map((page: FirecrawlPageResponse) => ({
     url: page.metadata?.sourceURL || page.metadata?.url || page.url || '',
     title: page.metadata?.title,
     markdown: page.markdown,

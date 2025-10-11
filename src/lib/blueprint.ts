@@ -20,14 +20,7 @@ function extractSections(markdown: string = "") {
   const sections: Blueprint["pages"][0]["sections"] = [];
   const lines = markdown.split("\n");
 
-  let currentSection: {
-    type: string;
-    h1?: string;
-    sub?: string;
-    cta?: string;
-    title?: string;
-    content?: string;
-  } | null = null;
+  let currentSection: Record<string, string> | null = null;
   let currentContent: string[] = [];
 
   for (const line of lines) {

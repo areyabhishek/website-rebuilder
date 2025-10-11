@@ -25,7 +25,7 @@ export async function GET(
       return NextResponse.json({ error: "Job not found" }, { status: 404 });
     }
 
-    const response = {
+    const response: Record<string, string | number | Date | null | undefined> = {
       id: job.id,
       domain: job.domain,
       status: job.status,
