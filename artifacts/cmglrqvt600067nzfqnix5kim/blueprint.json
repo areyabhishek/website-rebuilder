@@ -1,0 +1,31 @@
+{
+  "domain": "earnthatbody.com",
+  "nav": [
+    {
+      "text": "Home",
+      "href": "/"
+    }
+  ],
+  "pages": [
+    {
+      "url": "https://www.earnthatbody.com/makeitanapp",
+      "slug": "makeitanapp",
+      "title": "\n      \n        How To Make the ETB Platform an APP\n      \n    ",
+      "sections": [
+        {
+          "type": "section",
+          "title": "Make The ETB Platform an App On Your Phone!",
+          "content": "* * *\nCheck out this quick video to learn how to make the ETB Platform like an App on your phone! This will help you access your library with the click of a button!\n![Video Thumbnail](https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/themes/2149228881/settings_images/ybvUyjt9TqGZPjsGj8bL_sae.jpg)\nClick for sound\n1:12\nClose\n![](https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/themes/2149228881/assets/two_step.jpg?16370049793303099)\n50% Complete\n### Two Step\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        }
+      ],
+      "images": [
+        "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/themes/2149228881/settings_images/ybvUyjt9TqGZPjsGj8bL_sae.jpg",
+        "https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/themes/2149228881/assets/two_step.jpg?16370049793303099"
+      ]
+    }
+  ],
+  "assetsPolicy": {
+    "useOriginalImages": true,
+    "rewriteText": false
+  }
+}
