@@ -50,7 +50,13 @@ export async function mapSite(url: string, limit = 500): Promise<string[]> {
 
     // Extract URLs from link objects and filter out excluded URLs
     const urls = response.links
-      .map((link: { url?: string } | string) => typeof link === 'string' ? link : link.url || '')
+      .map((link: unknown) => {
+        if (typeof link === 'string') return link;
+        if (typeof link === 'object' && link !== null && 'url' in link) {
+          return (link as { url?: string }).url || '';
+        }
+        return '';
+      })
       .filter((linkUrl: string) => linkUrl && !shouldExcludeUrl(linkUrl))
       .slice(0, 60);
 
