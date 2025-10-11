@@ -1,0 +1,39 @@
+{
+  "domain": "loveandlogic.com",
+  "nav": [
+    {
+      "text": "Home",
+      "href": "/"
+    }
+  ],
+  "pages": [
+    {
+      "url": "https://www.loveandlogic.com/sitemap_products_1.xml?from=3584018284621&to=8086835986619",
+      "slug": "sitemap-products-1-xml",
+      "title": "Untitled",
+      "sections": [
+        {
+          "type": "content",
+          "content": "https://www.loveandlogic.com/dailyhttps://www.loveandlogic.com/products/9-essential-skills-for-the-love-and-logic-classroom-workbook2025-10-10T01:48:17-07:00dailyhttps://cdn.shopify.com/s/files/1/0081/4386/3885/files/9EssentialSkillsfortheLoveandLogicClassroom-Workbook.png?v=17383218719 Essential Skills for the Love and Logic Classroom - Workbook9 Essential Skills for the Love and Logic Classroom - Workbookhttps://www.loveandlogic.com/products/early-childhood-parenting-made-fun-workbook2025-10-10T01:48:17-07:00dailyhttps://cdn.shopify.com/s/files/1/0081/4386/3885/files/Love\\_and\\_Logic\\_Magic\\_for\\_Early\\_Childhood\\_-\\_Paperback\\_Book.png?v=1745320940Love and Logic Early Childhood Parenting Made Fun! - WorkbookLove and Logic Magic for Early Childhood - Paperback Bookhttps://www.loveandlogic.com/products/calming-the-chaos2025-10-10T01:48:17-07:00dailyhttps://cdn.shopify.com/s/files/1/0081/4386/3885/files/Calming\\_the\\_Chaos\\_8e67279d-cbb1-44ef-b4a9-13be0fd258bc.png?v=1745576664Calming t"
+        }
+      ],
+      "images": []
+    },
+    {
+      "url": "https://www.loveandlogic.com/sitemap_products_1.xml",
+      "slug": "sitemap-products-1-xml",
+      "title": "Untitled",
+      "sections": [
+        {
+          "type": "content",
+          "content": ""
+        }
+      ],
+      "images": []
+    }
+  ],
+  "assetsPolicy": {
+    "useOriginalImages": true,
+    "rewriteText": false
+  }
+}
