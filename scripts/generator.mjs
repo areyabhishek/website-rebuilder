@@ -115,7 +115,7 @@ Requirements:
 
   const message = await anthropic.messages.create({
     model: "claude-sonnet-4-20250514",
-    max_tokens: 16000,
+    max_tokens: 8000,
     system: systemPrompt,
     messages: [
       {
@@ -133,11 +133,15 @@ Requirements:
   try {
     result = JSON.parse(responseText);
   } catch (error) {
-    console.log("First attempt failed, retrying with stricter prompt...");
+    console.log("First attempt failed, waiting 2 minutes before retry to avoid rate limits...");
+
+    // Wait 120 seconds to allow rate limit to reset
+    await new Promise(resolve => setTimeout(resolve, 120000));
 
     const retryMessage = await anthropic.messages.create({
       model: "claude-sonnet-4-20250514",
-      max_tokens: 16000,
+      max_tokens: 8000,
+      system: systemPrompt,
       messages: [
         {
           role: "user",
@@ -150,7 +154,7 @@ Requirements:
         {
           role: "user",
           content:
-            "That wasn't valid JSON. Return ONLY valid JSON, nothing else.",
+            "That wasn't valid JSON. Return ONLY valid JSON with the exact format specified, nothing else.",
         },
       ],
     });
