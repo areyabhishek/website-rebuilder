@@ -1,0 +1,49 @@
+name: Generate Site
+
+on:
+  issues:
+    types: [labeled]
+
+jobs:
+  generate:
+    if: contains(github.event.issue.labels.*.name, 'generate-site')
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm install @anthropic-ai/sdk
+
+      - name: Run generator script
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: node scripts/generator.mjs
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "Generate site from issue #${{ github.event.issue.number }}"
+          branch: gen/site-${{ github.event.issue.number }}
+          title: "Generated site from issue #${{ github.event.issue.number }}"
+          body: |
+            Auto-generated Astro site based on artifacts from #${{ github.event.issue.number }}
+
+            ## Preview
+            The Vercel preview will be available once this PR is created.
+
+            ## Artifacts Used
+            - Blueprint: See issue for link
+            - Theme Tokens: See issue for link
+          labels: |
+            automated
+            generated-site

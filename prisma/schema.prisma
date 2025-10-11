@@ -1,0 +1,37 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Job {
+  id           String   @id @default(cuid())
+  domain       String
+  status       String
+  category     String?
+  pages        Page[]
+  blueprintUrl String?
+  tokensUrl    String?
+  issueNumber  Int?
+  prUrl        String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Page {
+  id    String  @id @default(cuid())
+  jobId String
+  url   String  @unique
+  title String?
+  md    String?
+  html  String?
+
+  Job Job @relation(fields: [jobId], references: [id], onDelete: Cascade)
+}

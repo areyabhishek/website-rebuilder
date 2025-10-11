@@ -6,22 +6,31 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push",
+    "db:studio": "prisma studio",
+    "setup": "npm install && prisma generate && prisma db push"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.65.0",
+    "@mendable/firecrawl-js": "^4.3.8",
+    "@octokit/rest": "^22.0.0",
+    "@prisma/client": "^6.17.1",
+    "next": "15.5.4",
     "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "next": "15.5.4"
+    "react-dom": "19.1.0"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
     "eslint": "^9",
     "eslint-config-next": "15.5.4",
-    "@eslint/eslintrc": "^3"
+    "prisma": "^6.17.1",
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }
