@@ -36,28 +36,21 @@ async function getIssueArtifacts(issueNumber) {
 
   const issue = await response.json();
 
-  // Extract artifact URLs from issue body
+  // Extract blueprint URL from issue body
   const blueprintMatch = issue.body.match(/\[Blueprint\]\(([^)]+)\)/);
-  const tokensMatch = issue.body.match(/\[Theme Tokens\]\(([^)]+)\)/);
 
-  if (!blueprintMatch || !tokensMatch) {
-    throw new Error("Could not find artifact URLs in issue body");
+  if (!blueprintMatch) {
+    throw new Error("Could not find blueprint URL in issue body");
   }
 
-  // Convert GitHub URLs to raw content URLs
-  const blueprintUrl = blueprintMatch[1].replace(
-    "github.com",
-    "raw.githubusercontent.com"
-  ).replace("/blob/", "/");
-  const tokensUrl = tokensMatch[1].replace(
-    "github.com",
-    "raw.githubusercontent.com"
-  ).replace("/blob/", "/");
+  // Convert GitHub URL to raw content URL
+  const blueprintUrl = blueprintMatch[1]
+    .replace("github.com", "raw.githubusercontent.com")
+    .replace("/blob/", "/");
 
   const blueprint = await fetchArtifact(blueprintUrl);
-  const tokens = await fetchArtifact(tokensUrl);
 
-  return { blueprint, tokens };
+  return { blueprint };
 }
 
 function getCategoryFromLabels(labels) {
@@ -77,67 +70,86 @@ function getCategoryFromLabels(labels) {
   return "portfolio";
 }
 
-async function generateSite(siteType, blueprint, tokens) {
-  // Optimize input by extracting only essential data
-  const optimizedBlueprint = {
-    nav: blueprint.nav.map(n => ({ label: n.label, href: n.href })),
-    pages: blueprint.pages.slice(0, 10).map(p => ({ // Limit to 10 pages max
-      title: p.title,
-      slug: p.slug,
-      // Remove content to save tokens
-    })),
-  };
+async function generateSite(siteType, blueprint) {
+  // Extract content from blueprint
+  const domain = blueprint.domain;
+  const pages = blueprint.pages.map((page) => ({
+    title: page.title,
+    slug: page.slug,
+    sections: page.sections,
+    images: page.images,
+  }));
 
-  const optimizedTokens = {
-    color: tokens.color || {},
-    fonts: {
-      heading: tokens.fonts?.heading || 'system-ui, sans-serif',
-      body: tokens.fonts?.body || 'system-ui, sans-serif',
-    },
-    space: tokens.space || [],
-    // Remove detailed component styles to save tokens
-  };
+  const navigation = blueprint.nav
+    .map((n) => `${n.text}: ${n.href}`)
+    .join(", ");
 
-  const systemPrompt = `You are a code generator that creates Astro websites. Output ONLY valid JSON in this exact format:
+  // Build a content summary
+  const contentSummary = pages
+    .slice(0, 5) // Limit to first 5 pages
+    .map((page) => {
+      const sectionsText = page.sections
+        .map((s) => {
+          const parts = [];
+          if (s.h1) parts.push(`Heading: ${s.h1}`);
+          if (s.sub) parts.push(`Subtext: ${s.sub}`);
+          if (s.title) parts.push(`Title: ${s.title}`);
+          if (s.content) parts.push(`Content: ${s.content.substring(0, 200)}`);
+          if (s.cta) parts.push(`CTA: ${s.cta}`);
+          return parts.join(" | ");
+        })
+        .join("\n  ");
+
+      return `Page: ${page.title} (${page.slug})
+  ${sectionsText}
+  Images: ${page.images.length} image(s)`;
+    })
+    .join("\n\n");
+
+  const systemPrompt = `You are an expert web designer and developer. Create a beautiful, modern Astro website based on the content provided.
+
+IMPORTANT: You MUST respond with ONLY valid JSON in this EXACT format (no markdown, no code blocks, no explanation):
 {
   "files": [
-    { "path": "...", "content": "..." }
-  ],
-  "readme": "..."
+    {"path": "src/pages/index.astro", "content": "..."},
+    {"path": "src/pages/about.astro", "content": "..."}
+  ]
 }
 
-Requirements:
-- Use Astro with TypeScript
-- Build a navigation menu from blueprint.nav
-- Follow theme tokens for colors, typography, spacing
-- Match layout patterns to the site type (${siteType})
-- Mobile-first CSS with good contrast (min 4.5:1)
-- No dead links - only use hrefs from blueprint.nav
-- Put images under /public
-- Include proper meta tags for SEO`;
+Design guidelines:
+- Modern, clean, beautiful design with excellent typography
+- Mobile-first responsive design
+- Use Tailwind CSS for styling (include via CDN)
+- Match the site type: ${siteType}
+- Use the original navigation structure
+- Professional color scheme with good contrast
+- Smooth animations and hover effects
+- Include proper meta tags and SEO`;
 
-  const userPrompt = `Generate a complete Astro site.
+  const userPrompt = `Create a complete Astro website for: ${domain}
 
-siteType: ${siteType}
+Site Type: ${siteType}
 
-Navigation: ${optimizedBlueprint.nav.map(n => `${n.label}: ${n.href}`).join(', ')}
+Navigation: ${navigation}
 
-Theme Colors: ${Object.entries(optimizedTokens.color).map(([k,v]) => `${k}: ${v}`).join(', ')}
-
-Typography: ${optimizedTokens.fonts.heading} (heading), ${optimizedTokens.fonts.body} (body)
-
-Pages to create: ${optimizedBlueprint.pages.map(p => p.title).join(', ')}
+Content from original site:
+${contentSummary}
 
 Requirements:
-- Create all necessary pages from the blueprint
-- Add a 404.astro page
-- Add /sitemap.xml (if applicable)
-- ${siteType === "blog" ? "Add /feed.xml for RSS" : ""}
-- Return ONLY valid JSON with the format specified in the system prompt`;
+1. Create an Astro site with multiple pages based on the navigation
+2. Use modern, beautiful design with Tailwind CSS
+3. Include all navigation items as separate pages
+4. Add smooth transitions and animations
+5. Make it mobile-responsive
+6. Include a 404.astro page
+7. Use placeholder images from https://images.unsplash.com/photo-* for any images
+8. Return ONLY the JSON with files array - no markdown formatting, no code blocks`;
+
+  console.log("Sending request to Claude Sonnet 4.5...");
 
   const message = await anthropic.messages.create({
     model: "claude-sonnet-4-20250514",
-    max_tokens: 4000, // Reduced from 8000
+    max_tokens: 8000,
     system: systemPrompt,
     messages: [
       {
@@ -147,64 +159,38 @@ Requirements:
     ],
   });
 
-  const responseText =
+  let responseText =
     message.content[0].type === "text" ? message.content[0].text : "";
 
-  // Try to parse JSON with improved retry logic
+  console.log("Response received, parsing...");
+
+  // Clean up response - remove markdown code blocks if present
+  responseText = responseText
+    .replace(/```json\s*/g, "")
+    .replace(/```\s*/g, "")
+    .trim();
+
+  // Try to parse JSON
   let result;
   try {
     result = JSON.parse(responseText);
+    console.log(`Successfully parsed! Generated ${result.files?.length || 0} files.`);
   } catch (error) {
-    console.log("First attempt failed, retrying with exponential backoff...");
-    
-    // Retry with exponential backoff (up to 3 attempts)
-    for (let attempt = 1; attempt <= 3; attempt++) {
-      try {
-        const delay = Math.pow(2, attempt) * 30; // 1min, 2min, 4min
-        console.log(`Retry attempt ${attempt}, waiting ${delay} seconds...`);
-        await new Promise(resolve => setTimeout(resolve, delay * 1000));
-
-        const retryMessage = await anthropic.messages.create({
-          model: "claude-sonnet-4-20250514",
-          max_tokens: 4000,
-          system: systemPrompt,
-          messages: [
-            {
-              role: "user",
-              content: userPrompt,
-            },
-            {
-              role: "assistant",
-              content: responseText,
-            },
-            {
-              role: "user",
-              content:
-                "That wasn't valid JSON. Return ONLY valid JSON with the exact format specified, nothing else.",
-            },
-          ],
-        });
-
-        const retryText =
-          retryMessage.content[0].type === "text"
-            ? retryMessage.content[0].text
-            : "";
-        result = JSON.parse(retryText);
-        console.log(`Retry attempt ${attempt} succeeded!`);
-        break;
-      } catch (retryError) {
-        if (attempt === 3) {
-          throw new Error(`Failed to generate valid JSON after ${attempt + 1} attempts: ${retryError.message}`);
-        }
-        console.log(`Retry attempt ${attempt} failed: ${retryError.message}`);
-      }
-    }
+    console.log("JSON parsing failed. Response preview:");
+    console.log(responseText.substring(0, 500));
+    throw new Error(
+      `Failed to parse JSON response: ${error.message}\nResponse: ${responseText.substring(0, 200)}...`
+    );
   }
 
   return result;
 }
 
 function writeFiles(filesData, basePath = ".") {
+  if (!filesData.files || !Array.isArray(filesData.files)) {
+    throw new Error("Invalid files data structure");
+  }
+
   for (const file of filesData.files) {
     const filePath = join(basePath, file.path);
     const dir = dirname(filePath);
@@ -244,22 +230,20 @@ async function main() {
 
   console.log(`Site type: ${siteType}`);
 
-  // Fetch artifacts
-  console.log("Fetching artifacts...");
-  const { blueprint, tokens } = await getIssueArtifacts(issueNumber);
+  // Fetch blueprint
+  console.log("Fetching blueprint...");
+  const { blueprint } = await getIssueArtifacts(issueNumber);
+
+  console.log(`Blueprint loaded: ${blueprint.domain} with ${blueprint.pages.length} pages`);
 
   // Generate site
-  console.log("Generating site with Claude...");
-  const result = await generateSite(siteType, blueprint, tokens);
+  console.log("Generating site with Claude Sonnet 4.5...");
+  const result = await generateSite(siteType, blueprint);
 
   // Write files
   console.log("Writing files...");
   const outputDir = join(__dirname, "..", "generated-site");
   writeFiles(result, outputDir);
-
-  // Write README
-  const readmePath = join(outputDir, "README.md");
-  writeFileSync(readmePath, result.readme, "utf-8");
 
   console.log("\n✓ Site generation complete!");
   console.log(`Output directory: ${outputDir}`);
