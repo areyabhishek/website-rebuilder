@@ -65,7 +65,7 @@ async function classifyWithLLM(pages: FirecrawlPage[]): Promise<SiteCategory> {
   }));
 
   const message = await anthropic.messages.create({
-    model: "claude-haiku-3-20241022", // Much cheaper model
+    model: "claude-3-5-haiku-20241022", // Fast and cheap model
     max_tokens: 50, // Reduced from 200
     messages: [
       {
