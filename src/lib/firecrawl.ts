@@ -96,12 +96,15 @@ export async function crawlPages(
   urls: string[],
   limit = 25
 ): Promise<FirecrawlPage[]> {
+  console.log(`crawlPages called with ${urls.length} URLs`);
+  console.log(`First 5 URLs:`, urls.slice(0, 5));
+
   // Extract the base domain from the first URL and use the homepage
   const firstUrl = urls[0];
   const parsedUrl = new URL(firstUrl);
   const baseUrl = `${parsedUrl.protocol}//${parsedUrl.host}`;
 
-  console.log(`Starting crawl from: ${baseUrl} with limit: ${limit}`);
+  console.log(`Starting crawl from: ${baseUrl} (extracted from ${firstUrl}) with limit: ${limit}`);
 
   const response = await firecrawl.crawl(baseUrl, {
     limit,
@@ -119,12 +122,19 @@ export async function crawlPages(
   });
 
   if (!response.data || !Array.isArray(response.data)) {
+    console.error("Firecrawl returned no data array");
     throw new Error("Failed to crawl pages: No data returned");
   }
 
   if (response.data.length === 0) {
-    throw new Error("Crawl completed but returned 0 pages");
+    console.error(`Crawl from ${baseUrl} returned 0 pages. This usually means:`);
+    console.error("1. The site blocks crawlers");
+    console.error("2. Firecrawl couldn't access the site");
+    console.error("3. All pages were excluded by robots.txt");
+    throw new Error(`Crawl completed but returned 0 pages from ${baseUrl}. The site may block crawlers or require authentication.`);
   }
+
+  console.log(`Successfully crawled ${response.data.length} pages from ${baseUrl}`);
 
   interface FirecrawlPageResponse {
     url?: string;
