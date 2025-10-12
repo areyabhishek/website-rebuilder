@@ -20,7 +20,17 @@ export async function writeArtifacts(
   blueprint: Blueprint,
   tokens: ThemeTokens
 ): Promise<{ blueprintUrl: string; tokensUrl: string }> {
-  const { owner, repo } = parseRepo(process.env.GITHUB_REPO!);
+  if (!process.env.GITHUB_TOKEN) {
+    throw new Error("GITHUB_TOKEN environment variable is not set");
+  }
+
+  if (!process.env.GITHUB_REPO) {
+    throw new Error("GITHUB_REPO environment variable is not set");
+  }
+
+  const { owner, repo } = parseRepo(process.env.GITHUB_REPO);
+
+  console.log(`Writing artifacts to ${owner}/${repo}`);
 
   // Write blueprint.json
   const blueprintPath = `artifacts/${jobId}/blueprint.json`;
@@ -28,13 +38,20 @@ export async function writeArtifacts(
     JSON.stringify(blueprint, null, 2)
   ).toString("base64");
 
-  await octokit.repos.createOrUpdateFileContents({
-    owner,
-    repo,
-    path: blueprintPath,
-    message: `Add blueprint for ${blueprint.domain}`,
-    content: blueprintContent,
-  });
+  console.log(`Creating blueprint at: ${blueprintPath}`);
+
+  try {
+    await octokit.repos.createOrUpdateFileContents({
+      owner,
+      repo,
+      path: blueprintPath,
+      message: `Add blueprint for ${blueprint.domain}`,
+      content: blueprintContent,
+    });
+  } catch (error) {
+    console.error(`Failed to write blueprint to ${owner}/${repo}/${blueprintPath}`);
+    throw error;
+  }
 
   // Write tokens.json
   const tokensPath = `artifacts/${jobId}/tokens.json`;
