@@ -89,12 +89,12 @@ async function generateSite(siteType, blueprint, tokens) {
   };
 
   const optimizedTokens = {
-    colors: tokens.colors,
-    typography: {
-      fontFamily: tokens.typography.fontFamily,
-      fontSize: tokens.typography.fontSize,
+    color: tokens.color || {},
+    fonts: {
+      heading: tokens.fonts?.heading || 'system-ui, sans-serif',
+      body: tokens.fonts?.body || 'system-ui, sans-serif',
     },
-    spacing: tokens.spacing,
+    space: tokens.space || [],
     // Remove detailed component styles to save tokens
   };
 
@@ -122,9 +122,9 @@ siteType: ${siteType}
 
 Navigation: ${optimizedBlueprint.nav.map(n => `${n.label}: ${n.href}`).join(', ')}
 
-Theme Colors: ${Object.entries(optimizedTokens.colors).map(([k,v]) => `${k}: ${v}`).join(', ')}
+Theme Colors: ${Object.entries(optimizedTokens.color).map(([k,v]) => `${k}: ${v}`).join(', ')}
 
-Typography: ${optimizedTokens.typography.fontFamily}
+Typography: ${optimizedTokens.fonts.heading} (heading), ${optimizedTokens.fonts.body} (body)
 
 Pages to create: ${optimizedBlueprint.pages.map(p => p.title).join(', ')}
 
