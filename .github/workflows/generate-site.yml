@@ -39,8 +39,8 @@ jobs:
           echo "Checking generated files..."
           ls -la generated-site/ || echo "No generated-site directory"
           find generated-site -type f 2>/dev/null || echo "No files found"
-          echo "Staging files for git..."
-          git add -A generated-site/
+          echo "Staging files for git (force add to override .gitignore)..."
+          git add -f generated-site/
           git status
 
       - name: Create Pull Request
