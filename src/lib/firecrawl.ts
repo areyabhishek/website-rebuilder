@@ -96,8 +96,10 @@ export async function crawlPages(
   urls: string[],
   limit = 25
 ): Promise<FirecrawlPage[]> {
-  // Use the first URL as the base, and let Firecrawl crawl from there
-  const baseUrl = urls[0];
+  // Extract the base domain from the first URL and use the homepage
+  const firstUrl = urls[0];
+  const parsedUrl = new URL(firstUrl);
+  const baseUrl = `${parsedUrl.protocol}//${parsedUrl.host}`;
 
   console.log(`Starting crawl from: ${baseUrl} with limit: ${limit}`);
 
@@ -139,13 +141,18 @@ export async function crawlPages(
   // Filter out unwanted URLs from crawl results
   const filteredData = response.data.filter((page: FirecrawlPageResponse) => {
     const pageUrl = page.metadata?.sourceURL || page.metadata?.url || page.url || '';
-    return !shouldExcludeUrl(pageUrl);
+    const shouldExclude = shouldExcludeUrl(pageUrl);
+    if (shouldExclude) {
+      console.log(`Excluding: ${pageUrl}`);
+    }
+    return !shouldExclude;
   });
 
   console.log(`Filtered crawl results: ${response.data.length} -> ${filteredData.length} pages`);
 
   if (filteredData.length === 0) {
-    throw new Error("All crawled pages were filtered out (XML sitemaps, assets, etc.)");
+    console.error("All pages were filtered out. Original URLs:", response.data.map((p: FirecrawlPageResponse) => p.metadata?.sourceURL || p.url));
+    throw new Error("All crawled pages were filtered out (XML sitemaps, assets, etc.). Try a different URL.");
   }
 
   return filteredData.map((page: FirecrawlPageResponse) => ({
