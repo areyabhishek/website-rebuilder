@@ -37,7 +37,7 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
           commit-message: "Generate site from issue #${{ github.event.issue.number }}"
           branch: gen/site-${{ github.event.issue.number }}
           title: "Generated site from issue #${{ github.event.issue.number }}"
@@ -49,7 +49,6 @@ jobs:
 
             ## Artifacts Used
             - Blueprint: See issue for link
-            - Theme Tokens: See issue for link
           labels: |
             automated
             generated-site
