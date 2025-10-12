@@ -21,8 +21,32 @@ const EXCLUDED_PATHS = [
   "/settings",
 ];
 
+// File extensions and patterns to exclude
+const EXCLUDED_PATTERNS = [
+  ".xml",   // Sitemaps
+  ".pdf",   // PDFs
+  ".zip",   // Archives
+  ".jpg",   // Images
+  ".jpeg",
+  ".png",
+  ".gif",
+  ".svg",
+  ".webp",
+  "/feed",  // RSS feeds
+  "/wp-json", // WordPress API
+  "/wp-content", // WordPress assets
+  "/wp-includes", // WordPress core files
+];
+
 function shouldExcludeUrl(url: string): boolean {
   try {
+    const urlLower = url.toLowerCase();
+
+    // Check if URL contains excluded file extensions or patterns
+    if (EXCLUDED_PATTERNS.some((pattern) => urlLower.includes(pattern))) {
+      return true;
+    }
+
     const { pathname } = new URL(url);
     return EXCLUDED_PATHS.some((excluded) =>
       pathname.toLowerCase().includes(excluded)
