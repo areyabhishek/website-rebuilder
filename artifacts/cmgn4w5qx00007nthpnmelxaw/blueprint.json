@@ -1,0 +1,38 @@
+{
+  "domain": "moveorperish.com",
+  "nav": [
+    {
+      "text": "Home",
+      "href": "/"
+    }
+  ],
+  "pages": [
+    {
+      "url": "https://www.moveorperish.com",
+      "slug": "index",
+      "title": "Move or Die",
+      "sections": [
+        {
+          "type": "hero",
+          "h1": "MOVE OR DIE",
+          "sub": "",
+          "cta": "",
+          "content": "![](https://www.moveorperish.com/assets/images/image01.svg?v=5800e561)\nJoin the tribe"
+        },
+        {
+          "type": "section",
+          "title": "Join 2k+ movers reclaiming their freedom from pain and sedentary living.",
+          "content": "Start your FREE 7-Day Movement Course.\nArrow Right (Light)Go\n![](https://www.moveorperish.com/assets/images/image02.jpg?v=5800e561)\n\"This allowed me to squat and pick things up pain-free again.\""
+        }
+      ],
+      "images": [
+        "https://www.moveorperish.com/assets/images/image01.svg?v=5800e561",
+        "https://www.moveorperish.com/assets/images/image02.jpg?v=5800e561"
+      ]
+    }
+  ],
+  "assetsPolicy": {
+    "useOriginalImages": true,
+    "rewriteText": false
+  }
+}
