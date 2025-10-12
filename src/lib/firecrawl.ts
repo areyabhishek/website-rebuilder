@@ -136,7 +136,19 @@ export async function crawlPages(
     links?: string[];
   }
 
-  return response.data.map((page: FirecrawlPageResponse) => ({
+  // Filter out unwanted URLs from crawl results
+  const filteredData = response.data.filter((page: FirecrawlPageResponse) => {
+    const pageUrl = page.metadata?.sourceURL || page.metadata?.url || page.url || '';
+    return !shouldExcludeUrl(pageUrl);
+  });
+
+  console.log(`Filtered crawl results: ${response.data.length} -> ${filteredData.length} pages`);
+
+  if (filteredData.length === 0) {
+    throw new Error("All crawled pages were filtered out (XML sitemaps, assets, etc.)");
+  }
+
+  return filteredData.map((page: FirecrawlPageResponse) => ({
     url: page.metadata?.sourceURL || page.metadata?.url || page.url || '',
     title: page.metadata?.title,
     markdown: page.markdown,
