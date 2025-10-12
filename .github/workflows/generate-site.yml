@@ -4,6 +4,11 @@ on:
   issues:
     types: [labeled]
 
+permissions:
+  contents: write
+  pull-requests: write
+  issues: read
+
 jobs:
   generate:
     if: contains(github.event.issue.labels.*.name, 'generate-site')
