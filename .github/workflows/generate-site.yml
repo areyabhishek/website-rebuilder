@@ -41,11 +41,18 @@ jobs:
           commit-message: "Generate site from issue #${{ github.event.issue.number }}"
           branch: gen/site-${{ github.event.issue.number }}
           title: "Generated site from issue #${{ github.event.issue.number }}"
+          add-paths: |
+            generated-site/**
           body: |
             Auto-generated Astro site based on artifacts from #${{ github.event.issue.number }}
 
-            ## Preview
-            The Vercel preview will be available once this PR is created.
+            ## Test Locally
+            ```bash
+            git checkout gen/site-${{ github.event.issue.number }}
+            cd generated-site
+            npm install
+            npm run dev
+            ```
 
             ## Artifacts Used
             - Blueprint: See issue for link
