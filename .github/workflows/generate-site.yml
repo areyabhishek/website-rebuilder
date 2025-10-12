@@ -34,11 +34,14 @@ jobs:
           ISSUE_NUMBER: ${{ github.event.issue.number }}
         run: node scripts/generator.mjs
 
-      - name: Verify generated files
+      - name: Verify and stage generated files
         run: |
           echo "Checking generated files..."
           ls -la generated-site/ || echo "No generated-site directory"
           find generated-site -type f 2>/dev/null || echo "No files found"
+          echo "Staging files for git..."
+          git add -A generated-site/
+          git status
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
