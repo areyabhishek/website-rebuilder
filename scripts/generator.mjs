@@ -119,11 +119,12 @@ IMPORTANT: You MUST respond with ONLY valid JSON in this EXACT format (no markdo
 Design guidelines:
 - Modern, clean, beautiful design with excellent typography
 - Mobile-first responsive design
-- Use Tailwind CSS for styling (include via CDN)
+- Use inline <style> tags with modern CSS (NO external CSS, NO Tailwind CDN)
+- Use CSS Grid, Flexbox, and modern CSS features
 - Match the site type: ${siteType}
 - Use the original navigation structure
 - Professional color scheme with good contrast
-- Smooth animations and hover effects
+- Smooth animations and hover effects with CSS transitions
 - Include proper meta tags and SEO`;
 
   const userPrompt = `Create a complete Astro website for: ${domain}
@@ -137,15 +138,18 @@ ${contentSummary}
 
 Requirements:
 1. Create ONLY 3 pages maximum: index.astro, about.astro (or similar), and 404.astro
-2. Use modern, beautiful design with Tailwind CSS via CDN
+2. Use inline <style> tags in each page with modern CSS (NO Tailwind, NO external CSS files)
 3. Keep each page under 200 lines of code
-4. Use simple, clean layouts - avoid complex components
-5. Make it mobile-responsive
+4. Use simple, clean layouts with CSS Grid and Flexbox
+5. Make it mobile-responsive with @media queries
 6. Use placeholder images from https://images.unsplash.com/
 7. Include package.json and astro.config.mjs
 8. Return ONLY the JSON with files array - no markdown formatting, no code blocks
 
-IMPORTANT: Keep the response under 15000 tokens by creating simple, concise pages.`;
+IMPORTANT:
+- NO Tailwind CDN scripts
+- Use <style> tags with regular CSS
+- Keep the response under 15000 tokens by creating simple, concise pages.`;
 
   console.log("Sending request to Claude Sonnet 4.5...");
 
