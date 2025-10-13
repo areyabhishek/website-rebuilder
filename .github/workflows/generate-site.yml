@@ -43,6 +43,19 @@ jobs:
           git add -f generated-site/
           git status
 
+      - name: Deploy to Vercel
+        id: vercel-deploy
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        run: |
+          cd generated-site
+          npm install -g vercel
+          DEPLOY_URL=$(vercel deploy --token=$VERCEL_TOKEN --yes 2>&1 | grep -o 'https://[^ ]*')
+          echo "deploy_url=$DEPLOY_URL" >> $GITHUB_OUTPUT
+          echo "Deployed to: $DEPLOY_URL"
+
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
         with:
@@ -53,6 +66,9 @@ jobs:
           add-paths: generated-site
           body: |
             Auto-generated Astro site based on artifacts from #${{ github.event.issue.number }}
+
+            ## 🚀 Live Preview
+            ${{ steps.vercel-deploy.outputs.deploy_url }}
 
             ## Test Locally
             ```bash
