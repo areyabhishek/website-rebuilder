@@ -1,7 +1,8 @@
 import { ProgressTracker } from "@/components/ProgressTracker";
 import Link from "next/link";
 
-export default function StatusPage({ params }: { params: { jobId: string } }) {
+export default async function StatusPage({ params }: { params: Promise<{ jobId: string }> }) {
+  const { jobId } = await params;
   return (
     <div className="flex min-h-screen flex-col bg-slate-950 text-slate-100">
       <nav className="border-b border-slate-800 px-6 py-4">
@@ -29,7 +30,7 @@ export default function StatusPage({ params }: { params: { jobId: string } }) {
       </nav>
 
       <main className="mx-auto w-full max-w-4xl flex-1 px-6 py-12">
-        <ProgressTracker jobId={params.jobId} />
+        <ProgressTracker jobId={jobId} />
       </main>
     </div>
   );
