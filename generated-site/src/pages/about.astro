@@ -1,0 +1,324 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Release Notes | MotherDuck Docs</title>
+  <meta name="description" content="Stay up to date with the latest MotherDuck releases and features">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="nav-container">
+        <div class="logo">
+          <a href="/">🦆 MotherDuck</a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about/" class="active">Release Notes</a></li>
+          <li><a href="/ecosystem/">Ecosystem</a></li>
+          <li><a href="/docs/integrations/bi-tools/hex/">Hex</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="sidebar">
+        <h3>Documentation</h3>
+        <ul class="doc-nav">
+          <li><a href="#october-2025">October 2025</a></li>
+          <li><a href="#september-2025">September 2025</a></li>
+          <li><a href="#august-2025">August 2025</a></li>
+          <li><a href="#july-2025">July 2025</a></li>
+        </ul>
+      </div>
+      
+      <div class="content">
+        <h1>Release Notes</h1>
+        <p class="intro">Stay up to date with the latest MotherDuck releases, features, and improvements.</p>
+        
+        <div class="release-notes">
+          <div class="release" id="october-2025">
+            <h2>October 9, 2025</h2>
+            <div class="release-content">
+              <h4>Streaming Kafka Data into MotherDuck with Estuary</h4>
+              <p>Live demo: October 9th - Learn how to stream real-time data from Kafka directly into MotherDuck using Estuary Flow.</p>
+            </div>
+          </div>
+
+          <div class="release" id="september-2025">
+            <h2>September 30, 2025</h2>
+            <div class="release-content">
+              <h4>Get help from MotherDuck Experts</h4>
+              <p>Get a human helping hand with technical questions, troubleshooting, and best practices directly in the MotherDuck UI. Open "Expert help" from the Help menu.</p>
+            </div>
+          </div>
+
+          <div class="release">
+            <h2>September 10, 2025</h2>
+            <div class="release-content">
+              <h4>Instances are now called Ducklings</h4>
+              <p>We've updated our name for instances to better reflect their purpose as dedicated and scalable DuckDB instances that provide isolated, on-demand compute.</p>
+            </div>
+          </div>
+
+          <div class="release" id="august-2025">
+            <h2>August 21, 2025</h2>
+            <div class="release-content">
+              <h4>Support for H3 Spatial Indexing Extension</h4>
+              <p>MotherDuck now supports the H3 DuckDB Extension, which adds support for the H3 hierarchical geospatial indexing system.</p>
+            </div>
+          </div>
+
+          <div class="release">
+            <h2>August 13, 2025</h2>
+            <div class="release-content">
+              <h4>GPT 5 Support in prompt function</h4>
+              <p>The PROMPT function now supports OpenAI's GPT 5 series models for enhanced AI-powered SQL assistance.</p>
+            </div>
+          </div>
+
+          <div class="release" id="july-2025">
+            <h2>July 16, 2025</h2>
+            <div class="release-content">
+              <h4>NEW - Larger Compute Instances</h4>
+              <p>MotherDuck now offers two new memory-rich compute duckling (instance) types, <strong>Mega</strong> and <strong>Giga</strong>, built to run at high-capacity for the largest, most demanding workloads.</p>
+            </div>
+          </div>
+
+          <div class="release">
+            <h2>July 01, 2025</h2>
+            <div class="release-content">
+              <h4>[Preview] DuckLake Support</h4>
+              <p>MotherDuck now supports DuckLake, an integrated data lake and catalog format. MotherDuck currently provides two options for creating and managing DuckLake tables.</p>
+            </div>
+          </div>
+
+          <div class="release">
+            <h2>June 26, 2025</h2>
+            <div class="release-content">
+              <h4>Chat Widget Optimization</h4>
+              <p>Users can now view their inline edit history in a more compact chat widget and quickly request follow-up changes when needed.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2024 MotherDuck. All rights reserved.</p>
+    </div>
+  </footer>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #ffffff;
+}
+
+header {
+  background: #1e293b;
+  padding: 1rem 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.logo a {
+  color: #f59e0b;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: #e5e7eb;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #f59e0b;
+  background: rgba(245, 158, 11, 0.1);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 3rem;
+  padding: 2rem;
+  min-height: 70vh;
+}
+
+.sidebar {
+  background: #f8fafc;
+  padding: 2rem;
+  border-radius: 12px;
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+}
+
+.sidebar h3 {
+  color: #1e293b;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.doc-nav {
+  list-style: none;
+}
+
+.doc-nav li {
+  margin-bottom: 0.5rem;
+}
+
+.doc-nav a {
+  color: #64748b;
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.doc-nav a:hover {
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+.content {
+  padding-left: 1rem;
+}
+
+.content h1 {
+  font-size: 2.5rem;
+  color: #1e293b;
+  margin-bottom: 1rem;
+}
+
+.intro {
+  font-size: 1.1rem;
+  color: #64748b;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.release-notes {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.release {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  transition: all 0.3s ease;
+}
+
+.release:hover {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  border-color: #cbd5e1;
+}
+
+.release h2 {
+  color: #1e293b;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #f59e0b;
+}
+
+.release-content h4 {
+  color: #374151;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.release-content p {
+  color: #6b7280;
+  line-height: 1.7;
+}
+
+footer {
+  background: #0f172a;
+  padding: 2rem;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.footer-content p {
+  color: #94a3b8;
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .nav-links {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 1rem;
+  }
+  
+  .sidebar {
+    position: static;
+  }
+  
+  .content h1 {
+    font-size: 2rem;
+  }
+}
+</style>
+</body>
+</html>
