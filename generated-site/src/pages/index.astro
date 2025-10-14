@@ -1,0 +1,481 @@
+---
+// MotherDuck Homepage
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MotherDuck: Ducking Simple Data Warehouse based on DuckDB</title>
+  <meta name="description" content="Making Big Data Feel Small with MotherDuck's serverless analytics platform built on DuckDB">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="/" class="logo">MotherDuck</a>
+      <ul class="nav-menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/docs/about-motherduck/release-notes/">Release Notes</a></li>
+        <li><a href="/ecosystem/">Ecosystem</a></li>
+        <li><a href="/docs/integrations/bi-tools/hex/">Hex</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-announcement">
+          <span>🦆 MotherDuck's first European cloud region is coming!</span>
+          <a href="#">Join the waitlist →</a>
+        </div>
+        <h1>Making Big Data Feel Small</h1>
+        <p class="hero-subtitle">Finally: A database you don't hate. MotherDuck is a serverless analytics platform built on DuckDB that scales effortlessly.</p>
+        <div class="hero-cta">
+          <button class="btn-primary">Get Started Free</button>
+          <button class="btn-secondary">View Documentation</button>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop" alt="Analytics Dashboard" />
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <h2>Why MotherDuck?</h2>
+        <div class="features-grid">
+          <div class="feature">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=300&h=200&fit=crop" alt="Scales Performance" />
+            <h3>Scales Vertically & Horizontally</h3>
+            <p>Handle spiky workloads with automatic scaling that adapts to your needs.</p>
+          </div>
+          <div class="feature">
+            <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=300&h=200&fit=crop" alt="Developer Friendly" />
+            <h3>Developer Friendly</h3>
+            <p>Built for software engineers who need fast analytics without the complexity.</p>
+          </div>
+          <div class="feature">
+            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=300&h=200&fit=crop" alt="Analytics" />
+            <h3>Analytics That Works</h3>
+            <p>For data teams and app developers who want results, not headaches.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ecosystem">
+      <div class="container">
+        <h2>Modern Duck Stack</h2>
+        <p>Connect your entire data ecosystem</p>
+        <div class="ecosystem-grid">
+          <div class="ecosystem-item">
+            <h4>Sources</h4>
+            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=100&h=60&fit=crop" alt="Data Sources" />
+          </div>
+          <div class="ecosystem-item">
+            <h4>Cloud Data Warehouse</h4>
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=100&h=60&fit=crop" alt="Cloud" />
+          </div>
+          <div class="ecosystem-item">
+            <h4>BI Tools</h4>
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=100&h=60&fit=crop" alt="BI Tools" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <h2>Join the Flock</h2>
+        <p>Get started with MotherDuck today and experience the future of analytics</p>
+        <div class="cta-buttons">
+          <button class="btn-primary">Start Free Trial</button>
+          <a href="https://slack.motherduck.com/" class="btn-secondary">Chat with us on Slack</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/ecosystem/">Ecosystem</a></li>
+            <li><a href="/docs/about-motherduck/release-notes/">Release Notes</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Integrations</h4>
+          <ul>
+            <li><a href="/docs/integrations/bi-tools/hex/">Hex</a></li>
+            <li><a href="#">Python</a></li>
+            <li><a href="#">JavaScript</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Community</h4>
+          <ul>
+            <li><a href="https://slack.motherduck.com/">Slack</a></li>
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 MotherDuck. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #fff;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #e5e5e5;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #1a73e8;
+      text-decoration: none;
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    .nav-menu a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-menu a:hover {
+      color: #1a73e8;
+    }
+
+    main {
+      margin-top: 80px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .hero-announcement {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+      display: inline-block;
+    }
+
+    .hero-announcement a {
+      color: white;
+      text-decoration: none;
+      margin-left: 0.5rem;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      line-height: 1.1;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      color: #666;
+      margin-bottom: 2rem;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: #1a73e8;
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background: #1557b0;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #333;
+      border: 2px solid #333;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+      background: #333;
+      color: white;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .features {
+      padding: 6rem 0;
+      background: #f8f9fa;
+    }
+
+    .features h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .feature {
+      text-align: center;
+      padding: 2rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .feature:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .feature h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .ecosystem {
+      padding: 6rem 0;
+    }
+
+    .ecosystem h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .ecosystem p {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #666;
+      margin-bottom: 3rem;
+    }
+
+    .ecosystem-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+
+    .ecosystem-item {
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    .ecosystem-item h4 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .ecosystem-item img {
+      width: 100px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    .cta-section {
+      padding: 6rem 0;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .cta-section p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .cta-section .btn-primary {
+      background: white;
+      color: #667eea;
+    }
+
+    .cta-section .btn-secondary {
+      border-color: white;
+      color: white;
+    }
+
+    footer {
+      background: #1a1a1a;
+      color: white;
+      padding: 3rem 0 1rem;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-section h4 {
+      margin-bottom: 1rem;
+      color: #1a73e8;
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-section a:hover {
+      color: #1a73e8;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid #333;
+      color: #999;
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero-cta {
+        justify-content: center;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ecosystem-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</body>
+</html>
