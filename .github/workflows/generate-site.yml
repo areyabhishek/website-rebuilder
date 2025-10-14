@@ -48,19 +48,25 @@ jobs:
         id: deployment
         run: |
           if [ -f deployment-info.json ]; then
+            echo "Found deployment-info.json"
+            cat deployment-info.json
             PREVIEW_URL=$(cat deployment-info.json | jq -r '.previewUrl // ""')
+            echo "Extracted preview URL: $PREVIEW_URL"
             echo "preview_url=$PREVIEW_URL" >> $GITHUB_OUTPUT
           else
+            echo "No deployment-info.json found"
             echo "preview_url=" >> $GITHUB_OUTPUT
           fi
 
       - name: Post Vercel URL to Issue
         if: steps.deployment.outputs.preview_url != ''
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
           PREVIEW_URL: ${{ steps.deployment.outputs.preview_url }}
         run: |
+          echo "Posting comment to issue #$ISSUE_NUMBER"
+          echo "Preview URL: $PREVIEW_URL"
           gh issue comment $ISSUE_NUMBER --body "## 🚀 Vercel Preview Deployed!
 
           Your generated site is now live at:
@@ -70,6 +76,7 @@ jobs:
 
           ---
           *This preview was automatically deployed by GitHub Actions*"
+          echo "Comment posted successfully"
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
