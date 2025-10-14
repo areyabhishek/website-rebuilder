@@ -1,0 +1,72 @@
+{
+  "domain": "gumroad.com",
+  "nav": [
+    {
+      "text": "Home",
+      "href": "/"
+    },
+    {
+      "text": "Checkout",
+      "href": "/checkout"
+    },
+    {
+      "text": "Tweet",
+      "href": "/intent/tweet"
+    },
+    {
+      "text": "Sharer.Php",
+      "href": "/sharer/sharer.php"
+    }
+  ],
+  "pages": [
+    {
+      "url": "https://doodlebug07.gumroad.com/l/lvgwo",
+      "slug": "l-lvgwo",
+      "title": "The Predictor: Building Supervised Learning Models",
+      "sections": [
+        {
+          "type": "content",
+          "content": "$29\n\n$29\n\nhttps://schema.org/InStock\n\nusd\n\ndoodlebug07\n\n### The Predictor: Building Supervised Learning Models\n\n[I want this!](https://gumroad.com/checkout?product=lvgwo&quantity=1)\n\n![](https://public-files.gumroad.com/uyzsezlfdn4u90acpe8mwd5ucjf8)\n\n$29\n\n$29\n\nhttps://schema.org/InStock\n\nusd\n\ndoodlebug07\n\n[![](https://assets.gumroad.com/assets/gumroad-default-avatar-5-623b6723477dd15920db554b0a4e9aac6a5e41159fd3d7bb4c9f9745a44e4f85.png)doodlebug07](https://doodlebug07.gumroad.com/)\n\nThe Predictor is a powerful tool designed to help you harness the power of supervised machine learning for predictive analytics tasks. Let's break down its key features:\n\n- **Modular Design:** The well-organized structure ensures ease of use. Specific modules handle data preparation, model building, performance evaluation, and the generation of predictions.\n\n- **Core Functionality:** The Predictor guides you through essential supervised learning steps:\n\n  - **Data Preprocessing:** Prepare raw data for model"
+        }
+      ],
+      "images": [
+        "https://public-files.gumroad.com/uyzsezlfdn4u90acpe8mwd5ucjf8",
+        "https://assets.gumroad.com/assets/gumroad-default-avatar-5-623b6723477dd15920db554b0a4e9aac6a5e41159fd3d7bb4c9f9745a44e4f85.png"
+      ]
+    },
+    {
+      "url": "https://doodlebug07.gumroad.com/l/sskwdg",
+      "slug": "l-sskwdg",
+      "title": "Project Genesis: A Framework for AI-Generated Code Templates",
+      "sections": [
+        {
+          "type": "content",
+          "content": "$29+\n\n$29+\n\nhttps://schema.org/InStock\n\nusd\n\ndoodlebug07\n\n### Project Genesis: A Framework for AI-Generated Code Templates\n\n[I want this!](https://gumroad.com/checkout?product=sskwdg&quantity=1)\n\n![](https://public-files.gumroad.com/bl874beyepvyrfuq9onvpi1b9rhn)\n\n$29+\n\n$29+\n\nhttps://schema.org/InStock\n\nusd\n\ndoodlebug07\n\n[![](https://assets.gumroad.com/assets/gumroad-default-avatar-5-623b6723477dd15920db554b0a4e9aac6a5e41159fd3d7bb4c9f9745a44e4f85.png)doodlebug07](https://doodlebug07.gumroad.com/)\n\n**Project Genesis: Revolutionizing Code Development with AI-Driven Templates**\n\nProject Genesis is a sophisticated framework designed to transform the software development landscape through the power of artificial intelligence. By automating the generation of code templates, Project Genesis assists developers in creating robust, error-free code across multiple programming languages efficiently.\n\n**Key Features:**\n\n- **AI-Generated Code Templates:** Harness cutting-edge AI technology to produc"
+        }
+      ],
+      "images": [
+        "https://public-files.gumroad.com/bl874beyepvyrfuq9onvpi1b9rhn",
+        "https://assets.gumroad.com/assets/gumroad-default-avatar-5-623b6723477dd15920db554b0a4e9aac6a5e41159fd3d7bb4c9f9745a44e4f85.png"
+      ]
+    },
+    {
+      "url": "https://doodlebug07.gumroad.com",
+      "slug": "index",
+      "title": "doodlebug07",
+      "sections": [
+        {
+          "type": "hero",
+          "h1": "Subscribe to receive email updates from doodlebug07.",
+          "sub": "",
+          "cta": "",
+          "content": "Subscribe\nGumroad"
+        }
+      ],
+      "images": []
+    }
+  ],
+  "assetsPolicy": {
+    "useOriginalImages": true,
+    "rewriteText": false
+  }
+}
