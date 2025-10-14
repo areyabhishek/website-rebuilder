@@ -1,0 +1,203 @@
+---
+title: "DOULAS by the BAY | SF Bay Area Doula Support Services"
+description: "Professional birth and postpartum doula services in the San Francisco Bay Area. Supporting families through pregnancy, birth, and beyond since 2009."
+---
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta name="keywords" content="doula, birth support, postpartum, san francisco, bay area" />
+  <link rel="canonical" href="https://doulasbythebay.com" />
+</head>
+<body>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; color: #333; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    
+    header { background: #2c5282; color: white; padding: 1rem 0; position: sticky; top: 0; z-index: 100; }
+    .header-content { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 1.5rem; font-weight: bold; }
+    nav ul { list-style: none; display: flex; gap: 2rem; }
+    nav a { color: white; text-decoration: none; transition: opacity 0.3s; }
+    nav a:hover { opacity: 0.8; }
+    
+    .hero { background: linear-gradient(135deg, #e6f3ff 0%, #f0f8ff 100%); padding: 4rem 0; }
+    .hero-content { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+    .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; color: #2c5282; }
+    .hero p { font-size: 1.2rem; margin-bottom: 2rem; color: #4a5568; }
+    .btn { display: inline-block; background: #3182ce; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; transition: all 0.3s; }
+    .btn:hover { background: #2c5282; transform: translateY(-2px); }
+    .hero-image { width: 100%; height: 400px; object-fit: cover; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+    
+    .services { padding: 4rem 0; }
+    .services h2 { text-align: center; font-size: 2.2rem; margin-bottom: 3rem; color: #2c5282; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+    .service-card { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: transform 0.3s; }
+    .service-card:hover { transform: translateY(-5px); }
+    .service-card h3 { color: #3182ce; margin-bottom: 1rem; }
+    
+    .about { background: #f7fafc; padding: 4rem 0; }
+    .about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+    .about h2 { font-size: 2.2rem; margin-bottom: 1rem; color: #2c5282; }
+    .about-image { width: 100%; height: 350px; object-fit: cover; border-radius: 12px; }
+    
+    .resources { padding: 4rem 0; }
+    .resources h2 { text-align: center; font-size: 2.2rem; margin-bottom: 3rem; color: #2c5282; }
+    .resources-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+    .resource-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: transform 0.3s; }
+    .resource-card:hover { transform: translateY(-5px); }
+    .resource-image { width: 100%; height: 200px; object-fit: cover; }
+    .resource-content { padding: 1.5rem; }
+    .resource-card h3 { color: #3182ce; margin-bottom: 0.5rem; }
+    .resource-date { color: #718096; font-size: 0.9rem; margin-bottom: 1rem; }
+    
+    footer { background: #2c5282; color: white; padding: 3rem 0 1rem; }
+    .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+    .footer-section h3 { margin-bottom: 1rem; color: #e6f3ff; }
+    .footer-section a { color: #cbd5e0; text-decoration: none; transition: color 0.3s; }
+    .footer-section a:hover { color: white; }
+    .footer-bottom { text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #4a5568; color: #cbd5e0; }
+    
+    @media (max-width: 768px) {
+      .header-content { flex-direction: column; gap: 1rem; }
+      nav ul { flex-wrap: wrap; justify-content: center; }
+      .hero-content, .about-content { grid-template-columns: 1fr; text-align: center; }
+      .hero h1 { font-size: 2rem; }
+      .services-grid, .resources-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+  
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">DOULAS by the BAY</div>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/courses-cart">Courses</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div>
+            <h1>Professional Doula Support Services</h1>
+            <p>Are you worried about navigating pregnancy, birth, and the initial weeks with your newborn? Let our experienced team guide you through every stage of your birthing journey with compassion and expertise.</p>
+            <a href="/contact" class="btn">Contact Us Today</a>
+          </div>
+          <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&h=400&fit=crop&crop=faces" alt="Doula supporting expecting mother" class="hero-image" />
+        </div>
+      </div>
+    </section>
+    
+    <section class="services">
+      <div class="container">
+        <h2>Our Doula Services</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <h3>Birth Support</h3>
+            <p>Continuous support during labor and delivery, helping you navigate the birthing process with confidence and comfort.</p>
+          </div>
+          <div class="service-card">
+            <h3>Postpartum Support</h3>
+            <p>Expert care during the crucial postpartum period, supporting your recovery and transition to parenthood.</p>
+          </div>
+          <div class="service-card">
+            <h3>Newborn Care</h3>
+            <p>Specialized newborn care services to help you and your baby establish healthy routines and bonding.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="about">
+      <div class="container">
+        <div class="about-content">
+          <div>
+            <h2>Proudly Serving the San Francisco Bay Area Since 2009</h2>
+            <p>What makes Doulas by the Bay unique is our large, diverse team that has worked with thousands of parents and babies. Our team of professionals is trained and certified, fully vetted, CPR certified, and dedicated to supporting families before, during and immediately after childbirth.</p>
+            <p>We are a collective of Birth and Postpartum Doulas and Newborn Care Specialists committed to providing exceptional support tailored to each family's unique needs.</p>
+            <a href="/about" class="btn">Learn More About Us</a>
+          </div>
+          <img src="https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=600&h=350&fit=crop&crop=faces" alt="Professional doula team" class="about-image" />
+        </div>
+      </div>
+    </section>
+    
+    <section class="resources">
+      <div class="container">
+        <h2>Educational Videos & Resources</h2>
+        <div class="resources-grid">
+          <div class="resource-card">
+            <img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=400&h=200&fit=crop" alt="The Vital Role of Doulas" class="resource-image" />
+            <div class="resource-content">
+              <div class="resource-date">Apr 29, 2025</div>
+              <h3>The Vital Role of Doulas in Modern Childbirth</h3>
+              <p>Childbirth is a deeply personal and transformative journey, and having the right support along the way can bring comfort, confidence, and peace...</p>
+            </div>
+          </div>
+          <div class="resource-card">
+            <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=200&fit=crop" alt="Postpartum Depression Guide" class="resource-image" />
+            <div class="resource-content">
+              <div class="resource-date">Apr 16, 2025</div>
+              <h3>Postpartum Depression PPD: A Comprehensive Guide</h3>
+              <p>Postpartum depression (PPD) is a significant concern for many new parents. This guide aims to provide a comprehensive understanding of PPD...</p>
+            </div>
+          </div>
+          <div class="resource-card">
+            <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=400&h=200&fit=crop" alt="Benefits of Hiring a Doula" class="resource-image" />
+            <div class="resource-content">
+              <div class="resource-date">Mar 7, 2025</div>
+              <h3>Benefits of Hiring a Doula: Worth the Investment?</h3>
+              <p>Hiring a doula has become an increasingly popular choice for expectant parents who seek emotional and practical support during pregnancy...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Services</h3>
+          <ul style="list-style: none;">
+            <li><a href="#">Postpartum Support</a></li>
+            <li><a href="#">Birth Support</a></li>
+            <li><a href="#">Sibling Support</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Resources</h3>
+          <ul style="list-style: none;">
+            <li><a href="/about">About Us</a></li>
+            <li><a href="#">Our Doulas</a></li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="#">Service Area</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p>San Francisco Bay Area</p>
+          <p>Serving families since 2009</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Doulas by the Bay. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
