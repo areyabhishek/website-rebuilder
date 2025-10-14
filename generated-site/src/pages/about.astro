@@ -1,0 +1,696 @@
+---
+// About page for Viral Strategies
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Meet Your Instructor | Viral Strategies</title>
+    <meta name="description" content="Learn about our former Disney & Marvel VFX artist instructor who gained 400k+ followers and 30+ million views in just 10 weeks.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --accent-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --dark-gradient: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            --text-dark: #1a1a1a;
+            --text-light: #666;
+            --white: #ffffff;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-800: #1e293b;
+            --success: #10b981;
+            --border-radius: 12px;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #667eea;
+            transform: translateY(-2px);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-gradient);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after, .nav-links a.active::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 70vh;
+            background: var(--primary-gradient);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            margin-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1536240478700-b869070f9279?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover;
+            opacity: 0.1;
+            z-index: 1;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Sections */
+        .section {
+            padding: 6rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Instructor Profile */
+        .instructor-profile {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .instructor-image {
+            position: relative;
+        }
+
+        .instructor-image img {
+            width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .instructor-badge {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            background: var(--accent-gradient);
+            color: var(--white);
+            padding: 1rem 1.5rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            box-shadow: var(--shadow-lg);
+            transform: rotate(5deg);
+        }
+
+        .instructor-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .instructor-content p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        /* Stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid var(--gray-200);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-weight: 600;
+            color: var(--text-dark);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        /* Experience Section */
+        .experience {
+            background: var(--gray-50);
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .experience-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .experience-logo {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-gradient);
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .experience-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .experience-company {
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .experience-description {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: var(--dark-gradient);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--white);
+            color: #667eea;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--gray-800);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .instructor-profile {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .instructor-badge {
+                position: static;
+                transform: none;
+                margin-bottom: 1rem;
+                display: inline-block;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="logo">Viral Strategies</a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about" class="active">About</a></li>
+                <li><a href="/resource_redirect/downloads/">Downloads</a></li>
+                <li><a href="/offers/kBSBh9un/checkout">Checkout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1 class="font-display">Meet Your Instructor</h1>
+            <p class="hero-subtitle">Learn from a former Disney & Marvel VFX professional who cracked the code to viral success</p>
+        </div>
+    </section>
+
+    <!-- Instructor Section -->
+    <section class="section">
+        <div class="container">
+            <div class="instructor-profile">
+                <div class="instructor-image">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Instructor Profile" />
+                    <div class="instructor-badge">VFX Expert</div>
+                </div>
+                
+                <div class="instructor-content">
+                    <h2 class="font-display">From Hollywood to Viral Success</h2>
+                    <p>With years of experience creating visual effects for major Hollywood productions including Disney and Marvel films, I discovered the secret formulas that make content irresistibly shareable.</p>
+                    <p>After transitioning to social media, I gained over 400,000 followers and achieved 30+ million views in just 10 weeks using the same principles I learned in professional VFX production.</p>
+                    <p>Now I'm sharing these insider secrets with content creators, business owners, and aspiring influencers who want to break through the noise and create content that truly goes viral.</p>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">400K+</span>
+                    <span class="stat-label">Followers Gained</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">30M+</span>
+                    <span class="stat-label">Total Views</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">10</span>
+                    <span class="stat-label">Weeks Timeline</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">22K+</span>
+                    <span class="stat-label">Students Taught</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section experience">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title font-display">Professional Background</h2>
+                <p class="section-subtitle">Bringing Hollywood-level expertise to social media content creation</p>
+            </div>
+            
+            <div class="experience-grid">
+                <div class="experience-card fade-in-up">
+                    <div class="experience-logo">🎬</div>
+                    <h3 class="experience-title">Senior VFX Artist</h3>
+                    <div class="experience-company">Disney Studios</div>
+                    <p class="experience-description">Created stunning visual effects for major animated and live-action films, mastering the art of capturing and holding audience attention through compelling visual storytelling.</p>
+                </div>
+                
+                <div class="experience-card fade-in-up">
+                    <div class="experience-logo">⚡</div>
+                    <h3 class="experience-title">VFX Specialist</h3>
+                    <div class="experience-company">Marvel Entertainment</div>
+                    <p class="experience-description">Worked on blockbuster superhero films, developing expertise in creating jaw-dropping visual effects that generate buzz and social media engagement.</p>
+                </div>
+                
+                <div class="experience-card fade-in-up">
+                    <div class="experience-logo">📱</div>
+                    <h3 class="experience-title">Viral Content Creator</h3>
+                    <div class="experience-company">Social Media</div>
+                    <p class="experience-description">Applied Hollywood VFX techniques to social media content, achieving viral success and proving that professional techniques work at any scale.</p>
+                </div>
+                
+                <div class="experience-card fade-in-up">
+                    <div class="experience-logo">🎓</div>
+                    <h3 class="experience-title">Course Instructor</h3>
+                    <div class="experience-company">Viral Strategies</div>
+                    <p class="experience-description">Teaching thousands of students how to create viral content using simplified versions of professional VFX techniques and proven engagement strategies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teaching Philosophy -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title font-display">My Teaching Philosophy</h2>
+                <p class="section-subtitle">Making professional-level content creation accessible to everyone</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div style="background: var(--white); padding: 2rem; border-radius: var(--border-radius); box-shadow: var(--shadow-md);">
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-dark);">🎯 Simplified Excellence</h3>
+                    <p style="color: var(--text-light); line-height: 1.6;">I take complex Hollywood VFX techniques and break them down into simple, actionable steps that anyone can follow, regardless of their technical background.</p>
+                </div>
+                
+                <div style="background: var(--white); padding: 2rem; border-radius: var(--border-radius); box-shadow: var(--shadow-md);">
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-dark);">📱 Mobile-First Approach</h3>
+                    <p style="color: var(--text-light); line-height: 1.6;">Every technique I teach can be executed using just a smartphone and free apps, removing barriers and making content creation accessible to everyone.</p>
+                </div>
+                
+                <div style="background: var(--white); padding: 2rem; border-radius: var(--border-radius); box-shadow: var(--shadow-md);">
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-dark);">🚀 Results-Driven Learning</h3>
+                    <p style="color: var(--text-light); line-height: 1.6;">My courses focus on strategies that deliver measurable results. Students see real growth in views, engagement, and followers by applying these proven techniques.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta">
+        <div class="container">
+            <h2 class="font-display">Ready to Learn From a Pro?</h2>
+            <p>Join thousands of students who are already creating viral content and growing their online presence</p>
+            <a href="/offers/kBSBh9un/checkout" class="btn btn-primary">Start Your Viral Journey Today</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Viral Strategies</h3>
+                    <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6;">Learn from a former Disney & Marvel VFX artist how to create viral content and grow your online presence using proven strategies.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/resource_redirect/downloads/">Downloads</a></li>
+                        <li><a href="/offers/kBSBh9un/checkout">Checkout</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="/terms">Terms of Service</a></li>
+                        <li><a href="/privacy_policy">Privacy Policy</a></li>
+                        <li><a href="/earnings-disclaimer">Earnings Disclaimer</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Community</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Viral Strategies. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = '0s';
+                    entry.target.classList.add('fade-in-up');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all experience cards
+        document.querySelectorAll('.experience-card').forEach(card => {
+            observer.observe(card);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
