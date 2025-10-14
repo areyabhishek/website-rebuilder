@@ -1,0 +1,555 @@
+---
+// Studio Ruh Contact Page
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Studio Ruh</title>
+  <meta name="description" content="Get in touch with Studio Ruh. Let's discuss your next design project and bring your vision to life.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #0a0a0a;
+      --secondary: #ff6b35;
+      --accent: #7c3aed;
+      --text-light: #6b7280;
+      --bg-light: #f8fafc;
+      --white: #ffffff;
+      --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --gradient-secondary: linear-gradient(135deg, #ff6b35 0%, #f093fb 100%);
+      --shadow-soft: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      --shadow-strong: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: var(--primary);
+      background: var(--bg-light);
+    }
+    
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      z-index: 1000;
+      padding: 1rem 0;
+    }
+    
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-decoration: none;
+    }
+    
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2.5rem;
+      align-items: center;
+    }
+    
+    .nav-links a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 500;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .nav-links a:hover {
+      color: var(--secondary);
+      transform: translateY(-2px);
+    }
+    
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gradient-secondary);
+      transition: width 0.3s ease;
+    }
+    
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+    
+    /* Hero Section */
+    .hero {
+      padding: 8rem 0 4rem;
+      background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 60%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200') center/cover;
+      opacity: 0.15;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+    }
+    
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 6vw, 5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      background: var(--gradient-secondary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .hero p {
+      font-size: 1.3rem;
+      color: #c0c0c0;
+      margin-bottom: 3rem;
+      line-height: 1.7;
+    }
+    
+    /* Contact Form Section */
+    .contact-form {
+      padding: 6rem 0;
+    }
+    
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: start;
+    }
+    
+    .form-container {
+      background: var(--white);
+      padding: 4rem;
+      border-radius: 30px;
+      box-shadow: var(--shadow-strong);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .form-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: var(--gradient-secondary);
+    }
+    
+    .form-container h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: var(--primary);
+    }
+    
+    .form-group {
+      margin-bottom: 2rem;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+    
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 1rem;
+      border: 2px solid #e5e7eb;
+      border-radius: 15px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--secondary);
+      box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+    }
+    
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    .submit-btn {
+      background: var(--gradient-secondary);
+      color: var(--white);
+      border: none;
+      padding: 1rem 3rem;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow-soft);
+      width: 100%;
+    }
+    
+    .submit-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-strong);
+    }
+    
+    /* Contact Info */
+    .contact-info {
+      display: grid;
+      gap: 2.5rem;
+    }
+    
+    .info-card {
+      background: var(--white);
+      padding: 3rem;
+      border-radius: 25px;
+      box-shadow: var(--shadow-soft);
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .info-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: var(--gradient-primary);
+      opacity: 0.03;
+      transition: left 0.5s ease;
+    }
+    
+    .info-card:hover::before {
+      left: 0;
+    }
+    
+    .info-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: var(--shadow-strong);
+    }
+    
+    .info-icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 18px;
+      background: var(--gradient-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+      color: var(--white);
+    }
+    
+    .info-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+    
+    .info-card p {
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+    
+    .info-card a {
+      color: var(--secondary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    
+    .info-card a:hover {
+      text-decoration: underline;
+    }
+    
+    /* Map Section */
+    .map-section {
+      padding: 4rem 0;
+      background: var(--primary);
+      color: var(--white);
+    }
+    
+    .map-container {
+      text-align: center;
+    }
+    
+    .map-container h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      background: var(--gradient-secondary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .map-container p {
+      font-size: 1.1rem;
+      color: #c0c0c0;
+      margin-bottom: 2rem;
+    }
+    
+    .map-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      background: var(--gradient-secondary);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow-soft);
+    }
+    
+    .map-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-strong);
+    }
+    
+    /* Footer */
+    footer {
+      background: #000;
+      color: var(--white);
+      padding: 4rem 0 2rem;
+      text-align: center;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    
+    .footer-section h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--secondary);
+    }
+    
+    .footer-section p, .footer-section a {
+      color: #888;
+      text-decoration: none;
+      line-height: 1.8;
+    }
+    
+    .footer-section a:hover {
+      color: var(--secondary);
+    }
+    
+    .footer-bottom {
+      border-top: 1px solid #333;
+      padding-top: 2rem;
+      color: #666;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 1rem;
+      }
+      
+      .nav-links {
+        display: none;
+      }
+      
+      .hero {
+        padding: 6rem 0 3rem;
+      }
+      
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+      }
+      
+      .form-container {
+        padding: 2.5rem;
+      }
+      
+      .info-card {
+        padding: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="container nav-container">
+      <a href="/" class="logo">STUDIO RUH</a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/studio-ruh">Studio.Ruh</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="mailto:info@studioruh.in">Info@Studioruh.In</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Let's Create Something Amazing</h1>
+        <p>Ready to bring your vision to life? We're here to listen, collaborate, and craft exceptional design solutions that exceed your expectations.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-form">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="form-container">
+          <h2>Leave us a message!</h2>
+          <form>
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="project">Project Type</label>
+              <input type="text" id="project" name="project" placeholder="Visual Identity, Web Design, etc.">
+            </div>
+            <div class="form-group">
+              <label for="message">Tell us about your project</label>
+              <textarea id="message" name="message" placeholder="Share your vision, goals, and any specific requirements..." required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+          </form>
+        </div>
+        
+        <div class="contact-info">
+          <div class="info-card">
+            <div class="info-icon">📍</div>
+            <h3>Studio Location</h3>
+            <p>Studio Ruh, Totem Heights<br>1st Floor, 136/1 Gangadhara Chetty Road<br>Ulsoor, Bangalore<br>Karnataka 560042</p>
+          </div>
+          
+          <div class="info-card">
+            <div class="info-icon">✉️</div>
+            <h3>Email Us</h3>
+            <p>Have a question or want to discuss a project?</p>
+            <p><a href="mailto:info@studioruh.in">info@studioruh.in</a></p>
+          </div>
+          
+          <div class="info-card">
+            <div class="info-icon">🕒</div>
+            <h3>Working Hours</h3>
+            <p>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 4:00 PM<br>Sunday: By appointment</p>
+          </div>
+          
+          <div class="info-card">
+            <div class="info-icon">🌐</div>
+            <h3>Follow Our Journey</h3>
+            <p>Stay updated with our latest work and creative process</p>
+            <p><a href="#">Instagram</a> • <a href="#">Behance</a> • <a href="#">LinkedIn</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="map-section">
+    <div class="container">
+      <div class="map-container">
+        <h2>Find Us</h2>
+        <p>Located in the heart of Ulsoor, Bangalore. Easy to reach by metro, bus, or car.</p>
+        <a href="/maps/dir/" class="map-btn">
+          <span>Get Directions</span>
+          <span>📍</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Studio Ruh</h3>
+          <p>A creative design studio dedicated to crafting exceptional visual experiences that inspire and captivate.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Services</h3>
+          <p><a href="#">Visual Identity</a></p>
+          <p><a href="#">Digital Design</a></p>
+          <p><a href="#">User Experience</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>Connect</h3>
+          <p><a href="mailto:info@studioruh.in">info@studioruh.in</a></p>
+          <p><a href="/maps/dir/">Visit Our Studio</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Studio Ruh. All rights reserved. Crafted with passion in Bangalore.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
