@@ -1,0 +1,353 @@
+---
+// 404 Error Page
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found | MotherDuck</title>
+  <meta name="description" content="The page you're looking for doesn't exist. Return to MotherDuck home page.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="/" class="logo">MotherDuck</a>
+      <ul class="nav-menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/docs/about-motherduck/release-notes/">Release Notes</a></li>
+        <li><a href="/ecosystem/">Ecosystem</a></li>
+        <li><a href="/docs/integrations/bi-tools/hex/">Hex</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="error-main">
+    <div class="error-container">
+      <div class="error-content">
+        <div class="error-image">
+          <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop" alt="Lost Duck" />
+        </div>
+        <div class="error-text">
+          <h1>404</h1>
+          <h2>Oops! This duck seems to have flown away</h2>
+          <p>The page you're looking for doesn't exist or has been moved to a different pond.</p>
+          <div class="error-actions">
+            <a href="/" class="btn-primary">Return Home</a>
+            <a href="/docs/about-motherduck/release-notes/" class="btn-secondary">Browse Docs</a>
+          </div>
+          <div class="helpful-links">
+            <h3>Maybe you were looking for:</h3>
+            <ul>
+              <li><a href="/">MotherDuck Home</a></li>
+              <li><a href="/docs/about-motherduck/release-notes/">Release Notes</a></li>
+              <li><a href="/ecosystem/">Ecosystem</a></li>
+              <li><a href="/docs/integrations/bi-tools/hex/">Hex Integration</a></li>
+              <li><a href="https://slack.motherduck.com/">Community Slack</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/ecosystem/">Ecosystem</a></li>
+            <li><a href="/docs/about-motherduck/release-notes/">Release Notes</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="/docs/integrations/bi-tools/hex/">Documentation</a></li>
+            <li><a href="#">API Reference</a></li>
+            <li><a href="#">Tutorials</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Community</h4>
+          <ul>
+            <li><a href="https://slack.motherduck.com/">Slack</a></li>
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">Support</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 MotherDuck. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #fafafa;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #e5e5e5;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #1a73e8;
+      text-decoration: none;
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    .nav-menu a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-menu a:hover {
+      color: #1a73e8;
+    }
+
+    .error-main {
+      margin-top: 80px;
+      min-height: calc(100vh - 80px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .error-container {
+      max-width: 1000px;
+      width: 100%;
+    }
+
+    .error-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      background: white;
+      padding: 3rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .error-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      filter: grayscale(20%);
+    }
+
+    .error-text h1 {
+      font-size: 6rem;
+      font-weight: 900;
+      color: #1a73e8;
+      margin-bottom: 1rem;
+      line-height: 1;
+    }
+
+    .error-text h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    .error-text p {
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 2rem;
+    }
+
+    .error-actions {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: #1a73e8;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background: #1557b0;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #333;
+      border: 2px solid #333;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+      background: #333;
+      color: white;
+    }
+
+    .helpful-links h3 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    .helpful-links ul {
+      list-style: none;
+    }
+
+    .helpful-links li {
+      margin-bottom: 0.5rem;
+    }
+
+    .helpful-links a {
+      color: #1a73e8;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .helpful-links a:hover {
+      color: #1557b0;
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    footer {
+      background: #1a1a1a;
+      color: white;
+      padding: 3rem 0 1rem;
+      margin-top: 4rem;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-section h4 {
+      margin-bottom: 1rem;
+      color: #1a73e8;
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-section a:hover {
+      color: #1a73e8;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid #333;
+      color: #999;
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        display: none;
+      }
+
+      .error-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 2rem;
+        text-align: center;
+      }
+
+      .error-text h1 {
+        font-size: 4rem;
+      }
+
+      .error-text h2 {
+        font-size: 1.5rem;
+      }
+
+      .error-actions {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .error-main {
+        padding: 1rem;
+      }
+
+      .error-content {
+        padding: 1.5rem;
+      }
+
+      .error-text h1 {
+        font-size: 3rem;
+      }
+
+      .error-actions {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</body>
+</html>
