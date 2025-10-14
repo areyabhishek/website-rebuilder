@@ -10,7 +10,7 @@ import { writeArtifacts, createIssue } from "@/lib/github";
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { url, limit = 25 } = body;
+    const { url, limit = 5 } = body;
 
     if (!url) {
       return NextResponse.json({ error: "URL is required" }, { status: 400 });
@@ -39,16 +39,16 @@ export async function POST(request: NextRequest) {
     const crawledPages = await crawlPages(mappedUrls, limit);
 
     // Validate page count to prevent token limit issues
-    if (crawledPages.length > 20) {
+    if (crawledPages.length > 10) {
       await prisma.job.update({
         where: { id: job.id },
         data: { status: "failed" },
       });
       return NextResponse.json(
-        { 
-          error: "Site too large", 
-          message: `Site has ${crawledPages.length} pages, maximum allowed is 20 to prevent token limit issues. Please try a smaller site.` 
-        }, 
+        {
+          error: "Site too large",
+          message: `Site has ${crawledPages.length} pages, maximum allowed is 10 to prevent token limit issues. Please try a smaller site.`
+        },
         { status: 400 }
       );
     }

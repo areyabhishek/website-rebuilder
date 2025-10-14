@@ -56,7 +56,7 @@ function shouldExcludeUrl(url: string): boolean {
   }
 }
 
-export async function mapSite(url: string, limit = 500): Promise<string[]> {
+export async function mapSite(url: string, limit = 20): Promise<string[]> {
   try {
     const response = await firecrawl.map(url, {
       limit,
@@ -82,7 +82,7 @@ export async function mapSite(url: string, limit = 500): Promise<string[]> {
         return '';
       })
       .filter((linkUrl: string) => linkUrl && !shouldExcludeUrl(linkUrl))
-      .slice(0, 60);
+      .slice(0, 5);
 
     console.log(`Found ${urls.length} valid URLs after filtering`);
     return urls;
@@ -94,7 +94,7 @@ export async function mapSite(url: string, limit = 500): Promise<string[]> {
 
 export async function crawlPages(
   urls: string[],
-  limit = 25
+  limit = 5
 ): Promise<FirecrawlPage[]> {
   console.log(`crawlPages called with ${urls.length} URLs`);
   console.log(`First 5 URLs:`, urls.slice(0, 5));

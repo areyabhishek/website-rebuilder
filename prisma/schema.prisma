@@ -28,10 +28,12 @@ model Job {
 model Page {
   id    String  @id @default(cuid())
   jobId String
-  url   String  @unique
+  url   String
   title String?
   md    String?
   html  String?
 
   Job Job @relation(fields: [jobId], references: [id], onDelete: Cascade)
+
+  @@unique([jobId, url])
 }
