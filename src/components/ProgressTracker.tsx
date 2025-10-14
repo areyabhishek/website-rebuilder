@@ -23,6 +23,8 @@ interface JobStatus {
   issueNumber?: number;
   issueUrl?: string;
   prUrl?: string;
+  previewUrl?: string;
+  deploymentId?: string;
   actionStatus?: ActionStatus;
 }
 
@@ -77,16 +79,16 @@ export function ProgressTracker({ jobId }: { jobId: string }) {
 
   if (error) {
     return (
-      <div className="rounded-lg border border-red-200 bg-red-50 p-4">
-        <p className="text-red-800">Error: {error}</p>
+      <div className="rounded-lg border border-red-500/30 bg-red-500/10 p-4">
+        <p className="text-red-400">Error: {error}</p>
       </div>
     );
   }
 
   if (!status) {
     return (
-      <div className="flex items-center gap-2 text-gray-600">
-        <div className="h-4 w-4 animate-spin rounded-full border-2 border-gray-300 border-t-blue-600"></div>
+      <div className="flex items-center gap-2 text-slate-400">
+        <div className="h-4 w-4 animate-spin rounded-full border-2 border-slate-700 border-t-sky-500"></div>
         <span>Loading status...</span>
       </div>
     );
@@ -100,32 +102,88 @@ export function ProgressTracker({ jobId }: { jobId: string }) {
     <div className="space-y-6">
       {/* Header */}
       <div>
-        <h2 className="text-2xl font-bold text-gray-900">
+        <h2 className="text-2xl font-bold text-slate-100">
           {status.domain}
         </h2>
         {status.category && (
-          <p className="text-sm text-gray-600">
-            Type: <span className="font-medium">{status.category}</span>
+          <p className="text-sm text-slate-400">
+            Type: <span className="font-medium text-slate-300">{status.category}</span>
           </p>
         )}
       </div>
 
+      {/* Preview URL Banner - Show prominently when available */}
+      {status.previewUrl && (
+        <div className="rounded-xl border border-sky-500/30 bg-gradient-to-br from-sky-500/10 to-transparent p-6">
+          <div className="mb-3 flex items-center gap-2">
+            <svg
+              className="h-6 w-6 text-sky-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+              />
+            </svg>
+            <h3 className="text-xl font-semibold text-sky-400">
+              🎉 Your Site is Live!
+            </h3>
+          </div>
+          <a
+            href={status.previewUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mb-2 block text-lg text-sky-300 hover:text-sky-200 hover:underline"
+          >
+            {status.previewUrl}
+          </a>
+          <a
+            href={status.previewUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-lg bg-sky-500 px-6 py-3 font-semibold text-slate-950 transition hover:bg-sky-400"
+          >
+            View Generated Site
+            <svg
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M14 5l7 7m0 0l-7 7m7-7H3"
+              />
+            </svg>
+          </a>
+          <p className="mt-4 text-sm text-slate-400">
+            While you wait for the PR to be created, check out the live preview above!
+          </p>
+        </div>
+      )}
+
       {/* Main Progress */}
-      <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+      <div className="rounded-lg border border-slate-800 bg-slate-900/40 p-6">
         <div className="mb-4 flex items-center justify-between">
           <div>
-            <h3 className="text-lg font-semibold text-gray-900">
+            <h3 className="text-lg font-semibold text-slate-100">
               {currentStage.label}
             </h3>
-            <p className="text-sm text-gray-600">{currentStage.description}</p>
+            <p className="text-sm text-slate-400">{currentStage.description}</p>
           </div>
           {!isComplete && !isFailed && (
-            <div className="h-8 w-8 animate-spin rounded-full border-4 border-gray-200 border-t-blue-600"></div>
+            <div className="h-8 w-8 animate-spin rounded-full border-4 border-slate-700 border-t-sky-500"></div>
           )}
           {isComplete && (
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-green-100">
+            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-green-500/20">
               <svg
-                className="h-5 w-5 text-green-600"
+                className="h-5 w-5 text-green-400"
                 fill="none"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -138,9 +196,9 @@ export function ProgressTracker({ jobId }: { jobId: string }) {
             </div>
           )}
           {isFailed && (
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-red-100">
+            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-red-500/20">
               <svg
-                className="h-5 w-5 text-red-600"
+                className="h-5 w-5 text-red-400"
                 fill="none"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -155,10 +213,10 @@ export function ProgressTracker({ jobId }: { jobId: string }) {
         </div>
 
         {/* Progress Bar */}
-        <div className="h-2 w-full overflow-hidden rounded-full bg-gray-200">
+        <div className="h-2 w-full overflow-hidden rounded-full bg-slate-800">
           <div
             className={`h-full transition-all duration-500 ${
-              isFailed ? "bg-red-600" : "bg-blue-600"
+              isFailed ? "bg-red-500" : "bg-sky-500"
             }`}
             style={{
               width: getProgressPercentage(status.status, status.actionStatus),
@@ -169,8 +227,8 @@ export function ProgressTracker({ jobId }: { jobId: string }) {
 
       {/* GitHub Action Steps */}
       {status.actionStatus?.steps && status.actionStatus.steps.length > 0 && (
-        <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
-          <h4 className="mb-4 font-semibold text-gray-900">
+        <div className="rounded-lg border border-slate-800 bg-slate-900/40 p-6">
+          <h4 className="mb-4 font-semibold text-slate-100">
             Build Steps
           </h4>
           <div className="space-y-2">
@@ -183,7 +241,7 @@ export function ProgressTracker({ jobId }: { jobId: string }) {
                 >
                   {step.status === "completed" && step.conclusion === "success" && (
                     <svg
-                      className="h-4 w-4 flex-shrink-0 text-green-600"
+                      className="h-4 w-4 flex-shrink-0 text-green-400"
                       fill="none"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -196,7 +254,7 @@ export function ProgressTracker({ jobId }: { jobId: string }) {
                   )}
                   {step.status === "completed" && step.conclusion === "failure" && (
                     <svg
-                      className="h-4 w-4 flex-shrink-0 text-red-600"
+                      className="h-4 w-4 flex-shrink-0 text-red-400"
                       fill="none"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -208,19 +266,19 @@ export function ProgressTracker({ jobId }: { jobId: string }) {
                     </svg>
                   )}
                   {step.status === "in_progress" && (
-                    <div className="h-4 w-4 flex-shrink-0 animate-spin rounded-full border-2 border-gray-300 border-t-blue-600"></div>
+                    <div className="h-4 w-4 flex-shrink-0 animate-spin rounded-full border-2 border-slate-700 border-t-sky-500"></div>
                   )}
                   {step.status === "queued" && (
-                    <div className="h-4 w-4 flex-shrink-0 rounded-full border-2 border-gray-300"></div>
+                    <div className="h-4 w-4 flex-shrink-0 rounded-full border-2 border-slate-700"></div>
                   )}
                   {step.status === "completed" && step.conclusion === "skipped" && (
-                    <div className="h-4 w-4 flex-shrink-0 rounded-full border-2 border-gray-300"></div>
+                    <div className="h-4 w-4 flex-shrink-0 rounded-full border-2 border-slate-700"></div>
                   )}
                   <span
                     className={
                       step.status === "completed" && step.conclusion === "failure"
-                        ? "text-red-600"
-                        : "text-gray-700"
+                        ? "text-red-400"
+                        : "text-slate-300"
                     }
                   >
                     {step.name}
@@ -238,7 +296,7 @@ export function ProgressTracker({ jobId }: { jobId: string }) {
             href={status.issueUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
+            className="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-900/40 px-4 py-2 text-sm font-medium text-slate-300 hover:bg-slate-900/60"
           >
             <svg
               className="h-4 w-4"
@@ -255,7 +313,7 @@ export function ProgressTracker({ jobId }: { jobId: string }) {
             href={status.actionStatus.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
+            className="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-900/40 px-4 py-2 text-sm font-medium text-slate-300 hover:bg-slate-900/60"
           >
             <svg
               className="h-4 w-4"
@@ -276,7 +334,7 @@ export function ProgressTracker({ jobId }: { jobId: string }) {
             href={status.prUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700"
+            className="inline-flex items-center gap-2 rounded-lg bg-sky-500 px-4 py-2 text-sm font-medium text-slate-950 hover:bg-sky-400"
           >
             <svg
               className="h-4 w-4"

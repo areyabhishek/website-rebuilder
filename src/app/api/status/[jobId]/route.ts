@@ -88,6 +88,8 @@ export async function GET(
         ? `https://github.com/${process.env.GITHUB_REPO}/issues/${job.issueNumber}`
         : null,
       prUrl: job.prUrl,
+      previewUrl: job.previewUrl,
+      deploymentId: job.deploymentId,
       blueprintUrl: job.blueprintUrl,
       tokensUrl: job.tokensUrl,
       createdAt: job.createdAt,

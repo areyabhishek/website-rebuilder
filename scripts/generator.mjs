@@ -1,11 +1,15 @@
 #!/usr/bin/env node
 
 import Anthropic from "@anthropic-ai/sdk";
-import { writeFileSync, mkdirSync } from "fs";
+import { writeFileSync, mkdirSync, readFileSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
+
+// Load prompt configuration
+const configPath = join(__dirname, "..", "config", "generator-prompt.json");
+const promptConfig = JSON.parse(readFileSync(configPath, "utf-8"));
 
 const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY,
@@ -106,56 +110,20 @@ async function generateSite(siteType, blueprint) {
     })
     .join("\n\n");
 
-  const systemPrompt = `You are an expert web designer and developer. Create a beautiful, modern Astro website based on the content provided.
+  // Use prompts from config file with variable substitution
+  const systemPrompt = promptConfig.systemPrompt.replace('{{siteType}}', siteType);
 
-IMPORTANT: You MUST respond with ONLY valid JSON in this EXACT format (no markdown, no code blocks, no explanation):
-{
-  "files": [
-    {"path": "src/pages/index.astro", "content": "..."},
-    {"path": "src/pages/about.astro", "content": "..."}
-  ]
-}
+  const userPrompt = promptConfig.userPromptTemplate
+    .replace('{{domain}}', domain)
+    .replace('{{siteType}}', siteType)
+    .replace('{{navigation}}', navigation)
+    .replace('{{contentSummary}}', contentSummary);
 
-Design guidelines:
-- Modern, clean, beautiful design with excellent typography
-- Mobile-first responsive design
-- Use inline <style> tags with modern CSS (NO external CSS, NO Tailwind CDN)
-- Use CSS Grid, Flexbox, and modern CSS features
-- Match the site type: ${siteType}
-- Use the original navigation structure
-- Professional color scheme with good contrast
-- Smooth animations and hover effects with CSS transitions
-- Include proper meta tags and SEO`;
-
-  const userPrompt = `Create a complete Astro website for: ${domain}
-
-Site Type: ${siteType}
-
-Navigation: ${navigation}
-
-Content from original site:
-${contentSummary}
-
-Requirements:
-1. Create ONLY 3 pages maximum: index.astro, about.astro (or similar), and 404.astro
-2. Use inline <style> tags in each page with modern CSS (NO Tailwind, NO external CSS files)
-3. Keep each page under 200 lines of code
-4. Use simple, clean layouts with CSS Grid and Flexbox
-5. Make it mobile-responsive with @media queries
-6. Use placeholder images from https://images.unsplash.com/
-7. Include package.json and astro.config.mjs
-8. Return ONLY the JSON with files array - no markdown formatting, no code blocks
-
-IMPORTANT:
-- NO Tailwind CDN scripts
-- Use <style> tags with regular CSS
-- Keep the response under 15000 tokens by creating simple, concise pages.`;
-
-  console.log("Sending request to Claude Sonnet 4.5...");
+  console.log(`Sending request to ${promptConfig.model}...`);
 
   const message = await anthropic.messages.create({
-    model: "claude-sonnet-4-20250514",
-    max_tokens: 16000, // Increased from 8000 for complete sites
+    model: promptConfig.model,
+    max_tokens: promptConfig.maxTokens,
     system: systemPrompt,
     messages: [
       {
@@ -210,6 +178,79 @@ function writeFiles(filesData, basePath = ".") {
   }
 }
 
+async function deployToVercel(dirPath, projectName) {
+  if (!process.env.VERCEL_TOKEN) {
+    console.warn("VERCEL_TOKEN not set, skipping Vercel deployment");
+    return null;
+  }
+
+  console.log(`Deploying to Vercel as project: ${projectName}...`);
+
+  // Read all files from the directory
+  const { readdirSync, statSync, readFileSync: readFileSyncLocal } = await import("fs");
+
+  function getAllFiles(dir, fileList = []) {
+    const files = readdirSync(dir);
+    files.forEach((file) => {
+      const filePath = join(dir, file);
+      if (statSync(filePath).isDirectory()) {
+        getAllFiles(filePath, fileList);
+      } else {
+        fileList.push(filePath);
+      }
+    });
+    return fileList;
+  }
+
+  const allFiles = getAllFiles(dirPath);
+  const vercelFiles = allFiles.map((filePath) => {
+    const relativePath = filePath.replace(dirPath + "/", "");
+    const content = readFileSyncLocal(filePath, "utf-8");
+    return {
+      file: relativePath,
+      data: content,
+    };
+  });
+
+  console.log(`Deploying ${vercelFiles.length} files...`);
+
+  // Deploy to Vercel
+  const response = await fetch("https://api.vercel.com/v13/deployments", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${process.env.VERCEL_TOKEN}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      name: projectName,
+      files: vercelFiles,
+      projectSettings: {
+        framework: "astro",
+        buildCommand: "npm run build",
+        outputDirectory: "dist",
+        installCommand: "npm install",
+      },
+      target: "production",
+    }),
+  });
+
+  if (!response.ok) {
+    const error = await response.text();
+    console.error(`Vercel deployment failed: ${response.statusText}\n${error}`);
+    return null;
+  }
+
+  const deployment = await response.json();
+  const previewUrl = `https://${deployment.url}`;
+
+  console.log(`✓ Deployed to Vercel: ${previewUrl}`);
+
+  return {
+    url: previewUrl,
+    id: deployment.id,
+  };
+}
+
 async function main() {
   const issueNumber = process.env.ISSUE_NUMBER;
 
@@ -253,6 +294,23 @@ async function main() {
 
   console.log("\n✓ Site generation complete!");
   console.log(`Output directory: ${outputDir}`);
+
+  // Deploy to Vercel if token is available
+  const deployment = await deployToVercel(outputDir, `gen-site-${issueNumber}`);
+
+  if (deployment) {
+    // Write deployment info to a file that GitHub Actions can read
+    const deploymentInfo = {
+      previewUrl: deployment.url,
+      deploymentId: deployment.id,
+      issueNumber,
+    };
+    writeFileSync(
+      join(__dirname, "..", "deployment-info.json"),
+      JSON.stringify(deploymentInfo, null, 2)
+    );
+    console.log(`\n✓ Deployment info saved for GitHub Actions`);
+  }
 }
 
 main().catch((error) => {

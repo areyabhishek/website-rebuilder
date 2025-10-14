@@ -1,31 +1,36 @@
 import { ProgressTracker } from "@/components/ProgressTracker";
+import Link from "next/link";
 
 export default function StatusPage({ params }: { params: { jobId: string } }) {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
-      <div className="mx-auto max-w-4xl px-4 py-12">
-        <div className="mb-8">
-          <a
-            href="/generate"
-            className="inline-flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900"
-          >
-            <svg
-              className="h-4 w-4"
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+    <div className="flex min-h-screen flex-col bg-slate-950 text-slate-100">
+      <nav className="border-b border-slate-800 px-6 py-4">
+        <div className="mx-auto flex max-w-4xl items-center justify-between">
+          <Link href="/" className="text-lg font-semibold">
+            Portfolio Rebuilder
+          </Link>
+          <div className="flex gap-4 text-sm">
+            <Link
+              href="/sites"
+              className="text-slate-400 hover:text-slate-100"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <path d="M15 19l-7-7 7-7"></path>
-            </svg>
-            Generate Another Site
-          </a>
+              View Other Sites →
+            </Link>
+            <Link
+              href="/generate"
+              className="text-slate-400 hover:text-slate-100"
+            >
+              Generate Another
+            </Link>
+          </div>
         </div>
+      </nav>
 
+      <main className="mx-auto w-full max-w-4xl flex-1 px-6 py-12">
         <ProgressTracker jobId={params.jobId} />
-      </div>
+      </main>
     </div>
   );
 }

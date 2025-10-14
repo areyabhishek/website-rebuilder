@@ -32,6 +32,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
         run: node scripts/generator.mjs
 
       - name: Verify and stage generated files
@@ -43,6 +44,16 @@ jobs:
           git add -f generated-site/
           git status
 
+      - name: Read deployment info
+        id: deployment
+        run: |
+          if [ -f deployment-info.json ]; then
+            PREVIEW_URL=$(cat deployment-info.json | jq -r '.previewUrl // ""')
+            echo "preview_url=$PREVIEW_URL" >> $GITHUB_OUTPUT
+          else
+            echo "preview_url=" >> $GITHUB_OUTPUT
+          fi
+
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
         with:
@@ -53,6 +64,8 @@ jobs:
           add-paths: generated-site
           body: |
             Auto-generated Astro site based on artifacts from #${{ github.event.issue.number }}
+
+            ${{ steps.deployment.outputs.preview_url != '' && format('## 🌐 Live Preview\n\n**[View Generated Site]({0})**\n', steps.deployment.outputs.preview_url) || '## Preview\n\nVercel deployment not available. Test locally instead.' }}
 
             ## Test Locally
             ```bash

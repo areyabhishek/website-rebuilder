@@ -21,6 +21,8 @@ model Job {
   tokensUrl    String?
   issueNumber  Int?
   prUrl        String?
+  previewUrl   String?
+  deploymentId String?
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
 }

@@ -25,10 +25,15 @@ export default function Home() {
           >
             Launch generator
           </Link>
-          <div className="rounded-2xl border border-slate-800 bg-slate-900/40 px-5 py-3 text-sm text-slate-300">
-            Phase 1: Next.js + Prisma scaffolding with the `/generate` workflow
-            UI.
-          </div>
+          <Link
+            href="/sites"
+            className="flex items-center justify-center rounded-2xl border border-slate-700 bg-slate-900/40 px-6 py-3 text-base font-semibold text-slate-100 transition hover:bg-slate-900/60 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-slate-500/40"
+          >
+            View generated sites
+          </Link>
+        </div>
+        <div className="rounded-2xl border border-slate-800 bg-slate-900/40 px-5 py-3 text-sm text-slate-300">
+          Generate sites with AI, view live previews, and request styling changes.
         </div>
       </main>
       <footer className="border-t border-slate-800 px-6 py-6 text-xs text-slate-500">
