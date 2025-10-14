@@ -1,0 +1,603 @@
+---
+// Studio Ruh Homepage
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio Ruh | All Things Design</title>
+  <meta name="description" content="Studio Ruh - Creative design studio specializing in all things design. Based in Bangalore, we create exceptional visual experiences.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #0a0a0a;
+      --secondary: #ff6b35;
+      --accent: #7c3aed;
+      --text-light: #6b7280;
+      --bg-light: #f8fafc;
+      --white: #ffffff;
+      --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --gradient-secondary: linear-gradient(135deg, #ff6b35 0%, #f093fb 100%);
+      --gradient-bg: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #ff6b35 100%);
+      --shadow-soft: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      --shadow-strong: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: var(--primary);
+      overflow-x: hidden;
+    }
+    
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      z-index: 1000;
+      padding: 1rem 0;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-decoration: none;
+    }
+    
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2.5rem;
+      align-items: center;
+    }
+    
+    .nav-links a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 500;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .nav-links a:hover {
+      color: var(--secondary);
+      transform: translateY(-2px);
+    }
+    
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gradient-secondary);
+      transition: width 0.3s ease;
+    }
+    
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+    
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 4px;
+    }
+    
+    .menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background: var(--primary);
+      transition: all 0.3s ease;
+    }
+    
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=1920') center/cover;
+      opacity: 0.1;
+      z-index: 1;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    
+    .hero-text h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      transform: translateY(50px);
+      animation: fadeInUp 1s ease forwards 0.2s;
+    }
+    
+    .hero-text .highlight {
+      background: var(--gradient-secondary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .hero-text p {
+      font-size: 1.3rem;
+      color: #a0a0a0;
+      margin-bottom: 2.5rem;
+      max-width: 500px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s ease forwards 0.4s;
+    }
+    
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      background: var(--gradient-secondary);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow-soft);
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s ease forwards 0.6s;
+    }
+    
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-strong);
+    }
+    
+    .hero-visual {
+      position: relative;
+      opacity: 0;
+      transform: translateX(50px);
+      animation: fadeInRight 1s ease forwards 0.8s;
+    }
+    
+    .hero-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 3rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    
+    .hero-card:hover {
+      transform: translateY(-10px) rotateY(5deg);
+      background: rgba(255, 255, 255, 0.15);
+    }
+    
+    .hero-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+    
+    .hero-card p {
+      color: #c0c0c0;
+      font-size: 1.1rem;
+    }
+    
+    /* Features Section */
+    .features {
+      padding: 8rem 0;
+      background: var(--bg-light);
+    }
+    
+    .features h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      text-align: center;
+      margin-bottom: 4rem;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 3rem;
+    }
+    
+    .feature-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 3rem;
+      box-shadow: var(--shadow-soft);
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: var(--gradient-secondary);
+      opacity: 0.03;
+      transition: left 0.5s ease;
+    }
+    
+    .feature-card:hover::before {
+      left: 0;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-15px) scale(1.02);
+      box-shadow: var(--shadow-strong);
+    }
+    
+    .feature-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 20px;
+      background: var(--gradient-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2rem;
+      color: var(--white);
+      font-size: 2rem;
+    }
+    
+    .feature-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+    
+    .feature-card p {
+      color: var(--text-light);
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+    
+    /* Contact Section */
+    .contact {
+      padding: 8rem 0;
+      background: var(--primary);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .contact::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800') center/cover;
+      opacity: 0.1;
+    }
+    
+    .contact-content {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+    }
+    
+    .contact h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      margin-bottom: 2rem;
+      background: var(--gradient-secondary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .contact p {
+      font-size: 1.2rem;
+      margin-bottom: 3rem;
+      color: #c0c0c0;
+      line-height: 1.7;
+    }
+    
+    .contact-info {
+      display: grid;
+      gap: 2rem;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      transition: all 0.3s ease;
+    }
+    
+    .contact-item:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateX(10px);
+    }
+    
+    .contact-item a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    
+    .contact-item a:hover {
+      color: var(--secondary);
+    }
+    
+    /* Footer */
+    footer {
+      background: #000;
+      color: var(--white);
+      padding: 4rem 0 2rem;
+      text-align: center;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    
+    .footer-section h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--secondary);
+    }
+    
+    .footer-section p, .footer-section a {
+      color: #888;
+      text-decoration: none;
+      line-height: 1.8;
+    }
+    
+    .footer-section a:hover {
+      color: var(--secondary);
+    }
+    
+    .footer-bottom {
+      border-top: 1px solid #333;
+      padding-top: 2rem;
+      color: #666;
+    }
+    
+    /* Animations */
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes fadeInRight {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 1rem;
+      }
+      
+      .nav-links {
+        display: none;
+      }
+      
+      .menu-toggle {
+        display: flex;
+      }
+      
+      .hero-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      
+      .hero-text h1 {
+        font-size: 3rem;
+      }
+      
+      .features h2, .contact h2 {
+        font-size: 2.5rem;
+      }
+      
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .feature-card {
+        padding: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="container nav-container">
+      <a href="/" class="logo">STUDIO RUH</a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/studio-ruh">Studio.Ruh</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="mailto:info@studioruh.in">Info@Studioruh.In</a></li>
+      </ul>
+      <div class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>ALL THINGS <span class="highlight">DESIGN</span></h1>
+          <p>We craft exceptional visual experiences that captivate, inspire, and drive results. From concept to creation, we bring your vision to life.</p>
+          <a href="/contact" class="cta-button">
+            <span>Shoot us an email</span>
+            <span>→</span>
+          </a>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-card">
+            <h3>Creative Excellence</h3>
+            <p>Where innovation meets artistry in every project we undertake</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="container">
+      <h2>Our Expertise</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🎨</div>
+          <h3>Visual Identity</h3>
+          <p>We create memorable brand identities that resonate with your audience and stand out in the marketplace. From logos to complete brand systems.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💻</div>
+          <h3>Digital Design</h3>
+          <p>Modern, responsive web design and digital experiences that engage users and drive conversions across all platforms and devices.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📱</div>
+          <h3>User Experience</h3>
+          <p>Intuitive interfaces and seamless user journeys that delight users and achieve business objectives through thoughtful design.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="container">
+      <div class="contact-content">
+        <h2>Let's Create Together</h2>
+        <p>Ready to bring your vision to life? We'd love to hear about your project and explore how we can help you achieve your goals.</p>
+        
+        <div class="contact-info">
+          <div class="contact-item">
+            <span>📍</span>
+            <div>
+              <strong>Studio Location</strong><br>
+              <a href="/maps/dir/">Totem Heights, 1st Floor<br>136/1 Gangadhara Chetty Road<br>Ulsoor, Bangalore, Karnataka 560042</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span>✉️</span>
+            <div>
+              <strong>Get in Touch</strong><br>
+              <a href="mailto:info@studioruh.in">info@studioruh.in</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Studio Ruh</h3>
+          <p>A creative design studio dedicated to crafting exceptional visual experiences that inspire and captivate.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Services</h3>
+          <p><a href="#">Visual Identity</a></p>
+          <p><a href="#">Digital Design</a></p>
+          <p><a href="#">User Experience</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>Follow Our Journey</h3>
+          <p><a href="#">Instagram</a></p>
+          <p><a href="#">Behance</a></p>
+          <p><a href="#">LinkedIn</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Studio Ruh. All rights reserved. Crafted with passion in Bangalore.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
