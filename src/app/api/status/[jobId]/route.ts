@@ -16,9 +16,43 @@ export async function GET(
       return NextResponse.json({ error: "Job not found" }, { status: 404 });
     }
 
-    // If we have an issue number, check the GitHub Action status
+    // If we have an issue number, check the GitHub Action status and preview URL from comments
     let actionStatus = null;
+    let previewUrlFromComment = null;
+
     if (job.issueNumber) {
+      // Check for Vercel preview URL in issue comments
+      try {
+        const commentsResponse = await fetch(
+          `https://api.github.com/repos/${process.env.GITHUB_REPO}/issues/${job.issueNumber}/comments`,
+          {
+            headers: {
+              Authorization: `token ${process.env.GITHUB_TOKEN}`,
+              Accept: "application/vnd.github.v3+json",
+            },
+          }
+        );
+
+        if (commentsResponse.ok) {
+          const comments = await commentsResponse.json();
+          // Look for the Vercel preview comment
+          const vercelComment = comments.find((c: any) =>
+            c.body?.includes("🚀 Vercel Preview Deployed") ||
+            c.body?.includes("Vercel Preview Deployed")
+          );
+
+          if (vercelComment) {
+            // Extract URL from the comment
+            const urlMatch = vercelComment.body.match(/https:\/\/[^\s)]+\.vercel\.app/);
+            if (urlMatch) {
+              previewUrlFromComment = urlMatch[0];
+            }
+          }
+        }
+      } catch (error) {
+        console.error("Failed to fetch issue comments:", error);
+      }
+
       try {
         const response = await fetch(
           `https://api.github.com/repos/${process.env.GITHUB_REPO}/actions/runs?event=issues&per_page=10`,
@@ -88,7 +122,7 @@ export async function GET(
         ? `https://github.com/${process.env.GITHUB_REPO}/issues/${job.issueNumber}`
         : null,
       prUrl: job.prUrl,
-      previewUrl: job.previewUrl,
+      previewUrl: previewUrlFromComment || job.previewUrl, // Prioritize comment URL
       deploymentId: job.deploymentId,
       blueprintUrl: job.blueprintUrl,
       tokensUrl: job.tokensUrl,

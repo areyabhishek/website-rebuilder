@@ -7,7 +7,7 @@ on:
 permissions:
   contents: write
   pull-requests: write
-  issues: read
+  issues: write
 
 jobs:
   generate:
@@ -53,6 +53,23 @@ jobs:
           else
             echo "preview_url=" >> $GITHUB_OUTPUT
           fi
+
+      - name: Post Vercel URL to Issue
+        if: steps.deployment.outputs.preview_url != ''
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          PREVIEW_URL: ${{ steps.deployment.outputs.preview_url }}
+        run: |
+          gh issue comment $ISSUE_NUMBER --body "## 🚀 Vercel Preview Deployed!
+
+          Your generated site is now live at:
+          **$PREVIEW_URL**
+
+          [View Generated Site →]($PREVIEW_URL)
+
+          ---
+          *This preview was automatically deployed by GitHub Actions*"
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
