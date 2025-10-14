@@ -52,13 +52,12 @@ export default async function SitesPage() {
         ) : (
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {jobs.map((job) => (
-              <Link
+              <div
                 key={job.id}
-                href={`/sites/${job.id}`}
-                className="group rounded-xl border border-slate-800 bg-slate-900/40 p-6 transition hover:border-sky-500/50 hover:bg-slate-900/60"
+                className="group rounded-xl border border-slate-800 bg-slate-900/40 p-6 transition hover:border-sky-500/50"
               >
                 <div className="mb-4">
-                  <h3 className="mb-1 text-lg font-semibold group-hover:text-sky-400">
+                  <h3 className="mb-1 text-lg font-semibold">
                     {job.domain}
                   </h3>
                   <div className="flex items-center gap-2">
@@ -71,25 +70,32 @@ export default async function SitesPage() {
                   </div>
                 </div>
 
+                {job.previewUrl && (
+                  <a
+                    href={job.previewUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="mb-3 flex items-center gap-2 rounded-lg border border-sky-500/30 bg-sky-500/10 px-3 py-2 text-sm font-medium text-sky-400 transition hover:bg-sky-500/20"
+                  >
+                    <svg
+                      className="h-4 w-4"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
+                    </svg>
+                    View Live Site
+                  </a>
+                )}
+
                 <div className="space-y-2 text-sm text-slate-400">
-                  {job.previewUrl && (
-                    <div className="flex items-center gap-2">
-                      <svg
-                        className="h-4 w-4 text-sky-400"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                        />
-                      </svg>
-                      <span className="text-sky-400">Live Preview</span>
-                    </div>
-                  )}
                   {job.issueNumber && (
                     <div>Issue #{job.issueNumber}</div>
                   )}
@@ -101,11 +107,18 @@ export default async function SitesPage() {
                   </div>
                 </div>
 
-                <div className="mt-4 text-xs text-slate-500">
+                <Link
+                  href={`/sites/${job.id}`}
+                  className="mt-4 inline-block text-sm text-slate-500 hover:text-sky-400"
+                >
+                  View Details →
+                </Link>
+
+                <div className="mt-2 text-xs text-slate-500">
                   {new Date(job.createdAt).toLocaleDateString()} at{" "}
                   {new Date(job.createdAt).toLocaleTimeString()}
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
         )}
