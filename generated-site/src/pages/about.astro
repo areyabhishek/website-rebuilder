@@ -1,0 +1,343 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Appsmith | Documentation Platform</title>
+  <meta name="description" content="Learn about Appsmith's documentation platform and how to build internal applications with our comprehensive guides.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <h1>Appsmith</h1>
+      </div>
+      <nav class="nav">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/connect-data/reference/querying-mongodb" class="nav-link">MongoDB</a>
+        <a href="/connect-data/reference/notion" class="nav-link">Notion</a>
+        <a href="/reference/widgets/custom" class="nav-link">Custom</a>
+        <a href="/docs" class="nav-link active">Docs</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="hero-title">About Our Documentation</h1>
+          <p class="hero-description">Comprehensive guides and references to help you build amazing internal applications with Appsmith.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="container">
+        <div class="content-grid">
+          <div class="content-section">
+            <h2>Documentation Overview</h2>
+            <p>Our documentation platform provides detailed information on connecting data sources, building widgets, and implementing security features. Whether you're working with MongoDB, Notion, or creating custom widgets, we have guides to help you succeed.</p>
+            
+            <div class="feature-list">
+              <div class="feature-item">
+                <h3>Data Connections</h3>
+                <p>Learn how to connect and query various databases including MongoDB, PostgreSQL, and more.</p>
+              </div>
+              <div class="feature-item">
+                <h3>Widget Development</h3>
+                <p>Build custom widgets and components to extend your application functionality.</p>
+              </div>
+              <div class="feature-item">
+                <h3>Security Implementation</h3>
+                <p>Implement robust security measures with SCRAM authentication and other security protocols.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="sidebar">
+            <div class="quick-links">
+              <h3>Quick Access</h3>
+              <ul class="link-list">
+                <li><a href="/connect-data/reference/querying-mongodb">MongoDB Guide</a></li>
+                <li><a href="/connect-data/reference/notion">Notion Integration</a></li>
+                <li><a href="/reference/widgets/custom">Custom Widgets</a></li>
+                <li><a href="/docs/manual/core/security-scram/">Security SCRAM</a></li>
+                <li><a href="/write-code/concepts/execute-onpageload">Page Load Code</a></li>
+              </ul>
+            </div>
+
+            <div class="resources">
+              <h3>Additional Resources</h3>
+              <div class="resource-card">
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=300&h=200&fit=crop" alt="Code example" />
+                <h4>Code Examples</h4>
+                <p>Browse practical examples and implementation patterns.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Ready to Get Started?</h2>
+          <p>Explore our comprehensive documentation and start building your next internal application.</p>
+          <a href="/" class="btn btn-primary">Browse Documentation</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 Appsmith. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #ffffff;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    .header {
+      background: #fff;
+      border-bottom: 1px solid #e5e5e5;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem;
+    }
+
+    .logo h1 {
+      color: #ff6b35;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .nav {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: #666;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: #ff6b35;
+    }
+
+    .hero {
+      padding: 3rem 0;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      text-align: center;
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .hero-description {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .content {
+      padding: 4rem 0;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 3rem;
+    }
+
+    .content-section h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+
+    .content-section p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      color: #666;
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .feature-item {
+      padding: 1.5rem;
+      background: #f8f9fa;
+      border-radius: 0.5rem;
+      border-left: 4px solid #ff6b35;
+    }
+
+    .feature-item h3 {
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-item p {
+      color: #666;
+      margin: 0;
+    }
+
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .quick-links,
+    .resources {
+      background: #f8f9fa;
+      padding: 2rem;
+      border-radius: 1rem;
+    }
+
+    .quick-links h3,
+    .resources h3 {
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    .link-list {
+      list-style: none;
+    }
+
+    .link-list li {
+      margin-bottom: 0.5rem;
+    }
+
+    .link-list a {
+      color: #ff6b35;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .link-list a:hover {
+      opacity: 0.8;
+    }
+
+    .resource-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .resource-card h4 {
+      margin-bottom: 0.5rem;
+      color: #333;
+    }
+
+    .resource-card p {
+      color: #666;
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    .cta {
+      background: #f8f9fa;
+      padding: 4rem 0;
+      text-align: center;
+    }
+
+    .cta-content h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    .cta-content p {
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 2rem;
+      background: #ff6b35;
+      color: white;
+      text-decoration: none;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+    }
+
+    .footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 2rem 0;
+    }
+
+    @media (max-width: 768px) {
+      .nav {
+        gap: 1rem;
+      }
+
+      .hero-title {
+        font-size: 2rem;
+      }
+
+      .content-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .sidebar {
+        order: -1;
+      }
+    }
+  </style>
+</body>
+</html>
