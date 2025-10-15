@@ -1,0 +1,699 @@
+---
+// About page
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Ramp | Financial Intelligence Platform</title>
+  <meta name="description" content="Learn about Ramp's mission to transform business finances through intelligent automation, comprehensive support, and cutting-edge technology.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #6366f1;
+      --primary-dark: #4f46e5;
+      --secondary: #ec4899;
+      --accent: #06b6d4;
+      --text-dark: #0f172a;
+      --text-gray: #475569;
+      --text-light: #94a3b8;
+      --bg-light: #f8fafc;
+      --bg-white: #ffffff;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      color: var(--text-dark);
+      background: var(--bg-light);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Navigation */
+    .nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      font-family: 'Fraunces', serif;
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-gray);
+      font-weight: 500;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-links a.active {
+      color: var(--primary);
+    }
+
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 8rem 0 4rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=1600&h=900&fit=crop') center/cover;
+      opacity: 0.1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      opacity: 0.95;
+      line-height: 1.7;
+    }
+
+    /* Content Sections */
+    .section {
+      padding: 5rem 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-header h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 600;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--text-dark), var(--text-gray));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .section-header p {
+      font-size: 1.125rem;
+      color: var(--text-gray);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Mission Section */
+    .mission {
+      background: var(--bg-white);
+    }
+
+    .mission-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .mission-text h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: var(--text-dark);
+    }
+
+    .mission-text p {
+      font-size: 1.125rem;
+      color: var(--text-gray);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .mission-image {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow-xl);
+    }
+
+    .mission-image img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    /* Values Section */
+    .values {
+      background: var(--bg-light);
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .value-card {
+      background: var(--bg-white);
+      padding: 2.5rem;
+      border-radius: 20px;
+      box-shadow: var(--shadow-md);
+      transition: all 0.4s ease;
+      text-align: center;
+    }
+
+    .value-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .value-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: white;
+      margin: 0 auto 1.5rem;
+    }
+
+    .value-card h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+    }
+
+    .value-card p {
+      color: var(--text-gray);
+      line-height: 1.7;
+    }
+
+    /* Stats Section */
+    .stats {
+      background: var(--text-dark);
+      color: white;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 3rem;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-family: 'Fraunces', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--accent), var(--secondary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-size: 1.125rem;
+      color: var(--text-light);
+    }
+
+    /* CTA Section */
+    .cta {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta p {
+      font-size: 1.25rem;
+      margin-bottom: 2.5rem;
+      opacity: 0.95;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-white {
+      background: white;
+      color: var(--primary);
+    }
+
+    .btn-white:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-xl);
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--text-dark);
+      color: var(--text-light);
+      padding: 4rem 0 2rem;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-section h4 {
+      font-family: 'Fraunces', serif;
+      color: white;
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section a {
+      color: var(--text-light);
+      text-decoration: none;
+      transition: color 0.3s ease;
+      display: block;
+      padding: 0.25rem 0;
+    }
+
+    .footer-section a:hover {
+      color: var(--accent);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid #334155;
+      color: var(--text-light);
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      
+      .mission-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      
+      .mission-image {
+        order: -1;
+      }
+      
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="/" class="logo">Ramp</a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/hc/en-us/search">Search</a></li>
+        <li><a href="/hc/en-us/articles/5506033900307-User-role-deep-dive-Assistant">User Roles</a></li>
+        <li><a href="/support/get-help">Get Help</a></li>
+        <li><a href="/about" class="active">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Reimagining Corporate Finance</h1>
+        <p>We're on a mission to help businesses save time and money by automating finance operations and providing intelligent insights that drive growth.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section mission">
+    <div class="container">
+      <div class="mission-content">
+        <div class="mission-text fade-in">
+          <h3>Our Mission</h3>
+          <p>At Ramp, we believe finance should be a strategic advantage, not a burden. We're building the future of corporate spend management by combining cutting-edge technology with unparalleled customer support.</p>
+          <p>Our platform doesn't just track expenses—it intelligently optimizes them, provides actionable insights, and scales with your business growth. From startups to enterprises, we're transforming how companies manage their finances.</p>
+        </div>
+        <div class="mission-image fade-in">
+          <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop" alt="Modern office with financial technology">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section values">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Core Values</h2>
+        <p>These principles guide everything we do and shape how we serve our customers.</p>
+      </div>
+      
+      <div class="values-grid">
+        <div class="value-card fade-in">
+          <div class="value-icon">⚡</div>
+          <h3>Speed & Efficiency</h3>
+          <p>We automate the tedious so you can focus on strategy. Our platform processes transactions in real-time and provides instant insights.</p>
+        </div>
+        
+        <div class="value-card fade-in">
+          <div class="value-icon">🎯</div>
+          <h3>Customer Success</h3>
+          <p>Your success is our success. We provide comprehensive onboarding, training, and ongoing support to ensure you achieve your goals.</p>
+        </div>
+        
+        <div class="value-card fade-in">
+          <div class="value-icon">🔒</div>
+          <h3>Security First</h3>
+          <p>Your financial data deserves the highest level of protection. We implement bank-level security and maintain strict compliance standards.</p>
+        </div>
+        
+        <div class="value-card fade-in">
+          <div class="value-icon">📈</div>
+          <h3>Continuous Innovation</h3>
+          <p>We're constantly evolving our platform based on customer feedback and emerging technologies to stay ahead of the curve.</p>
+        </div>
+        
+        <div class="value-card fade-in">
+          <div class="value-icon">🤝</div>
+          <h3>Partnership</h3>
+          <p>We don't just provide software—we partner with you for long-term success through our community, academy, and expert support.</p>
+        </div>
+        
+        <div class="value-card fade-in">
+          <div class="value-icon">💡</div>
+          <h3>Intelligence</h3>
+          <p>Our AI-powered insights help you make smarter financial decisions and identify opportunities for cost savings and optimization.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section stats">
+    <div class="container">
+      <div class="section-header">
+        <h2 style="color: white;">Trusted by Thousands</h2>
+        <p style="color: var(--text-light);">Our platform powers financial operations for businesses of all sizes.</p>
+      </div>
+      
+      <div class="stats-grid">
+        <div class="stat-item fade-in">
+          <div class="stat-number">15,000+</div>
+          <div class="stat-label">Active Businesses</div>
+        </div>
+        
+        <div class="stat-item fade-in">
+          <div class="stat-number">$2.1B+</div>
+          <div class="stat-label">Spend Managed</div>
+        </div>
+        
+        <div class="stat-item fade-in">
+          <div class="stat-number">99.9%</div>
+          <div class="stat-label">Uptime</div>
+        </div>
+        
+        <div class="stat-item fade-in">
+          <div class="stat-number">4.8/5</div>
+          <div class="stat-label">Customer Rating</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta">
+    <div class="container">
+      <h2>Ready to Transform Your Finance Operations?</h2>
+      <p>Join thousands of businesses using Ramp to save time, reduce costs, and gain financial intelligence.</p>
+      <a href="/support/get-help" class="btn btn-white">Get Started Today</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="/hc/en-us/search">Help Center</a></li>
+            <li><a href="/support/get-help">Get Support</a></li>
+            <li><a href="#">Training Videos</a></li>
+            <li><a href="#">API Documentation</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Community</h4>
+          <ul>
+            <li><a href="#">Community Forum</a></li>
+            <li><a href="#">Partner Academy</a></li>
+            <li><a href="#">User Groups</a></li>
+            <li><a href="#">Events</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="/hc/en-us/articles/360049769034-ramp-s-terms-and-conditions">Terms</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="/support/get-help">Support</a></li>
+            <li><a href="#">Sales</a></li>
+            <li><a href="#">Partnerships</a></li>
+            <li><a href="#">Press Inquiries</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2024 Ramp. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationDelay = '0.2s';
+          entry.target.style.animationFillMode = 'forwards';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Nav scroll effect
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('.nav');
+      
+      if (window.pageYOffset > 100) {
+        nav.style.background = 'rgba(255, 255, 255, 0.98)';
+        nav.style.boxShadow = '0 4px 6px -1px rgb(0 0 0 / 0.1)';
+      } else {
+        nav.style.background = 'rgba(255, 255, 255, 0.95)';
+        nav.style.boxShadow = 'none';
+      }
+    });
+
+    // Counter animation for stats
+    function animateCounter(element, target, duration) {
+      let start = 0;
+      const increment = target / (duration / 16);
+      const timer = setInterval(() => {
+        start += increment;
+        if (start >= target) {
+          element.textContent = target.toLocaleString() + (element.dataset.suffix || '');
+          clearInterval(timer);
+        } else {
+          element.textContent = Math.ceil(start).toLocaleString() + (element.dataset.suffix || '');
+        }
+      }, 16);
+    }
+
+    // Animate counters when they come into view
+    const statNumbers = document.querySelectorAll('.stat-number');
+    const statsObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const text = entry.target.textContent;
+          const number = parseInt(text.replace(/[^0-9.]/g, ''));
+          entry.target.dataset.suffix = text.replace(/[0-9.,]/g, '');
+          animateCounter(entry.target, number, 2000);
+          statsObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    statNumbers.forEach(stat => statsObserver.observe(stat));
+  </script>
+</body>
+</html>
