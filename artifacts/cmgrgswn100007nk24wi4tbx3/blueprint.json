@@ -1,0 +1,255 @@
+{
+  "domain": "appsmith.com",
+  "nav": [
+    {
+      "text": "Home",
+      "href": "/"
+    },
+    {
+      "text": "Appsmith Build Spring 2024 Launch",
+      "href": "/event/appsmith-build-spring-2024-launch"
+    },
+    {
+      "text": "Anirupdutta",
+      "href": "/anirupdutta"
+    },
+    {
+      "text": "Anirupdutta",
+      "href": "/in/anirupdutta/"
+    },
+    {
+      "text": "Tech_wizzdom",
+      "href": "/tech_wizzdom"
+    },
+    {
+      "text": "Domagojvidovic",
+      "href": "/in/domagojvidovic/"
+    }
+  ],
+  "pages": [
+    {
+      "url": "https://www.appsmith.com/event/appsmith-build-spring-2024-launch",
+      "slug": "event-appsmith-build-spring-2024-launch",
+      "title": "Appsmith BUILD | Spring '24",
+      "sections": [
+        {
+          "type": "hero",
+          "h1": "Spring 2024 - Launch  Appsmith BUILD",
+          "sub": "",
+          "cta": "",
+          "content": "March 19th & 20th\n10am ET\nVirtual event\nJoin us for an exciting 2-day event celebrating the developers and custom applications that power businesses.\n[Reserve your spot](https://www.appsmith.com/event/appsmith-build-spring-2024-launch#event-registration-section)\n![appsmith-build-hero.webp](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F7nsbCZnLXl2c31Q3weWLTF%2F985b3e31e04edf0aae9304584de69604%2Fappsmith-build-hero.webp&w=3840&q=75)"
+        },
+        {
+          "type": "section",
+          "title": "Why attend?",
+          "content": "Custom internal applications are the unsung heroes of the software world. See how you can level-up your tools to streamline customer interactions, automate operations, and improve employee productivity.\n* * *\n### Be inspired\nLearn how modern low-code development and AI are powering a new generation of high-impact internal applications.\n### Build faster\nSee new updates that will help developers build more functional applications faster than ever before.\n### Get hands-on\nUse low-code to build AI interactions, enterprise application extensions, multi-step workflows, and custom UI elements.\nFirst name \\*\nLast name \\*\nWork email \\*\nCompany \\*\nJob Title \\*\nWhat is your company size?\nPlease select1-24 Employees25-99 Employees100-499 Employees500-1,499 Employees2,000-4,999 Employees5,000+ Employees\nReserve your spot\n\\* Required"
+        },
+        {
+          "type": "section",
+          "title": "Agenda",
+          "content": "### A new way to BUILD\nGet past development resource constraints with a new approach to low-code\n### Custom applications that drive impact\nInnovative examples and best practices from low-code power users\n### Developer-first low-code development in action\nNew features from Appsmith give developers greater flexibility and control\n### Reusability\nImprove standardization and simplify maintenance in your internal apps\n### Working with Salesforce\nBuild cost-saving custom extensions that access and interact with CRM data\n### Custom UI elements\nUse standard JS/CSS/HTML to completely create and customize UI widgets\n### Using AI in Appsmith\nBring AI interactions into your internal apps with practical use cases and templates\n[Reserve your spot](https://www.appsmith.com/event/appsmith-build-spring-2024-launch#event-registration-section)"
+        },
+        {
+          "type": "section",
+          "title": "Featured speakers",
+          "content": "![Alexander Kurz](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F4hdAovp8DZBXSWUOEXMhJZ%2F2990d00ea65f2bdf45db75f633f638ff%2FAlexander_Kurz.png&w=828&q=75)\nFounder & CEO, Pinelta\n### Alexander Kurz\n![Anirup Dutta](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F6nwqWzCZl7ti3qk5otJq5K%2F589ade471ef2a7c9dbea8fddb0d31659%2FAnirup_Dutta.png&w=828&q=75)\nPrincipal Product Manager, Twilio\n### Anirup Dutta\n![Domagoj Vidovic](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F2CsyBwoEuCgzTHBNTuRdTL%2F28d366bbbd8437297bb5cef602c4ef1c%2FGroup_1000004892.png&w=828&q=75)\nFounder, Tech Wizzdom\n### Domagoj Vidovic\n![Thomas Zwick](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F6NCrjGtUJx86UTAyezI8Ve%2Fec51ab08fd895112779646840028b818%2FThomas_Zwick.png&w=828&q=75)\nDirector, Data Services and Digital Transformation, OMRON Americas\n### Thomas Zwick\n![Abhishek Nayak](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F6HehDcu3TXRqfzPhY0Pn4X%2Fed87ba39c47b4813e83b69cc8cf9f181%2FAbhishek_Nayak.webp&w=640&q=75)\nCo-founder & CEO at Appsmith\n### Abhishek Nayak\n![Nikhil Nandagopal](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2Fln5K5Xfg5cjYN1hXyUkcz%2F8d13137ac58409b9bed2acaf48509564%2FNikhil_Nandagopal.webp&w=640&q=75)\nCo-founder & CPO at Appsmith\n### Nikhil Nandagopal\n![Ron Northcutt](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F2uhiCmPYfHjarTzDQBhfdJ%2F5179965744d957dfa9de75566d85e8ec%2FMask_group__2_.png&w=828&q=75)\nHead of DevRel\n### Ron Northcutt\nHead of Developer Relations at Appsmith\n### Joseph Petty\n![Kevin Blanco](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F7MXrKaMKQKCZb16HHLaccO%2Fbd04d864c9b928db809507c7a442b678%2FMask_group__1_.png&w=828&q=75)\nSenior DevRel Advocate at Appsmith\n### Kevin Blanco\n![Tom Jose](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F3ZDPNOPEouVnkLsdwC0CUU%2Fd3e3d8afeed89818869c3d0664e01b6b%2FTom_Jose.png&w=828&q=75)\nCustomer Solutions\n### Tom Jose\n### Appsmith: a modern approach to low-code development\nAppsmith simplifies internal tool development for businesses. This helps to streamline operations, automate processes, and quickly integrate multiple apps and data while enhancing legacy apps with new features.\n[Get started for free](https://www.appsmith.com/sign-up)\n![Conversion Panel](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F7H0JO69qvMnaWyjVwT06NZ%2Fc12ccb59485642991f2d528a4d3d9204%2Fconversion_panel.webp&w=3840&q=75)"
+        }
+      ],
+      "images": [
+        "https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F7nsbCZnLXl2c31Q3weWLTF%2F985b3e31e04edf0aae9304584de69604%2Fappsmith-build-hero.webp&amp;w=3840&amp;q=75",
+        "https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F4hdAovp8DZBXSWUOEXMhJZ%2F2990d00ea65f2bdf45db75f633f638ff%2FAlexander_Kurz.png&amp;w=828&amp;q=75",
+        "https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F6nwqWzCZl7ti3qk5otJq5K%2F589ade471ef2a7c9dbea8fddb0d31659%2FAnirup_Dutta.png&amp;w=828&amp;q=75",
+        "https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F2CsyBwoEuCgzTHBNTuRdTL%2F28d366bbbd8437297bb5cef602c4ef1c%2FGroup_1000004892.png&amp;w=828&amp;q=75",
+        "https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F6NCrjGtUJx86UTAyezI8Ve%2Fec51ab08fd895112779646840028b818%2FThomas_Zwick.png&amp;w=828&amp;q=75",
+        "https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F6HehDcu3TXRqfzPhY0Pn4X%2Fed87ba39c47b4813e83b69cc8cf9f181%2FAbhishek_Nayak.webp&amp;w=640&amp;q=75",
+        "https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2Fln5K5Xfg5cjYN1hXyUkcz%2F8d13137ac58409b9bed2acaf48509564%2FNikhil_Nandagopal.webp&amp;w=640&amp;q=75",
+        "https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F2uhiCmPYfHjarTzDQBhfdJ%2F5179965744d957dfa9de75566d85e8ec%2FMask_group__2_.png&amp;w=828&amp;q=75",
+        "https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F7MXrKaMKQKCZb16HHLaccO%2Fbd04d864c9b928db809507c7a442b678%2FMask_group__1_.png&amp;w=828&amp;q=75",
+        "https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F3ZDPNOPEouVnkLsdwC0CUU%2Fd3e3d8afeed89818869c3d0664e01b6b%2FTom_Jose.png&amp;w=828&amp;q=75"
+      ]
+    },
+    {
+      "url": "https://www.appsmith.com/blog/appsmith-and-the-future-of-low-code",
+      "slug": "blog-appsmith-and-the-future-of-low-code",
+      "title": "Appsmith and The Future of Low-Code Development",
+      "sections": [
+        {
+          "type": "hero",
+          "h1": "Appsmith And The Future of Low-Code: Why I Made The Leap",
+          "sub": "",
+          "cta": "",
+          "content": "![Carl Carozza](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F4v7wp78t2Rk7ndewiFibp7%2F1f2a594fdc6761709f9946fbf2f5b053%2FTGA9SH07N-U07J53JUJR4-f3ca3bc7f539-512.jpeg&w=3840&q=90)\nPosted by Carl Carozza\\|Published on Sep 19, 2024\n4 min read\n![Appsmith And The Future of Low-Code Why I Made The Leap-](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F7g9MMUpcuxzuXUJhlXwwKR%2F9bd6c661cbc983b347df50175d988e14%2FAppsmith_And_The_Future_of_Low-Code__Why_I_Made_The_Leap-.png&w=3840&q=90)\nTable of contents\nThe birth of low-code developmentThe low-code market todayThe AI wild cardWhy Appsmith?What's next?\nThree weeks ago, I joined [Appsmith](https://www.appsmith.com/) as our VP of Sales. I've been directly involved in the growth of this category (low-code development) for the past decade and am incredibly excited about the opportunity here at Appsmith.\nRather than just write a LinkedIn update, I wanted to take a moment to reflect on what I've seen in the space, where it's going, and why I'm bullish on the Appsmith product and team."
+        },
+        {
+          "type": "section",
+          "title": "The birth of low-code development",
+          "content": "I had an opportunity to see the low-code market get established and evolve in the United States. I joined Outsystems just as they were expanding across North America. At that time, we were doing a lot of educating. The initial products early on in the space frankly weren't very good. There was a stigma in the market where buyers believed that there was too much \"black box\" to these tools, and they weren't capable of producing quality enterprise applications. We did a ton of work: multiple demos, POCs, onboarding services, etc. to win buyers over.\nAt the same time, we were really building a category. Analysts and buyers weren't thinking about low-code application platforms as a unique category and often tried to lump us into broader sets of infrastructure. We worked with the analysts to create a separate category definition and with our customers to establish a separate budget item for these tools.\nThe reality is that low-code development is a transformative technology. We were driving huge efficiencies at the companies we worked with and allowing them to build solutions that they never would have had the resources to build with their internal teams. We supported really complex initiatives across all verticals and industries."
+        },
+        {
+          "type": "section",
+          "title": "The low-code market today",
+          "content": "I saw the birth of this category, and now I've also seen it age. All enterprise software becomes bigger and more complex over time — it's a natural evolution. A desire to drive continued growth in a maturing market has led vendors to try and serve as many audiences as possible (think tooling for both citizen and professional developers in the same platform) and push pricing continually higher.\nThere are some tremendously powerful platforms that will always have a large foothold in the enterprise space, but at the same time, there are growing opportunities for tools at the department level that are a bit more purpose-built. Not everybody is really well-served by monolithic platforms (especially expensive ones), and I'm increasingly seeing teams look for things that are more specialized and lighter weight."
+        },
+        {
+          "type": "section",
+          "title": "The AI wild card",
+          "content": "Generative AI is already a significant disruptor in the low-code space. I'm not convinced that everyone's going to want to build applications through pure text prompt-writing, but vendors are going to have to figure out two things.\nOne, how AI can assist the development process and unlock even more engineering efficiency in large-scale projects. And secondly, and probably most importantly, how low-code vendors can help organizations build applications around AI and LLMs.\nThe way that users interact with data from an LLM is totally different compared to data from a traditional backend database. Low-code platforms that can help organizations build out these interactions will become the new leaders in this space."
+        },
+        {
+          "type": "section",
+          "title": "Why Appsmith?",
+          "content": "This will sound corny, but it's really about the people. At Appsmith, I saw thoughtful, forward-looking founders who are very open, willing to listen, and willing to engage. These are people that I really wanted to work with. The fact that the Appsmith platform is open-source is also pretty unique.\nSome vendors, who I won't name here, are really getting out of control with pricing. They're taking advantage of the fact that customers are locked into the platform, and essentially holding them hostage.\nHaving an open-source alternative is a big deal. We give customers the right to own the applications they build, to inspect source code and directly contribute to the platform, and to move off of our commercial editions if we aren't serving them well. Open-source feels like a breath of fresh air in the space, and I'm excited to bring it to more customers."
+        },
+        {
+          "type": "section",
+          "title": "What's next?",
+          "content": "Like my time at Outsystems, we have a huge growth opportunity. Appsmith has a firm and growing presence in APAC and Europe, and we're starting to see some significant momentum in North America. For a number of years, I also had the pleasure to lead the LATAM region for Outsystems, and I see that as an additional expansion opportunity. One of the things that surprised me coming in was the number of established enterprise clients that are already using Appsmith. My goal is to help the team lean more into this segment.\nI'm also looking forward to meeting and interacting with the Appsmith community. There is an incredibly vibrant group of passionate supporters around the platform. You will be a key component of our continued success, so please reach out and say \"hi.\" I'd love to hear from you."
+        },
+        {
+          "type": "section",
+          "title": "Subscribe to our monthly newsletter",
+          "content": "EmailSubscribe"
+        },
+        {
+          "type": "section",
+          "title": "Related Blog Posts",
+          "content": "[![Why We Think Appsmith Is the #1 Open-source Low-code Platform](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F5kvsi5ymhqnVf7KGByHuN7%2F37cd50f2f2666a6754bbee270fce71ac%2F0294_Why_We_Think_Appsmith_Is_the_-1_Open-source_Low-code_Platform.png&w=3840&q=90)\\\\\n\\\\\nWhy We Think Appsmith Is the #1 Open-source Low-code Platform\\\\\n\\\\\nDessire Ugarte![Dessire Ugarte](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F4Seyd9lwdIqlMYwYVWxb7S%2Fc886c491645b38755dc9b5a897e8c42c%2FWhatsApp_Image_2023-09-01_at_3.07.24_PM_copy.jpeg&w=96&q=90)\\\\\n\\\\\nDessire Ugarte\\\\\n\\\\\nDec 16, 2024](https://www.appsmith.com/blog/buying-guide-why-appsmith) [![Reflecting on 2023 and Looking Ahead to 2024](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F2h4NeDz6ztRlsjK3CbLc1U%2F14500f147876110717c11efa26a87c7e%2Fyear-in-review-blog-header-2.jpg&w=3840&q=90)\\\\\n\\\\\nReflecting on 2023 and Looking Ahead to 2024\\\\\n\\\\\nAbhishek Nayak![Abhishek Nayak](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F11wiAnVzxorzdmHUXA5rPj%2F1bfa49cfaad63e08d94b80dcf4054733%2FAbhishek_Nayak_Headshot.png.webp&w=96&q=90)\\\\\n\\\\\nAbhishek Nayak\\\\\n\\\\\nJan 01, 2024](https://www.appsmith.com/blog/goodbye-2023-hello-2024) [![How to Stay Focused on User Education](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F5Nc3Gt8xqAWw1cQlnXKvFl%2Feffba5ff3f03739e56d138760f3c05bc%2FImage_User_Education_not_Marketing.png&w=3840&q=90)\\\\\n\\\\\nHow to Stay Focused on User Education\\\\\n\\\\\nKirti Punia![Kirti Punia](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F5KMBm9Kg8YdYKtL0nrQ6Oc%2F60a2cdd8b20df6ed699534110f478ab3%2FKirti_Punia_Appsmith.jpeg&w=96&q=90)\\\\\n\\\\\nKirti Punia](https://www.appsmith.com/blog/user-education)"
+        }
+      ],
+      "images": [
+        "https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F4v7wp78t2Rk7ndewiFibp7%2F1f2a594fdc6761709f9946fbf2f5b053%2FTGA9SH07N-U07J53JUJR4-f3ca3bc7f539-512.jpeg&amp;w=3840&amp;q=90",
+        "https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F7g9MMUpcuxzuXUJhlXwwKR%2F9bd6c661cbc983b347df50175d988e14%2FAppsmith_And_The_Future_of_Low-Code__Why_I_Made_The_Leap-.png&amp;w=3840&amp;q=90",
+        "https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F5kvsi5ymhqnVf7KGByHuN7%2F37cd50f2f2666a6754bbee270fce71ac%2F0294_Why_We_Think_Appsmith_Is_the_-1_Open-source_Low-code_Platform.png&amp;w=3840&amp;q=90",
+        "https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F4Seyd9lwdIqlMYwYVWxb7S%2Fc886c491645b38755dc9b5a897e8c42c%2FWhatsApp_Image_2023-09-01_at_3.07.24_PM_copy.jpeg&amp;w=96&amp;q=90",
+        "https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F2h4NeDz6ztRlsjK3CbLc1U%2F14500f147876110717c11efa26a87c7e%2Fyear-in-review-blog-header-2.jpg&amp;w=3840&amp;q=90",
+        "https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F11wiAnVzxorzdmHUXA5rPj%2F1bfa49cfaad63e08d94b80dcf4054733%2FAbhishek_Nayak_Headshot.png.webp&amp;w=96&amp;q=90",
+        "https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F5Nc3Gt8xqAWw1cQlnXKvFl%2Feffba5ff3f03739e56d138760f3c05bc%2FImage_User_Education_not_Marketing.png&amp;w=3840&amp;q=90",
+        "https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F5KMBm9Kg8YdYKtL0nrQ6Oc%2F60a2cdd8b20df6ed699534110f478ab3%2FKirti_Punia_Appsmith.jpeg&amp;w=96&amp;q=90"
+      ]
+    },
+    {
+      "url": "https://www.appsmith.com",
+      "slug": "index",
+      "title": "Appsmith | Open-Source Low-Code Application Platform",
+      "sections": [
+        {
+          "type": "hero",
+          "h1": "Deliver custom AI-powered       apps and agents faster",
+          "sub": "",
+          "cta": "",
+          "content": "Build the next generation of innovative, accurate, and secure enterprise applications with the leader in open-source low-code development.\n[Start for free](https://www.appsmith.com/) [Get a demo](https://www.appsmith.com/enterprise)\nCreate custom AI apps using your data, workflows, and LLMs\n[Explore apps](https://www.appsmith.com/ai/low-code)\n![GSK](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F3X6XRKnOq7QBiqCUBUD3h0%2F0b37c659878dff10152677a24e361576%2FGSK-Logo-1.png&w=256&q=90)\n![HeyJobs](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F2UFLYnFIKLYAiFhiBk5a0O%2Fe1264a516d5750abc65b534cef8d0de6%2FHeyJobsLogo.webp&w=256&q=90)\n![Twilio](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F4mJPREmeknB6QXBMa5X9mq%2Ff31a0f2939e4c38390bb1c92c84b42e7%2FTwilio-logo-red.png&w=256&q=90)\n![Dropbox](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F54mM7a4VvL8UHuEQofLDBr%2Fe4fdf00b6f05c18e14f9f0273236b51a%2FDropbox_Wordmark_Graphite_128.png&w=384&q=90)\n![Omron](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F69or7DZTQOAQjrxNm0DLH4%2F105955fd37896f29be4b16fd8be1ab17%2FOmron_Logo.svg&w=384&q=90)\n![Allianz](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F3QUkwhuW4tZOONudOKNN2L%2F5122c7222ffc350f660647f893fce90b%2FAllianz.svg&w=256&q=90)\n![Amazon Web Services](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F4Vyd9muWf1SPLUKOBES9sO%2Fe8b125043c9a7d05c29441967b041202%2FAmazon_Web_Services_Logo__1__1.svg&w=128&q=90)\n![GSK](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F3X6XRKnOq7QBiqCUBUD3h0%2F0b37c659878dff10152677a24e361576%2FGSK-Logo-1.png&w=256&q=90)\n![HeyJobs](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F2UFLYnFIKLYAiFhiBk5a0O%2Fe1264a516d5750abc65b534cef8d0de6%2FHeyJobsLogo.webp&w=256&q=90)\n![Twilio](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F4mJPREmeknB6QXBMa5X9mq%2Ff31a0f2939e4c38390bb1c92c84b42e7%2FTwilio-logo-red.png&w=256&q=90)\n![Dropbox](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F54mM7a4VvL8UHuEQofLDBr%2Fe4fdf00b6f05c18e14f9f0273236b51a%2FDropbox_Wordmark_Graphite_128.png&w=384&q=90)\n![Omron](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F69or7DZTQOAQjrxNm0DLH4%2F105955fd37896f29be4b16fd8be1ab17%2FOmron_Logo.svg&w=384&q=90)\n![Allianz](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F3QUkwhuW4tZOONudOKNN2L%2F5122c7222ffc350f660647f893fce90b%2FAllianz.svg&w=256&q=90)\n![Amazon Web Services](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F4Vyd9muWf1SPLUKOBES9sO%2Fe8b125043c9a7d05c29441967b041202%2FAmazon_Web_Services_Logo__1__1.svg&w=128&q=90)\n![GSK](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F3X6XRKnOq7QBiqCUBUD3h0%2F0b37c659878dff10152677a24e361576%2FGSK-Logo-1.png&w=256&q=90)\n![HeyJobs](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F2UFLYnFIKLYAiFhiBk5a0O%2Fe1264a516d5750abc65b534cef8d0de6%2FHeyJobsLogo.webp&w=256&q=90)\n![Twilio](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F4mJPREmeknB6QXBMa5X9mq%2Ff31a0f2939e4c38390bb1c92c84b42e7%2FTwilio-logo-red.png&w=256&q=90)\n![Dropbox](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F54mM7a4VvL8UHuEQofLDBr%2Fe4fdf00b6f05c18e14f9f0273236b51a%2FDropbox_Wordmark_Graphite_128.png&w=384&q=90)\n![Omron](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F69or7DZTQOAQjrxNm0DLH4%2F105955fd37896f29be4b16fd8be1ab17%2FOmron_Logo.svg&w=384&q=90)\n![Allianz](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F3QUkwhuW4tZOONudOKNN2L%2F5122c7222ffc350f660647f893fce90b%2FAllianz.svg&w=256&q=90)\n![Amazon Web Services](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F4Vyd9muWf1SPLUKOBES9sO%2Fe8b125043c9a7d05c29441967b041202%2FAmazon_Web_Services_Logo__1__1.svg&w=128&q=90)\n![GSK](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F3X6XRKnOq7QBiqCUBUD3h0%2F0b37c659878dff10152677a24e361576%2FGSK-Logo-1.png&w=256&q=90)\n![HeyJobs](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F2UFLYnFIKLYAiFhiBk5a0O%2Fe1264a516d5750abc65b534cef8d0de6%2FHeyJobsLogo.webp&w=256&q=90)\n![Twilio](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F4mJPREmeknB6QXBMa5X9mq%2Ff31a0f2939e4c38390bb1c92c84b42e7%2FTwilio-logo-red.png&w=256&q=90)\n![Dropbox](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F54mM7a4VvL8UHuEQofLDBr%2Fe4fdf00b6f05c18e14f9f0273236b51a%2FDropbox_Wordmark_Graphite_128.png&w=384&q=90)\n![Omron](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F69or7DZTQOAQjrxNm0DLH4%2F105955fd37896f29be4b16fd8be1ab17%2FOmron_Logo.svg&w=384&q=90)\n![Allianz](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F3QUkwhuW4tZOONudOKNN2L%2F5122c7222ffc350f660647f893fce90b%2FAllianz.svg&w=256&q=90)\n![Amazon Web Services](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F4Vyd9muWf1SPLUKOBES9sO%2Fe8b125043c9a7d05c29441967b041202%2FAmazon_Web_Services_Logo__1__1.svg&w=128&q=90)\n![Amyris](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F4xRrU1rZyjGXQnGbm4BgmG%2Fd8980c13f6b6bf51692289fbd4ed0c68%2Flogo-amyris.svg&w=256&q=90)\n![FOX](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F4czllPMbRcY9pkMTkBZYOA%2F6903499943013fc95c5a214731a61147%2Ffox.avif&w=256&q=90)\n![Great Wolf Lodge](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F78UF9L01m0N5nzkrhZvxUC%2F69abb0ec12055b5eb9604971e1bbc347%2FGWL_Logo_white.png&w=96&q=90)\n![Happay](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F6jSUF7nN7EZvdbN52GbByS%2F347820d5c709643e075f79f202cff4e9%2FHappay.svg&w=256&q=90)\n![Zuora](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2FrbS5Zh2CbLxstgPo4HqVF%2F8fe08198e41e4c45270089867d247065%2FZuora.svg&w=384&q=90)\n![Bytedance](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F1dCzRO6uFNB194tOEeAQXc%2Fed848ef5bd698b08eaa066a474f92b49%2FByteDance_logo_English_1.svg&w=384&q=90)\n![Northeastern University](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F1ZLcYnhKnE8yGEeZjI9Ptq%2F0218b6d246079bb5acd958f9acf01e83%2FNortheastern_Wordmark_1.svg&w=256&q=90)\n![Amyris](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F4xRrU1rZyjGXQnGbm4BgmG%2Fd8980c13f6b6bf51692289fbd4ed0c68%2Flogo-amyris.svg&w=256&q=90)\n![FOX](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F4czllPMbRcY9pkMTkBZYOA%2F6903499943013fc95c5a214731a61147%2Ffox.avif&w=256&q=90)\n![Great Wolf Lodge](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F78UF9L01m0N5nzkrhZvxUC%2F69abb0ec12055b5eb9604971e1bbc347%2FGWL_Logo_white.png&w=96&q=90)\n![Happay](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F6jSUF7nN7EZvdbN52GbByS%2F347820d5c709643e075f79f202cff4e9%2FHappay.svg&w=256&q=90)\n![Zuora](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2FrbS5Zh2CbLxstgPo4HqVF%2F8fe08198e41e4c45270089867d247065%2FZuora.svg&w=384&q=90)\n![Bytedance](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F1dCzRO6uFNB194tOEeAQXc%2Fed848ef5bd698b08eaa066a474f92b49%2FByteDance_logo_English_1.svg&w=384&q=90)\n![Northeastern University](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F1ZLcYnhKnE8yGEeZjI9Ptq%2F0218b6d246079bb5acd958f9acf01e83%2FNortheastern_Wordmark_1.svg&w=256&q=90)\n![Amyris](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F4xRrU1rZyjGXQnGbm4BgmG%2Fd8980c13f6b6bf51692289fbd4ed0c68%2Flogo-amyris.svg&w=256&q=90)\n![FOX](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F4czllPMbRcY9pkMTkBZYOA%2F6903499943013fc95c5a214731a61147%2Ffox.avif&w=256&q=90)\n![Great Wolf Lodge](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F78UF9L01m0N5nzkrhZvxUC%2F69abb0ec12055b5eb9604971e1bbc347%2FGWL_Logo_white.png&w=96&q=90)\n![Happay](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F6jSUF7nN7EZvdbN52GbByS%2F347820d5c709643e075f79f202cff4e9%2FHappay.svg&w=256&q=90)\n![Zuora](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2FrbS5Zh2CbLxstgPo4HqVF%2F8fe08198e41e4c45270089867d247065%2FZuora.svg&w=384&q=90)\n![Bytedance](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F1dCzRO6uFNB194tOEeAQXc%2Fed848ef5bd698b08eaa066a474f92b49%2FByteDance_logo_English_1.svg&w=384&q=90)\n![Northeastern University](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F1ZLcYnhKnE8yGEeZjI9Ptq%2F0218b6d246079bb5acd958f9acf01e83%2FNortheastern_Wordmark_1.svg&w=256&q=90)\n![Amyris](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F4xRrU1rZyjGXQnGbm4BgmG%2Fd8980c13f6b6bf51692289fbd4ed0c68%2Flogo-amyris.svg&w=256&q=90)\n![FOX](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F4czllPMbRcY9pkMTkBZYOA%2F6903499943013fc95c5a214731a61147%2Ffox.avif&w=256&q=90)\n![Great Wolf Lodge](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F78UF9L01m0N5nzkrhZvxUC%2F69abb0ec12055b5eb9604971e1bbc347%2FGWL_Logo_white.png&w=96&q=90)\n![Happay](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F6jSUF7nN7EZvdbN52GbByS%2F347820d5c709643e075f79f202cff4e9%2FHappay.svg&w=256&q=90)\n![Zuora](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2FrbS5Zh2CbLxstgPo4HqVF%2F8fe08198e41e4c45270089867d247065%2FZuora.svg&w=384&q=90)\n![Bytedance](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F1dCzRO6uFNB194tOEeAQXc%2Fed848ef5bd698b08eaa066a474f92b49%2FByteDance_logo_English_1.svg&w=384&q=90)\n![Northeastern University](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F1ZLcYnhKnE8yGEeZjI9Ptq%2F0218b6d246079bb5acd958f9acf01e83%2FNortheastern_Wordmark_1.svg&w=256&q=90)"
+        },
+        {
+          "type": "section",
+          "title": "Build custom AI apps 80% faster",
+          "content": "Connect to LLMs, applications, and databases. Use built-in AI actions. Prompt or drag-and-drop UI components. Customize logic with JS. Manage and maintain with Git. Appsmith makes it easy to build anything.\nConnect\nBuild\nCustomize\nDeploy\nDatabase 24px"
+        },
+        {
+          "type": "section",
+          "title": "Connect",
+          "content": "Interact with any LLM, database, SaaS tool or REST/GraphQL API. Self host for secure access to internal data.\nLayout 24px"
+        },
+        {
+          "type": "section",
+          "title": "Build",
+          "content": "Use drag-and-drop widgets to quickly assemble responsive UI. Prompt your own widgets in natural language, or code them in JS/HTML/CSS.\nJsConsole 24px"
+        },
+        {
+          "type": "section",
+          "title": "Customize",
+          "content": "Automate workflows, manipulate appearance, and transform data with JS code or natural language prompts. Import your own JS libraries.\nJsConsole 24px"
+        },
+        {
+          "type": "section",
+          "title": "Deploy and maintain",
+          "content": "Version control and merge updates with Git. Automatically deploy merged changes from designated environment branches.\n[Explore the product](https://www.appsmith.com/)"
+        },
+        {
+          "type": "section",
+          "title": "Leading companies are"
+        },
+        {
+          "type": "section",
+          "title": "innovating with Appsmith",
+          "content": "From startups to enterprises, businesses are improving operations and increasing efficiency by building custom apps on Appsmith.\n[Reduce seat licenses\\\\\n\\\\\n![F22 Labs - Reduce seat licenses](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F7bhq1QmbdxGgYduaippMeL%2F87bda6a5022bd237a75a98c6c0ef247c%2FF22_Labs.jpg&w=3840&q=75)\\\\\n\\\\\n![F22 Labs - Homepage - Leading compnies section](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F6uw6uPety3tpeaaPitVKv%2F02f4ae95d1c45e40d673dbfa847a5dc3%2FF22Labs.png&w=96&q=75)\\\\\n\\\\\nF22 labssaved $1,200 a month by developing custom extensions to their project management platform.](https://www.appsmith.com/case-study/f22-labs) [Automate manual processes\\\\\n\\\\\n![GSK - Automate manual processes](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F6zOS759LTATXdoAC14We77%2F2db96359b7f90284327367ac50bda178%2FGSK.jpg&w=3840&q=75)\\\\\n\\\\\n![GSK Logo BW](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F41sa9pNxOnvX8Wk6BiItHI%2F95728a9049647db431d68b92a90c3e0b%2FGSK_logo_2022_1.svg&w=256&q=75)\\\\\n\\\\\nGSKbuilt an app to patch their fleet of 3,500 Linux servers in just one sprint.](https://www.appsmith.com/case-study/gsk) [Streamline customer support\\\\\n\\\\\n![Block - Streamline customer support](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F6dAKypDltjygE56PZgODFk%2F0679c440cf9d5917c3e6c00065e0e15e%2FBlock.jpg&w=3840&q=75)\\\\\n\\\\\n![Block - Logo - Homepage Leading companies section](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F1pjMwTlctsHUFmIq9ftEVw%2F96c4f0033a102cd7c5f7e086be17ccf3%2FBlock_1_.png&w=256&q=75)\\\\\n\\\\\nBlockprocesses new customer applications 50% faster.](https://www.appsmith.com/case-study/hifi) [Modernize legacy applications\\\\\n\\\\\n![HeyJobs - Modernize legacy applications](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F5qY5APftp6boFqncybcTV8%2Fb1b4b7493887d9a21b06aba491dd2c96%2FHey_Jobs.jpg&w=3840&q=75)\\\\\n\\\\\n![HeyJobs](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F2UFLYnFIKLYAiFhiBk5a0O%2Fe1264a516d5750abc65b534cef8d0de6%2FHeyJobsLogo.webp&w=256&q=75)\\\\\n\\\\\nHeyJobsadds new features to their campaign management and budgeting applications 90% faster.](https://www.appsmith.com/case-study/heyjobs)"
+        },
+        {
+          "type": "section",
+          "title": "Appsmith is a leader       in digital process automation and low-code development",
+          "content": "![G2 badges](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F6iAOFeSTd53faGRpcy0hci%2Fcf5475e583f9eed17890f332e7761536%2Fappsmith-spring-2025-badges.png&w=3840&q=75)\n![G2 stars](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2FxdFhRxgg3sQG1TBNLINph%2Fc471f295b5ad776658852e1c8d2e3e41%2Fg2stars.png&w=1920&q=75)\n4.7/5\n![ProductHunt Stars](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F2FAfc3K4cmTN3Ooq1WhUhE%2F20c1fe9ac512e007521838d3e98edbc2%2Fproducthuntstars.png&w=1920&q=75)\n4.9/5\n![Capterra badge](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F4PDhm9mk1ATrtCdnYKGWAt%2Fbb2e75d665db3c516cbf8a2bbcb057cc%2Fcapterra.webp&w=1920&q=75)\n5/5"
+        },
+        {
+          "type": "section",
+          "title": "Developer-first       low-code development",
+          "content": "Whether you’re prompting or coding, Appsmith offers full transparency and code-level control over every aspect of application development.\n[![low-code-development-with-built](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F51gJ6VN4fuGDM0aBArhDcI%2F482872895601a708875586689f079e09%2Flow-code-development-with-built.svg&w=1080&q=75)\\\\\n\\\\\n**Manage variables, functions, and logic in a centralized IDE** \\\\\n\\\\\nDon’t dribble code across individual widgets or workflow steps. Write reusable code blocks in an IDE with built-in auto-complete, multi-line editing, debugging, and linting.](https://docs.appsmith.com/advanced-concepts/embed-appsmith-into-existing-application)\n[![custom-widget-ai](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F4SLGxafwZo9HbSfxVVEidV%2F5f6dde0d899ec2417ab03c6df0cc971d%2FCustom_Widget_2x.webp&w=3840&q=75)\\\\\n\\\\\n**Use prompts to generate code, not abstractions** \\\\\n\\\\\nAppsmith’s copilots allow you to create custom widgets and workflow logic in code. Start with natural language, and easily customize generated code for full control.](https://docs.appsmith.com/getting-started/setup/instance-configuration/authentication)\n[![low-code-development-Open-source-edition-Apache](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F4Z806koP6th4sToFj8joPg%2Fc85f25add50c42f460da4c3d70972928%2FOpensource__1_.png&w=3840&q=75)\\\\\n\\\\\n**Fully maintained open-source edition under Apache 2.0 license** \\\\\n\\\\\nBuild with the transparency and security that comes with an open source solution. Appsmith Community Edition is fully maintained, community supported, and has a public roadmap.](https://www.appsmith.com/blog/appsmith-business-for-teams-who-need-more-for-their-internal-tools)\n[![low-code-development-git-intergration](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F3ThtiGkFMwyAvm0IAjDxSa%2F6c3f8fed3002595071ae9aa197dc5e0b%2FGit-intergration.svg&w=1080&q=75)\\\\\n\\\\\n**Integrate with Git to collaborate, manage versions, and merge updates** \\\\\n\\\\\nSync to a git repository, and use the same dev workflows. Designate dev/staging/prod environment branches, commit changes, review pull requests, and deploy with your CI/CD processes.](https://docs.appsmith.com/getting-started/setup)"
+        },
+        {
+          "type": "section",
+          "title": "Enterprise scale       security, and governance",
+          "content": "Deliver custom software lightning-fast with the user and access controls, compliance, uptime, and deployment options required for enterprise teams.\n![Self-hosting with air-gapped deployment options](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F7xrQSuPGmb6x3xYy2Cnnpu%2F8319e97be714b3e04c2a32053cd8e82a%2FSelf_host.svg&w=48&q=90)"
+        },
+        {
+          "type": "section",
+          "title": "Self-hosting with air-gapped deployment options",
+          "content": "Run any edition of Appsmith in your infrastructure.\n![Embeddable within existing apps with shared logins](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F73YfskABLjpmcA04TVWzzy%2F877a97249ae00d0fd8fac3ac941eafbe%2FEmbed.svg&w=48&q=90)"
+        },
+        {
+          "type": "section",
+          "title": "Embeddable within existing apps with shared logins",
+          "content": "Extend the functionality of your legacy and SaaS applications.\n![Open source under Apache 2.0 license](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F409R4wtv3oG7V19lX6axMI%2Ffeecae0ad1c8aa5ef8ed07eacb4804ca%2Fopen_source.svg&w=48&q=90)"
+        },
+        {
+          "type": "section",
+          "title": "Open source under Apache 2.0 license",
+          "content": "Build with high transparency and low vendor risk.\n![SAML and OIDC SSO](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F4ZQTu4WN8EyuBVZuNDySVL%2F08e407212a3b9d932e533c51249b91ff%2FSAML_and_OIDC_SSO.svg&w=48&q=90)"
+        },
+        {
+          "type": "section",
+          "title": "SAML and OIDC SSO",
+          "content": "Secure authentication and authorization with your login provider.\n![Role-based access controls](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F5hy39rh2ZtBEFGTdeikNPS%2F5ad46b6f41a386aa804986a1551d0e53%2FRole_based_access.svg&w=48&q=90)"
+        },
+        {
+          "type": "section",
+          "title": "Role-based access controls",
+          "content": "Customize granular roles, groups, and permissions.\n![SCIM-based user provisioning](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F6ibh8BibT4MsJ9P8FkAw9L%2F220b9100d9ae43021c03697ec9f4e324%2Fimport_users.svg&w=48&q=90)"
+        },
+        {
+          "type": "section",
+          "title": "SCIM-based user provisioning",
+          "content": "Import users and roles from your IdP.\n![Audit logging](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F2OBz3KLZ3F2GFzYTCcAi3K%2F70bdbc9e53f9ad8ef3c9329a737cd84d%2Faudit_logging.svg&w=48&q=90)"
+        },
+        {
+          "type": "section",
+          "title": "Audit logging",
+          "content": "Track organizational use and remediate issues.\n![SOC 2 Type II](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F4w6tw5qe5GlraNGnarDCY0%2Fa97ccf47c438c3be76a83a735d10f7f4%2FSOC2_type_2.svg&w=48&q=90)"
+        },
+        {
+          "type": "section",
+          "title": "SOC 2 Type II",
+          "content": "Proven security processes and controls.\n![Award-winning support](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F4LEbPoIipy6wJsecqNiY4O%2Ffec99155cb2a50927c1728c8b0e1a7e4%2Faward_winning_support.svg&w=48&q=90)"
+        },
+        {
+          "type": "section",
+          "title": "Award-winning support",
+          "content": "Development and deployment assistance with rapid response SLAs.\n### Appsmith is lightweight, fast, and developer-focused. It's easy to get started.\n[Get started for free](https://login.appsmith.com/) [Get a demo](https://www.appsmith.com/enterprise) [See pricing and plans](https://www.appsmith.com/pricing)\n![Conversion Panel](https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F7H0JO69qvMnaWyjVwT06NZ%2Fc12ccb59485642991f2d528a4d3d9204%2Fconversion_panel.webp&w=3840&q=75)"
+        }
+      ],
+      "images": [
+        "https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F3X6XRKnOq7QBiqCUBUD3h0%2F0b37c659878dff10152677a24e361576%2FGSK-Logo-1.png&amp;w=256&amp;q=90",
+        "https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F2UFLYnFIKLYAiFhiBk5a0O%2Fe1264a516d5750abc65b534cef8d0de6%2FHeyJobsLogo.webp&amp;w=256&amp;q=90",
+        "https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F4mJPREmeknB6QXBMa5X9mq%2Ff31a0f2939e4c38390bb1c92c84b42e7%2FTwilio-logo-red.png&amp;w=256&amp;q=90",
+        "https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F54mM7a4VvL8UHuEQofLDBr%2Fe4fdf00b6f05c18e14f9f0273236b51a%2FDropbox_Wordmark_Graphite_128.png&amp;w=384&amp;q=90",
+        "https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F69or7DZTQOAQjrxNm0DLH4%2F105955fd37896f29be4b16fd8be1ab17%2FOmron_Logo.svg&amp;w=384&amp;q=90",
+        "https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F3QUkwhuW4tZOONudOKNN2L%2F5122c7222ffc350f660647f893fce90b%2FAllianz.svg&amp;w=256&amp;q=90",
+        "https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F4Vyd9muWf1SPLUKOBES9sO%2Fe8b125043c9a7d05c29441967b041202%2FAmazon_Web_Services_Logo__1__1.svg&amp;w=128&amp;q=90",
+        "https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F3X6XRKnOq7QBiqCUBUD3h0%2F0b37c659878dff10152677a24e361576%2FGSK-Logo-1.png&amp;w=256&amp;q=90",
+        "https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F2UFLYnFIKLYAiFhiBk5a0O%2Fe1264a516d5750abc65b534cef8d0de6%2FHeyJobsLogo.webp&amp;w=256&amp;q=90",
+        "https://www.appsmith.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Flpvian6u6i39%2F4mJPREmeknB6QXBMa5X9mq%2Ff31a0f2939e4c38390bb1c92c84b42e7%2FTwilio-logo-red.png&amp;w=256&amp;q=90"
+      ]
+    }
+  ],
+  "assetsPolicy": {
+    "useOriginalImages": true,
+    "rewriteText": false
+  }
+}
