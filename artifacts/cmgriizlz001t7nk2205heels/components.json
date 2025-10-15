@@ -1,0 +1,49 @@
+{
+  "designDomain": "linear.app",
+  "designLanguage": "A refined and minimalist design system emphasizing clarity and efficiency. The dark theme creates focus while accent colors provide clear interaction points. Typography and spacing maintain strong hierarchy and readability. Components feature subtle depth through shadows and surface treatments.",
+  "components": [
+    {
+      "name": "Button",
+      "purpose": "Primary call-to-action component",
+      "description": "Interactive button component with multiple variants including primary, secondary, and ghost styles",
+      "keyStyles": [
+        "Border radius: 8px",
+        "Consistent padding: 12px 20px",
+        "Clear hover/active states",
+        "Icon support with 16px spacing"
+      ]
+    },
+    {
+      "name": "Card",
+      "purpose": "Container for grouped content",
+      "description": "Surface-level container with consistent padding and optional header/footer areas",
+      "keyStyles": [
+        "Background: surface color",
+        "Border radius: 8px",
+        "Padding: 24px",
+        "Optional border"
+      ]
+    },
+    {
+      "name": "Avatar",
+      "purpose": "User profile representation",
+      "description": "Circular image container for user avatars with fallback initials",
+      "keyStyles": [
+        "Border radius: 50%",
+        "Size variants: 24px, 32px, 40px",
+        "Fallback background color"
+      ]
+    },
+    {
+      "name": "Menu",
+      "purpose": "Dropdown and context menus",
+      "description": "Floating panel containing grouped actionable items",
+      "keyStyles": [
+        "Surface background",
+        "8px border radius",
+        "Subtle shadow",
+        "Item hover states"
+      ]
+    }
+  ]
+}
