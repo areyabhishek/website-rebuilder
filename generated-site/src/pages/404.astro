@@ -1,0 +1,446 @@
+---
+// 404 error page
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found | Ramp</title>
+  <meta name="description" content="Sorry, the page you're looking for doesn't exist. Let us help you find what you need.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #6366f1;
+      --primary-dark: #4f46e5;
+      --secondary: #ec4899;
+      --accent: #06b6d4;
+      --text-dark: #0f172a;
+      --text-gray: #475569;
+      --text-light: #94a3b8;
+      --bg-light: #f8fafc;
+      --bg-white: #ffffff;
+      --border: #e2e8f0;
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      color: var(--text-dark);
+      background: var(--bg-light);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Navigation */
+    .nav {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      font-family: 'Fraunces', serif;
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-gray);
+      font-weight: 500;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* Error Section */
+    .error-section {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 0;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .error-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1600&h=900&fit=crop') center/cover;
+      opacity: 0.1;
+    }
+
+    .error-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: white;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .error-code {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(8rem, 15vw, 12rem);
+      font-weight: 700;
+      line-height: 0.9;
+      background: linear-gradient(135deg, #ffffff, #e0e7ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+      opacity: 0.9;
+    }
+
+    .error-title {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2rem, 4vw, 2.5rem);
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .error-description {
+      font-size: 1.125rem;
+      margin-bottom: 3rem;
+      opacity: 0.9;
+      line-height: 1.7;
+    }
+
+    .error-actions {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(10px);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-3px);
+    }
+
+    /* Helpful Links */
+    .helpful-links {
+      padding: 4rem 0;
+      background: var(--bg-white);
+    }
+
+    .links-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .links-header h2 {
+      font-family: 'Fraunces', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+    }
+
+    .links-header p {
+      color: var(--text-gray);
+      font-size: 1.125rem;
+    }
+
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .link-card {
+      background: var(--bg-white);
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: var(--shadow-md);
+      transition: all 0.3s ease;
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .link-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .link-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: white;
+      margin: 0 auto 1.5rem;
+    }
+
+    .link-card h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+    }
+
+    .link-card p {
+      color: var(--text-gray);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .link-card a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .link-card a:hover {
+      color: var(--primary-dark);
+      transform: translateX(4px);
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      
+      .error-actions {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .btn {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+      }
+      
+      .links-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="/" class="logo">Ramp</a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/hc/en-us/search">Search</a></li>
+        <li><a href="/hc/en-us/articles/5506033900307-User-role-deep-dive-Assistant">User Roles</a></li>
+        <li><a href="/support/get-help">Get Help</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="error-section">
+    <div class="container">
+      <div class="error-content">
+        <div class="error-code">404</div>
+        <h1 class="error-title">Page Not Found</h1>
+        <p class="error-description">
+          Sorry, we couldn't find the page you're looking for. It might have been moved, deleted, or you entered the wrong URL.
+        </p>
+        <div class="error-actions">
+          <a href="/" class="btn btn-primary">
+            🏠 Go Home
+          </a>
+          <button onclick="history.back()" class="btn btn-secondary">
+            ← Go Back
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="helpful-links">
+    <div class="container">
+      <div class="links-header">
+        <h2>Let Us Help You Find What You Need</h2>
+        <p>Here are some popular resources that might be helpful</p>
+      </div>
+      
+      <div class="links-grid">
+        <div class="link-card fade-in">
+          <div class="link-icon">🔍</div>
+          <h3>Search Help Center</h3>
+          <p>Find answers to common questions and browse our knowledge base</p>
+          <a href="/hc/en-us/search">Search Now →</a>
+        </div>
+        
+        <div class="link-card fade-in">
+          <div class="link-icon">💬</div>
+          <h3>Get Support</h3>
+          <p>Contact our support team for personalized assistance with your account</p>
+          <a href="/support/get-help">Contact Support →</a>
+        </div>
+        
+        <div class="link-card fade-in">
+          <div class="link-icon">👥</div>
+          <h3>User Roles Guide</h3>
+          <p>Learn about different user roles and permissions in Ramp</p>
+          <a href="/hc/en-us/articles/5506033900307-User-role-deep-dive-Assistant">View Guide →</a>
+        </div>
+        
+        <div class="link-card fade-in">
+          <div class="link-icon">🎓</div>
+          <h3>Training Resources</h3>
+          <p>Access onboarding materials and learn how to use Ramp effectively</p>
+          <a href="/">Browse Resources →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Fade in animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationDelay = '0.2s';
+          entry.target.style.animationFillMode = 'forwards';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>

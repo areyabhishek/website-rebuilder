@@ -1,0 +1,689 @@
+---
+// Main page
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ramp | Financial Intelligence & Support</title>
+  <meta name="description" content="Transform your business finances with Ramp's intelligent platform. Get expert support, onboarding resources, and connect with our community.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #6366f1;
+      --primary-dark: #4f46e5;
+      --secondary: #ec4899;
+      --accent: #06b6d4;
+      --text-dark: #0f172a;
+      --text-gray: #475569;
+      --text-light: #94a3b8;
+      --bg-light: #f8fafc;
+      --bg-white: #ffffff;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      color: var(--text-dark);
+      background: var(--bg-light);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Navigation */
+    .nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      font-family: 'Fraunces', serif;
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-gray);
+      font-weight: 500;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--text-dark);
+      cursor: pointer;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('https://images.unsplash.com/photo-1551434678-e076c223a692?w=1600&h=900&fit=crop') center/cover;
+      opacity: 0.1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: white;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .hero h1 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, #ffffff, #e0e7ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1.1;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 2.5rem;
+      opacity: 0.95;
+      line-height: 1.7;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(10px);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-3px);
+    }
+
+    /* Features Section */
+    .features {
+      padding: 6rem 0;
+      background: var(--bg-white);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-header h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 600;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--text-dark), var(--text-gray));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .section-header p {
+      font-size: 1.125rem;
+      color: var(--text-gray);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .feature-card {
+      background: var(--bg-white);
+      padding: 2.5rem;
+      border-radius: 20px;
+      box-shadow: var(--shadow-md);
+      transition: all 0.4s ease;
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--accent), var(--secondary));
+    }
+
+    .feature-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .feature-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.75rem;
+      color: white;
+      margin-bottom: 1.5rem;
+    }
+
+    .feature-card h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+    }
+
+    .feature-card p {
+      color: var(--text-gray);
+      line-height: 1.7;
+    }
+
+    /* Articles Section */
+    .articles {
+      padding: 6rem 0;
+      background: var(--bg-light);
+    }
+
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .article-card {
+      background: var(--bg-white);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: all 0.4s ease;
+    }
+
+    .article-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .article-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .article-content {
+      padding: 2rem;
+    }
+
+    .article-tag {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    .article-card h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+
+    .article-card p {
+      color: var(--text-gray);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .read-more {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .read-more:hover {
+      color: var(--primary-dark);
+      transform: translateX(4px);
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--text-dark);
+      color: var(--text-light);
+      padding: 4rem 0 2rem;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-section h4 {
+      font-family: 'Fraunces', serif;
+      color: white;
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section a {
+      color: var(--text-light);
+      text-decoration: none;
+      transition: color 0.3s ease;
+      display: block;
+      padding: 0.25rem 0;
+    }
+
+    .footer-section a:hover {
+      color: var(--accent);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid #334155;
+      color: var(--text-light);
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      
+      .mobile-toggle {
+        display: block;
+      }
+      
+      .hero-content {
+        padding: 0 1rem;
+      }
+      
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .btn {
+        width: 100%;
+        max-width: 280px;
+      }
+      
+      .features-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      
+      .feature-card {
+        padding: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="/" class="logo">Ramp</a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/hc/en-us/search">Search</a></li>
+        <li><a href="/hc/en-us/articles/5506033900307-User-role-deep-dive-Assistant">User Roles</a></li>
+        <li><a href="/support/get-help">Get Help</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+      <button class="mobile-toggle">☰</button>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Transform Your Financial Intelligence</h1>
+        <p>Join thousands of businesses using Ramp's cutting-edge platform to streamline expenses, gain insights, and accelerate growth with our comprehensive support ecosystem.</p>
+        <div class="cta-buttons">
+          <a href="/support/get-help" class="btn btn-primary">Get Started</a>
+          <a href="/about" class="btn btn-secondary">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="container">
+      <div class="section-header">
+        <h2>Everything You Need to Succeed</h2>
+        <p>From onboarding to advanced features, we've got comprehensive resources to help you maximize your Ramp experience.</p>
+      </div>
+      
+      <div class="features-grid">
+        <div class="feature-card fade-in">
+          <div class="feature-icon">🚀</div>
+          <h3>Expert Onboarding</h3>
+          <p>Weekly Platform Overview sessions with Ramp experts to walk you through the platform and answer all your questions. Get up to speed quickly with role-based resources.</p>
+        </div>
+        
+        <div class="feature-card fade-in">
+          <div class="feature-icon">💡</div>
+          <h3>Seat Intelligence</h3>
+          <p>Gain instant visibility into your software usage with our advanced analytics. Identify inactive users and optimize costs with intelligent recommendations.</p>
+        </div>
+        
+        <div class="feature-card fade-in">
+          <div class="feature-icon">🌟</div>
+          <h3>Community Forum</h3>
+          <p>Connect with other customers and the Ramp team. Share best practices, get peer feedback, and stay updated on the latest features and improvements.</p>
+        </div>
+        
+        <div class="feature-card fade-in">
+          <div class="feature-icon">📚</div>
+          <h3>Partner Academy</h3>
+          <p>Comprehensive training resources with CPE credits available. Access specialized courses, certification programs, and professional development opportunities.</p>
+        </div>
+        
+        <div class="feature-card fade-in">
+          <div class="feature-icon">🛡️</div>
+          <h3>Policy Management</h3>
+          <p>Advanced policy controls and compliance tools to keep your organization secure. Set up intelligent rules and automate expense management workflows.</p>
+        </div>
+        
+        <div class="feature-card fade-in">
+          <div class="feature-icon">📊</div>
+          <h3>Admin Tools</h3>
+          <p>Powerful administrative features for account setup, user management, and financial oversight. Everything administrators need in one comprehensive guide.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="articles">
+    <div class="container">
+      <div class="section-header">
+        <h2>Popular Resources</h2>
+        <p>Explore our most helpful articles and guides to get the most out of Ramp.</p>
+      </div>
+      
+      <div class="articles-grid">
+        <article class="article-card fade-in">
+          <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop" alt="Admin Guide" class="article-image">
+          <div class="article-content">
+            <span class="article-tag">Admin Guide</span>
+            <h3>Ramp Administrator's Complete Guide</h3>
+            <p>Everything you need to set up and manage your Ramp account as an administrator. From initial setup to advanced features.</p>
+            <a href="#" class="read-more">Read More →</a>
+          </div>
+        </article>
+        
+        <article class="article-card fade-in">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" alt="Analytics" class="article-image">
+          <div class="article-content">
+            <span class="article-tag">Analytics</span>
+            <h3>Setting Up Seat Intelligence</h3>
+            <p>Learn how to connect Okta and gain insights into your software usage patterns to optimize costs and improve efficiency.</p>
+            <a href="/hc/en-us/articles/25529899967379-set-up-ramp-s-seat-intelligence" class="read-more">Read More →</a>
+          </div>
+        </article>
+        
+        <article class="article-card fade-in">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop" alt="Community" class="article-image">
+          <div class="article-content">
+            <span class="article-tag">Community</span>
+            <h3>Join Our Community Forum</h3>
+            <p>Connect with other Ramp users and team members. Share best practices, ask questions, and stay updated on new features.</p>
+            <a href="/hc/en-us/articles/41747368917523-ramp-community-forum-connect-with-other-customers-and-the-ramp-team" class="read-more">Read More →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="/hc/en-us/search">Help Center</a></li>
+            <li><a href="/support/get-help">Get Support</a></li>
+            <li><a href="#">Training Videos</a></li>
+            <li><a href="#">API Documentation</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Community</h4>
+          <ul>
+            <li><a href="#">Community Forum</a></li>
+            <li><a href="#">Partner Academy</a></li>
+            <li><a href="#">User Groups</a></li>
+            <li><a href="#">Events</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="/hc/en-us/articles/360049769034-ramp-s-terms-and-conditions">Terms</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="/support/get-help">Support</a></li>
+            <li><a href="#">Sales</a></li>
+            <li><a href="#">Partnerships</a></li>
+            <li><a href="#">Press Inquiries</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2024 Ramp. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Simple scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationDelay = '0.2s';
+          entry.target.style.animationFillMode = 'forwards';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Nav scroll effect
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+      const nav = document.querySelector('.nav');
+      
+      if (currentScroll > 100) {
+        nav.style.background = 'rgba(255, 255, 255, 0.98)';
+        nav.style.boxShadow = '0 4px 6px -1px rgb(0 0 0 / 0.1)';
+      } else {
+        nav.style.background = 'rgba(255, 255, 255, 0.95)';
+        nav.style.boxShadow = 'none';
+      }
+      
+      lastScroll = currentScroll;
+    });
+  </script>
+</body>
+</html>
