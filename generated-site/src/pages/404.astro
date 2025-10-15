@@ -1,0 +1,370 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Appsmith</title>
+    <meta name="description" content="The page you're looking for doesn't exist. Return to Appsmith to continue building amazing applications.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #FF6B35;
+            --secondary-color: #2B4F60;
+            --accent-color: #00C8FF;
+            --text-dark: #1a1a1a;
+            --text-light: #666;
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --gradient-primary: linear-gradient(135deg, #FF6B35 0%, #FF8E53 100%);
+            --gradient-secondary: linear-gradient(135deg, #00C8FF 0%, #0099CC 100%);
+            --gradient-mesh: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(0, 200, 255, 0.1) 100%);
+            --shadow-soft: 0 8px 32px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+            background: var(--gradient-mesh);
+        }
+        
+        /* 404 Container */
+        .error-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+        }
+        
+        .error-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=2125&q=80') center/cover;
+            opacity: 0.03;
+            z-index: -1;
+        }
+        
+        .error-content {
+            text-align: center;
+            max-width: 600px;
+            background: var(--bg-white);
+            padding: 4rem 3rem;
+            border-radius: 30px;
+            box-shadow: var(--shadow-hover);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .error-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: var(--gradient-primary);
+        }
+        
+        .error-number {
+            font-size: 8rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 2rem;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .error-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+        
+        .error-description {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            line-height: 1.7;
+        }
+        
+        .error-actions {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-soft);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-dark);
+            padding: 1rem 2.5rem;
+            border: 2px solid var(--text-dark);
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--text-dark);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        /* Floating Elements */
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            background: var(--gradient-secondary);
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .floating-element:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .floating-element:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            top: 20%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+        
+        .floating-element:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+        
+        .floating-element:nth-child(4) {
+            width: 100px;
+            height: 100px;
+            bottom: 15%;
+            right: 10%;
+            animation-delay: 1s;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-20px) rotate(90deg);
+            }
+            50% {
+                transform: translateY(-40px) rotate(180deg);
+            }
+            75% {
+                transform: translateY(-20px) rotate(270deg);
+            }
+        }
+        
+        /* Navigation Link */
+        .nav-home {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            z-index: 1000;
+        }
+        
+        .nav-home a {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-home a:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .error-content {
+                padding: 3rem 2rem;
+                margin: 1rem;
+            }
+            
+            .error-number {
+                font-size: 6rem;
+            }
+            
+            .error-title {
+                font-size: 2rem;
+            }
+            
+            .error-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .floating-element {
+                display: none;
+            }
+        }
+        
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        
+        /* Pulse animation for 404 number */
+        .pulse {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-home">
+        <a href="/">Appsmith</a>
+    </div>
+    
+    <div class="error-container">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        
+        <div class="error-content">
+            <div class="error-number pulse fade-in">404</div>
+            <h1 class="error-title fade-in delay-1">Page Not Found</h1>
+            <p class="error-description fade-in delay-2">
+                Oops! The page you're looking for seems to have wandered off into the digital wilderness. 
+                Don't worry though, our low-code platform is still here to help you build amazing applications.
+            </p>
+            <div class="error-actions fade-in delay-3">
+                <a href="/" class="btn-primary">Go Home</a>
+                <a href="javascript:history.back()" class="btn-secondary">Go Back</a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Add some interactive elements
+        document.addEventListener('DOMContentLoaded', () => {
+            // Create some sparkle effects
+            function createSparkle() {
+                const sparkle = document.createElement('div');
+                sparkle.style.position = 'fixed';
+                sparkle.style.width = '4px';
+                sparkle.style.height = '4px';
+                sparkle.style.background = '#FF6B35';
+                sparkle.style.borderRadius = '50%';
+                sparkle.style.pointerEvents = 'none';
+                sparkle.style.zIndex = '9999';
+                sparkle.style.left = Math.random() * window.innerWidth + 'px';
+                sparkle.style.top = Math.random() * window.innerHeight + 'px';
+                sparkle.style.opacity = '1';
+                sparkle.style.transition = 'all 2s ease-out';
+                
+                document.body.appendChild(sparkle);
+                
+                setTimeout(() => {
+                    sparkle.style.opacity = '0';
+                    sparkle.style.transform = 'translateY(-50px)';
+                    setTimeout(() => {
+                        document.body.removeChild(sparkle);
+                    }, 2000);
+                }, 100);
+            }
+            
+            // Create sparkles periodically
+            setInterval(createSparkle, 3000);
+            
+            // Add mouse movement interaction
+            document.addEventListener('mousemove', (e) => {
+                const errorNumber = document.querySelector('.error-number');
+                const rect = errorNumber.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+                
+                const deltaX = (e.clientX - centerX) / 50;
+                const deltaY = (e.clientY - centerY) / 50;
+                
+                errorNumber.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(1.05)`;
+            });
+        });
+    </script>
+</body>
+</html>
