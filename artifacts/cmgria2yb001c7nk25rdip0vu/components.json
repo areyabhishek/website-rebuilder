@@ -1,0 +1,38 @@
+{
+  "designDomain": "motherduck.com",
+  "designLanguage": "The MotherDuck design system emphasizes clarity and efficiency with a clean, professional aesthetic. It uses subtle shadows and rounded corners to create depth while maintaining readability. The color palette combines warm brand colors with neutral grays for a balanced, approachable look. Typography is clear and functional, prioritizing legibility across all screen sizes.",
+  "components": [
+    {
+      "name": "Button",
+      "purpose": "Primary call-to-action component",
+      "description": "Buttons communicate actions users can take. The primary button is used for the principal call to action.",
+      "keyStyles": [
+        "Rounded corners",
+        "Bold text",
+        "Consistent padding",
+        "Hover state feedback"
+      ]
+    },
+    {
+      "name": "Card",
+      "purpose": "Content container for related information",
+      "description": "Cards group related content and actions. They provide a consistent container for displaying information.",
+      "keyStyles": [
+        "Light background",
+        "Subtle shadow",
+        "Rounded corners",
+        "Consistent padding"
+      ]
+    },
+    {
+      "name": "Navigation",
+      "purpose": "Primary site navigation",
+      "description": "The main navigation provides consistent access to key sections of the site.",
+      "keyStyles": [
+        "Horizontal layout",
+        "Clear active states",
+        "Consistent spacing"
+      ]
+    }
+  ]
+}
