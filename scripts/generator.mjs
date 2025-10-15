@@ -187,7 +187,8 @@ async function generateSite({
 
   console.log(`Sending request to ${promptConfig.model}...`);
 
-  const message = await anthropic.messages.create({
+  // Use streaming to avoid 10-minute timeout
+  const stream = await anthropic.messages.stream({
     model: promptConfig.model,
     max_tokens: promptConfig.maxTokens,
     system: systemPrompt,
@@ -199,8 +200,16 @@ async function generateSite({
     ],
   });
 
-  let responseText =
-    message.content[0].type === "text" ? message.content[0].text : "";
+  // Collect the streamed response
+  let responseText = "";
+  for await (const chunk of stream) {
+    if (chunk.type === "content_block_delta" && chunk.delta.type === "text_delta") {
+      responseText += chunk.delta.text;
+    }
+  }
+
+  // Get final message for stop_reason
+  const message = await stream.finalMessage();
 
   console.log("Response received, parsing...");
 
