@@ -1,0 +1,307 @@
+{
+  "domain": "ramp.com",
+  "nav": [
+    {
+      "text": "Home",
+      "href": "/"
+    },
+    {
+      "text": "Search",
+      "href": "/hc/en-us/search"
+    },
+    {
+      "text": "5506033900307 User Role Deep Dive Assistant",
+      "href": "/hc/en-us/articles/5506033900307-User-role-deep-dive-Assistant"
+    },
+    {
+      "text": "Get Help",
+      "href": "/support/get-help"
+    },
+    {
+      "text": "CGsyNm9lVWhPeX5zaWQ6YmIzYzkwODMtNzYyNy00MWZiLTlmM2ItMWMzY2Y2YjlmYzU0",
+      "href": "/cGsyNm9lVWhPeX5zaWQ6YmIzYzkwODMtNzYyNy00MWZiLTlmM2ItMWMzY2Y2YjlmYzU0"
+    },
+    {
+      "text": "44072387128979 Policy Agent",
+      "href": "/hc/en-us/articles/44072387128979-Policy-agent"
+    }
+  ],
+  "pages": [
+    {
+      "url": "https://support.ramp.com",
+      "slug": "index",
+      "title": "Ramp",
+      "sections": [
+        {
+          "type": "hero",
+          "h1": "Ramp",
+          "sub": "",
+          "cta": "",
+          "content": "[Skip to main content](https://support.ramp.com/hc/en-us#main-content)"
+        },
+        {
+          "type": "section",
+          "title": "How can we help?",
+          "content": "![](https://support.ramp.com/hc/theming_assets/01HZKQ2BZX50KQE74TDSMZMNRT)![](https://support.ramp.com/hc/theming_assets/01HZKQ2DSZJ5MW0YEX9DWV49VM)"
+        },
+        {
+          "type": "section",
+          "title": "Check out our Onboarding Resources",
+          "content": "Come check out our weekly Platform Overview sessions, where a Ramp expert will walk through the platform and answer your questions, or browse our on-demand onboarding resources broken out by role and product.\n[Live training](https://ramp.com/webinars/onboarding?utm_source=hc&utm_term=header) [On-demand resources](https://ramp.com/training) [Community forum](https://community.ramp.com/)"
+        },
+        {
+          "type": "section",
+          "title": "Categories",
+          "content": "- [Getting started\\\\\n![](https://support.ramp.com/hc/theming_assets/01HZKQ2CXQ4V0RBR3H4X4TK7B6)\\\\\nEverything you need to set up your Ramp account](https://support.ramp.com/hc/en-us/categories/360002060114-Getting-started)\n- [About Ramp\\\\\n![](https://support.ramp.com/hc/theming_assets/01HZKQ2C3H0TDBAVMVE5JRKJZF)\\\\\nFind out more about joining Ramp](https://support.ramp.com/hc/en-us/categories/4408650449043-About-Ramp)\n- [Guides by topic\\\\\n![](https://support.ramp.com/hc/theming_assets/01HZKQ2CRJ23SNAFT58WCJKB38)\\\\\nFAQs and best practices for using the platform](https://support.ramp.com/hc/en-us/categories/4669349730963-Guides-by-topic)"
+        },
+        {
+          "type": "section",
+          "title": "Popular articles",
+          "content": "- Ramp Admin guide\nNote: This article primarily applies to Ramp Administrators.Cardholders may find Getting started as a User to be more applicable.\nWelcome!\nJump to:\nUnderstanding Ramp - financial basics\nYour Funds & cards dashboard\nSetting your Ramp expense poli...\n[Read more\\\\\n![](https://support.ramp.com/hc/theming_assets/01HZKQ2CM3TVZHN5G4FHSF34EN)](https://support.ramp.com/hc/en-us/articles/1500002005682-Ramp-Admin-guide)\n- Manage your communication preferences\nOverview\nRamp offers a comprehensive notification system that keeps you informed about various activities on the platform through SMS, email, and push notifications.\nNote: Some notifications are mandatory due to legal obligations, agreements, or r...\n[Read more\\\\\n![](https://support.ramp.com/hc/theming_assets/01HZKQ2CM3TVZHN5G4FHSF34EN)](https://support.ramp.com/hc/en-us/articles/1500001914421-Manage-your-communication-preferences)\n- Troubleshooting Ramp login issues\nOverview\nHaving trouble logging into Ramp? Follow these steps to get back on track.\nBefore you begin\nIf you are logging in for the first time, follow this guide.\nOtherwise, please make sure that you are using the correct login method: email and pa...\n[Read more\\\\\n![](https://support.ramp.com/hc/theming_assets/01HZKQ2CM3TVZHN5G4FHSF34EN)](https://support.ramp.com/hc/en-us/articles/1500005527981-Troubleshooting-Ramp-login-issues)\n- Bill payment methods and timelines\nOverviewAs the fastest bill payment product on the market, Bill Pay offers a variety of payment methods that ensure your vendors are paid fully and on time. You can also pay your bills with the assurance that we'll notify you if it looks like you'...\n[Read more\\\\\n![](https://support.ramp.com/hc/theming_assets/01HZKQ2CM3TVZHN5G4FHSF34EN)](https://support.ramp.com/hc/en-us/articles/4417836454419-Bill-payment-methods-and-timelines)\n- Ordering or requesting physical cards, virtual cards, and funds\nOverview\nWe understand that ordering a card or requesting funds is an important step in accessing Ramp's features and managing your expenses. We want to make this process as easy as possible. Below are instructions for ordering both physical cards...\n[Read more\\\\\n![](https://support.ramp.com/hc/theming_assets/01HZKQ2CM3TVZHN5G4FHSF34EN)](https://support.ramp.com/hc/en-us/articles/360055739074-Ordering-or-requesting-physical-cards-virtual-cards-and-funds)\n- Transaction declines\nOverview\nReceiving a message that your transaction has been declined can be frustrating and inconvenient. Below are some common reasons for transaction declines and steps you can take to address them.\nHow to View Declined Transactions\nAs a Card...\n[Read more\\\\\n![](https://support.ramp.com/hc/theming_assets/01HZKQ2CM3TVZHN5G4FHSF34EN)](https://support.ramp.com/hc/en-us/articles/360056379274-Transaction-declines)\n- Submitting receipts and memos for your Ramp funds\nOverview\nRamp offers multiple ways for you to submit receipts and memos for transactions on Ramp funds. The following article will cover submitting items for such transactions.\nPlease note that if you would like your company to reimburse you for s...\n[Read more\\\\\n![](https://support.ramp.com/hc/theming_assets/01HZKQ2CM3TVZHN5G4FHSF34EN)](https://support.ramp.com/hc/en-us/articles/360042588454-Submitting-receipts-and-memos-for-your-Ramp-funds)\n- Set up your spend approval policies\nNote: This article primarily applies to Ramp Administrators.Cardholders may find other articles in the Expense Policy and Receipts section to be more applicable.\nOverview\nApproval policies on Ramp govern the steps required to approve funds issuan...\n[Read more\\\\\n![](https://support.ramp.com/hc/theming_assets/01HZKQ2CM3TVZHN5G4FHSF34EN)](https://support.ramp.com/hc/en-us/articles/1500012376801-Set-up-your-spend-approval-policies)\n- Booking travel on Ramp: Employee guide\nWant to book a trip using Ramp Travel? You're in the right place!Want to book travel using Ramp funds and another travel platform? Read more here.\nOverview\nWe're excited to introduce Ramp Travel, your streamlined solution for business travel. With...\n[Read more\\\\\n![](https://support.ramp.com/hc/theming_assets/01HZKQ2CM3TVZHN5G4FHSF34EN)](https://support.ramp.com/hc/en-us/articles/28991294745491-Booking-travel-on-Ramp-Employee-guide)"
+        }
+      ],
+      "images": [
+        "https://support.ramp.com/hc/theming_assets/01HZKQ2BZX50KQE74TDSMZMNRT",
+        "https://support.ramp.com/hc/theming_assets/01HZKQ2DSZJ5MW0YEX9DWV49VM",
+        "https://support.ramp.com/hc/theming_assets/01HZKQ2CXQ4V0RBR3H4X4TK7B6",
+        "https://support.ramp.com/hc/theming_assets/01HZKQ2C3H0TDBAVMVE5JRKJZF",
+        "https://support.ramp.com/hc/theming_assets/01HZKQ2CRJ23SNAFT58WCJKB38",
+        "https://support.ramp.com/hc/theming_assets/01HZKQ2CM3TVZHN5G4FHSF34EN",
+        "https://support.ramp.com/hc/theming_assets/01HZKQ2CM3TVZHN5G4FHSF34EN",
+        "https://support.ramp.com/hc/theming_assets/01HZKQ2CM3TVZHN5G4FHSF34EN",
+        "https://support.ramp.com/hc/theming_assets/01HZKQ2CM3TVZHN5G4FHSF34EN",
+        "https://support.ramp.com/hc/theming_assets/01HZKQ2CM3TVZHN5G4FHSF34EN"
+      ]
+    },
+    {
+      "url": "https://support.ramp.com/hc/en-us/articles/44963024684051-Ramp-Partner-Academy-Overview-and-FAQs",
+      "slug": "hc-en-us-articles-44963024684051-ramp-partner-academy-overview-and-faqs",
+      "title": "Ramp Partner Academy: Overview and FAQs – Ramp",
+      "sections": [
+        {
+          "type": "section",
+          "title": "Overview",
+          "content": "[Skip to main content](https://support.ramp.com/hc/en-us/articles/44963024684051-Ramp-Partner-Academy-Overview-and-FAQs#main-content)\n![](https://support.ramp.com/hc/theming_assets/01HZKQ2DSZJ5MW0YEX9DWV49VM)\nThe Ramp Partner Academy is available for partners who have signed up and onboarded to [Ramp's partner program](https://ramp.com/partnerships). The Academy consists of courses, certifications, and other enablement materials to help partners become proficient with using, implementing, and supporting Ramp for their clients."
+        },
+        {
+          "type": "section",
+          "title": "Frequently Asked Questions (FAQs)",
+          "content": "**Can customers access the Partner Academy?**Customers can access [training videos and resources available at ramp.com/training](https://www.ramp.com/training), [support articles in the Help Center](https://support.ramp.com/hc/en-us), and [videos on Ramp's YouTube channel](https://www.youtube.com/@tryramp). The Partner Academy is designed solely for Ramp's partners.\n**How can partners access the Ramp Partner Academy?**Partners should log in to the Advisor Console, and they'll see a link to the Ramp Partner Academy in the left navigation bar.\n**Will more courses be added?**Yes! The Partner Academy team is committed to adding new courses and certifications based on our partners' feedback and evolving needs.\n**How can partners share feedback?**They can reach out to their partner manager, share their thoughts via the post-course surveys, or [use this feedback form](https://a.sprig.com/cGsyNm9lVWhPeX5zaWQ6MDRjMWE2N2EtYzQ5My00NTI5LTkzMDYtNzkzMDdmYTE2NzFm) to provide feedback.\n**If a partner completes a course, do they get a certificate?**Yes, partners receive a certificate of completion for courses and certifications."
+        },
+        {
+          "type": "section",
+          "title": "Continuing Professional Education (CPE) Credit Questions",
+          "content": "**How do I earn CPE credits through the Ramp Partner Academy?**\nTo earn CPE credits, you must complete eligible courses in their entirety. This includes completing all required training modules, passing all required assessments, and completing any mandatory evaluations or surveys. Once these steps are completed, your CPE certificate will be issued automatically.\n**Which Ramp Partner Academy courses offer CPE credits?**\nOnly certain courses are accredited for CPE. You’ll see a CPE reference in the course descriptions and on the thumbnail images. We’re continuously expanding our catalog, so check regularly for newly accredited courses.\n**Can I receive CPE credit for courses I completed before this program launched?**\nNo. Unfortunately, CPE credits are only issued for eligible courses completed after the launch of the CPE program. If you wish to earn credits, you will need to retake the course from the beginning to earn the CPE credit.\n**How do I access my CPE certificate once I complete a course?**\nAfter completing all course requirements, you’ll receive an email with your certificate of completion. You can also download your CPE certificate directly from your Partner Academy profile in the Credentials section.\n**Are the CPE credits issued by Ramp accepted by NASBA?**\nYes. Ramp is a registered sponsor with NASBA, and all CPE-accredited courses comply with NASBA’s standards. Once you’ve completed a course, your credits will be valid for reporting to your state licensing board, assuming they recognize NASBA-accredited providers (which most do).\n**How often will new CPE courses be added to the Partner Academy?**\nWe aim to continuously expand our CPE offerings. New courses will be announced in the Partner Academy and via our Partner Newsletter. If there’s a topic you’d like to see covered, [let us know](https://app.ramp.com/support/get-help)!\n**What if I experience issues with my CPE certificate or credit eligibility?**\nIf you believe there’s been an error in your course completion or certificate issuance, please [contact us here](https://app.ramp.com/support/get-help). Include your course name, completion date, and account email to help us resolve it quickly.\nWas this article helpful?\nYesNo\nWe're sorry to hear that.\n[Please share your feedback on this article here](https://a.sprig.com/cGsyNm9lVWhPeX5zaWQ6YmIzYzkwODMtNzYyNy00MWZiLTlmM2ItMWMzY2Y2YjlmYzU0?articleID=/hc/en-us/articles/44963024684051-Ramp-Partner-Academy-Overview-and-FAQs&userID=&userName=&userRole=)\nStill need help? [Reach our support team here](https://app.ramp.com/support/get-help)"
+        }
+      ],
+      "images": [
+        "https://support.ramp.com/hc/theming_assets/01HZKQ2DSZJ5MW0YEX9DWV49VM"
+      ]
+    },
+    {
+      "url": "https://support.ramp.com/hc/en-us/articles/41747368917523-Ramp-Community-Forum-Connect-with-other-customers-and-the-Ramp-team",
+      "slug": "hc-en-us-articles-41747368917523-ramp-community-forum-connect-with-other-customers-and-the-ramp-team",
+      "title": "Ramp Community Forum → Connect with other customers and the Ramp team – Ramp",
+      "sections": [
+        {
+          "type": "section",
+          "title": "Overview",
+          "content": "[Skip to main content](https://support.ramp.com/hc/en-us/articles/41747368917523-Ramp-Community-Forum-Connect-with-other-customers-and-the-Ramp-team#main-content)\n![](https://support.ramp.com/hc/theming_assets/01HZKQ2DSZJ5MW0YEX9DWV49VM)\nThe [Ramp Community Forum](http://community.ramp.com/) is an online space designed to bring Ramp customers and team members together to:\n- Drive Product Engagement: Help users maximize the value of Ramp's features.\n- Enable Community Support: Foster peer-to-peer learning and troubleshooting.\n- Foster Customer Advocacy: Build a network of engaged, enthusiastic Ramp users.\n**Please note:** The Community Forum is not a support center. For account or technical issues, please contact Ramp Support."
+        },
+        {
+          "type": "section",
+          "title": "What is the Virtual Community Forum?",
+          "content": "A dedicated space for live, ongoing conversations between Ramp users and Ramp employees. It allows customers to:\n- Share best practices and workflow tips\n- Ask and answer product questions\n- Provide feedback on Ramp features\n- Connect and build relationships with other customers and the Ramp team."
+        },
+        {
+          "type": "section",
+          "title": "Here’s how to get started…",
+          "content": "1. **Access the Forum** → Login using your _same Ramp email & password_\n2. **Set Up Your Profile** → Add a profile picture and fill in any user details\n   - [Introduce yourself in the introductory thread!](https://community.ramp.com/t/new-here-introduce-yourself-in-this-thread/92/114)\n3. **Explore Topics**   - Browse existing discussions to see what others are talking about\n   - Use the search bar to quickly locate topics, keywords, or specific questions\n4. **Join the Conversation**   - Click “New Post” to start a discussion\n   - Respond to other users’ posts with comments, answers, or suggestions\n   - Share your best practices, experiences, and Ramp tips.\n5. **Follow Topics**   - Subscribe to threads or categories to get email updates and stay engaged with conversations that matter to you.\n6. **Engage Respectfully**   - Follow Community Guidelines to ensure a respectful and productive environment for all."
+        },
+        {
+          "type": "section",
+          "title": "What the Forum is",
+          "content": "- A place for customers to ask questions and get peer feedback.\n- A space for sharing best practices and how-tos.\n- A community that supplements the work of Ramp’s CX, CSM, and AM teams.\n- An opportunity to connect directly with other Ramp customers and staff."
+        },
+        {
+          "type": "section",
+          "title": "What the Forum is not",
+          "content": "- A technical or account support center (contact Ramp Support instead).\n- A replacement for your dedicated Customer Success or Account Manager.\n- A place for unproductive rants—we encourage constructive feedback."
+        },
+        {
+          "type": "section",
+          "title": "Who can join?",
+          "content": "All Ramp customers and Ramp team members are welcome!\nWhether you’re a finance leader, operations manager, or cardholder, the Forum is here to help you maximize Ramp.\n**The following tags apply to this article:**\n- [Admin](https://support.ramp.com/hc/en-us/search?content_tags=01HT5ZT220D4CR704YSY7VP405&utf8=%E2%9C%93 \"Search results\")\n- [Employee](https://support.ramp.com/hc/en-us/search?content_tags=01HT619YX13BJY8CSWDME8JP04&utf8=%E2%9C%93 \"Search results\")\n- [Bookkeeper](https://support.ramp.com/hc/en-us/search?content_tags=01HT61EQ3CXSCH30PFSQTK2YFP&utf8=%E2%9C%93 \"Search results\")\n- [AP Clerk](https://support.ramp.com/hc/en-us/search?content_tags=01J5CHXP35B9FC4AQNFYSMVWDJ&utf8=%E2%9C%93 \"Search results\")\nWas this article helpful?\nYesNo\nWe're sorry to hear that.\n[Please share your feedback on this article here](https://a.sprig.com/cGsyNm9lVWhPeX5zaWQ6YmIzYzkwODMtNzYyNy00MWZiLTlmM2ItMWMzY2Y2YjlmYzU0?articleID=/hc/en-us/articles/41747368917523-Ramp-Community-Forum-Connect-with-other-customers-and-the-Ramp-team&userID=&userName=&userRole=)\nStill need help? [Reach our support team here](https://app.ramp.com/support/get-help)"
+        }
+      ],
+      "images": [
+        "https://support.ramp.com/hc/theming_assets/01HZKQ2DSZJ5MW0YEX9DWV49VM"
+      ]
+    },
+    {
+      "url": "https://support.ramp.com/hc/en-us/articles/25529899967379-Set-up-Ramp-s-seat-intelligence",
+      "slug": "hc-en-us-articles-25529899967379-set-up-ramp-s-seat-intelligence",
+      "title": "Set up Ramp's seat intelligence – Ramp",
+      "sections": [
+        {
+          "type": "section",
+          "title": "![](https://slabstatic.com/prod/uploads/ycse2gaa/posts/images/sbmNB8A49M9qxQgZk0NMaR0J.svg)",
+          "content": "[Skip to main content](https://support.ramp.com/hc/en-us/articles/25529899967379-Set-up-Ramp-s-seat-intelligence#main-content)\n![](https://support.ramp.com/hc/theming_assets/01HZKQ2DSZJ5MW0YEX9DWV49VM)"
+        },
+        {
+          "type": "section",
+          "title": "Overview",
+          "content": "Ramp’s Seat Intelligence provides instant visibility into your software usage so you can identify inactive users to reduce costs. Early access is now available for Okta users.\n**Jump to:**\n- [Overview](https://support.ramp.com/hc/en-us/articles/25529899967379-Set-up-Ramp-s-seat-intelligence#h_01HMYECM0HWDPBQD93DRTHP70P)\n- [Connect Ramp to Okta](https://support.ramp.com/hc/en-us/articles/25529899967379-Set-up-Ramp-s-seat-intelligence#h_01HMYKYDJ8DD1M77QJAWMDHP0R)\n- [View app usage data](https://support.ramp.com/hc/en-us/articles/25529899967379-Set-up-Ramp-s-seat-intelligence#h_01HMYP3Q9FAK5BTNW2FDSC19BY)"
+        },
+        {
+          "type": "section",
+          "title": "Connect Ramp to Okta",
+          "content": "Go to **Insights > [Seat Intelligence](https://app.ramp.com/seat-intelligence)** to connect your Okta account. You must be an Admin, IT Admin, or Bookkeeper to access this feature.\n1. Create a new service account by going to **Okta > Directory > People > Add person**.\n2. Go to **Security > Administrators**. Click **\\+ Add administrator**.\n3. Select the service account that you created. Under role, choose **Read-only Administrator**.\n4. Log in as the newly created Administrator account. Go to **Security > API tokens**. Click **create API key**.\n5. Name your token and click **create token**. Input your token value in the Ramp screen.\n6. Lastly, provide your **Okta URL**.\nWe only use this API token to query when users log in to Okta apps and for no other purposes.\nAfter you click **Connect to Okta**, our system will fetch information to visualize usage data in the Ramp dashboard. **This may take up to 2 hours**, please circle back later to see your information."
+        },
+        {
+          "type": "section",
+          "title": "View app usage data![Screenshot 2025-06-10 at 9.29.56 PM.png](https://support.ramp.com/hc/article_attachments/42069949381651)",
+          "content": "1. We calculate \"Active seats\" by looking at the last date the user signed in via Okta. If they have used the app in the past 30 days, we'll count the user as active.\n2. You can view all of your Okta apps with more than 30% utilization. If it's lower than this threshold, the app may not require re-authentication with Okta.\n3. Click on the individual app to see the list of active and inactive users and their last sign-in date. You can also export this data into CSV.\n4. During the import, we'll match Okta apps with the Vendors that you have on Ramp. We'll pull in the spend information so you can identify potential cost savings. You can always update the mapping to Ramp Vendors by clicking on each app.\n[Please send any feedback using this form.](https://app.ramp.com/support/submit-ticket) We're continuing to make improvements to this feature to make it more useful for your team to identify unused software spend.\n**The following tags apply to this article:**\n- [Admin](https://support.ramp.com/hc/en-us/search?content_tags=01HT5ZT220D4CR704YSY7VP405&utf8=%E2%9C%93 \"Search results\")\n- [Intelligence](https://support.ramp.com/hc/en-us/search?content_tags=01J83EYTBJNACY0NJDW9H65F4B&utf8=%E2%9C%93 \"Search results\")\n- [Seats](https://support.ramp.com/hc/en-us/search?content_tags=01J83F9N2XTC8ANBDTNQFMK6WQ&utf8=%E2%9C%93 \"Search results\")\nWas this article helpful?\nYesNo\nWe're sorry to hear that.\n[Please share your feedback on this article here](https://a.sprig.com/cGsyNm9lVWhPeX5zaWQ6YmIzYzkwODMtNzYyNy00MWZiLTlmM2ItMWMzY2Y2YjlmYzU0?articleID=/hc/en-us/articles/25529899967379-Set-up-Ramp-s-seat-intelligence&userID=&userName=&userRole=)\nStill need help? [Reach our support team here](https://app.ramp.com/support/get-help)"
+        }
+      ],
+      "images": [
+        "https://support.ramp.com/hc/theming_assets/01HZKQ2DSZJ5MW0YEX9DWV49VM",
+        "https://slabstatic.com/prod/uploads/ycse2gaa/posts/images/sbmNB8A49M9qxQgZk0NMaR0J.svg",
+        "https://support.ramp.com/hc/article_attachments/42069949381651"
+      ]
+    },
+    {
+      "url": "https://support.ramp.com/hc/en-us/articles/360049769034-Ramp-s-terms-and-conditions",
+      "slug": "hc-en-us-articles-360049769034-ramp-s-terms-and-conditions",
+      "title": "Ramp's terms and conditions – Ramp",
+      "sections": [
+        {
+          "type": "section",
+          "title": "Overview",
+          "content": "[Skip to main content](https://support.ramp.com/hc/en-us/articles/360049769034-Ramp-s-terms-and-conditions#main-content)\n![](https://support.ramp.com/hc/theming_assets/01HZKQ2DSZJ5MW0YEX9DWV49VM)\n**Note: This article primarily applies to Ramp Administrators.**\nCardholders may find other articles in the [Ramp overview](https://support.ramp.com/hc/en-us/articles/4417685250195-Ramp-Overview) section to be more applicable.\nFor complete details on Ramp's legal terms and conditions, please refer to our [Platform Agreement](https://ramp.com/legal/platform-agreement). This document contains all the necessary information regarding the use of Ramp's services and your obligations as a user.\n**The following tags apply to this article:**\n- [Admin](https://support.ramp.com/hc/en-us/search?content_tags=01HT5ZT220D4CR704YSY7VP405&utf8=%E2%9C%93 \"Search results\")\n- [Terms and conditions](https://support.ramp.com/hc/en-us/search?content_tags=01J80N38Z85YF9TTYW29WVFJ35&utf8=%E2%9C%93 \"Search results\")\nWas this article helpful?\nYesNo\nWe're sorry to hear that.\n[Please share your feedback on this article here](https://a.sprig.com/cGsyNm9lVWhPeX5zaWQ6YmIzYzkwODMtNzYyNy00MWZiLTlmM2ItMWMzY2Y2YjlmYzU0?articleID=/hc/en-us/articles/360049769034-Ramp-s-terms-and-conditions&userID=&userName=&userRole=)\nStill need help? [Reach our support team here](https://app.ramp.com/support/get-help)"
+        }
+      ],
+      "images": [
+        "https://support.ramp.com/hc/theming_assets/01HZKQ2DSZJ5MW0YEX9DWV49VM"
+      ]
+    },
+    {
+      "url": "https://support.ramp.com/hc/en-us/articles/5506033900307-User-role-deep-dive-Assistant",
+      "slug": "hc-en-us-articles-5506033900307-user-role-deep-dive-assistant",
+      "title": "User role deep-dive: Assistant – Ramp",
+      "sections": [
+        {
+          "type": "section",
+          "title": "Overview",
+          "content": "[Skip to main content](https://support.ramp.com/hc/en-us/articles/5506033900307-User-role-deep-dive-Assistant#main-content)\n![](https://support.ramp.com/hc/theming_assets/01HZKQ2DSZJ5MW0YEX9DWV49VM)\nThe Assistant role is for an individual (e.g. an Executive Assistant) to perform certain tasks on behalf of another user (e.g. an Executive). The Assistant role is not a distinct user role on Ramp, it is a permission that can be appended to an account.\n**Jump to:**\n- [What can the Assistant user do?](https://support.ramp.com/hc/en-us/articles/5506033900307-User-role-deep-dive-Assistant#h_01G4DJ76WBY63TWSRSKXCWD0CK)\n- [What notifications will the Assistant receive?](https://support.ramp.com/hc/en-us/articles/5506033900307-User-role-deep-dive-Assistant#h_01G8HEG60SY6M6F9083WNT5DT7)\n- [What can the Assistant user see?](https://support.ramp.com/hc/en-us/articles/5506033900307-User-role-deep-dive-Assistant#h_01G4DJ7NR98SGQBD77KE42RGBN)\n- [Who can assign themselves an Assistant?](https://support.ramp.com/hc/en-us/articles/5506033900307-User-role-deep-dive-Assistant#h_01G4DJ82FH8SY6J4N3FJMQWCC7)\n- [Who can be an Assistant?](https://support.ramp.com/hc/en-us/articles/5506033900307-User-role-deep-dive-Assistant#h_01G4DJ87A75R9M5S9YM2APD006)\n- [How do I assign my Assistant?](https://support.ramp.com/hc/en-us/articles/5506033900307-User-role-deep-dive-Assistant#h_01G4DJ8D34PD9PJTX9PXB7EQES)\n- [As an Admin user, how do I assign Assistants to others?](https://support.ramp.com/hc/en-us/articles/5506033900307-User-role-deep-dive-Assistant#h_01G4DJ8MPTDW6B0ZHC3KBR0REF)\n- [I'm an Assistant, how do I view my manager's transactions?](https://support.ramp.com/hc/en-us/articles/5506033900307-User-role-deep-dive-Assistant#h_01G4DJ8WZEJ1FEK1MF19Q0FB3E)\n- [Audit trail of Assistant edits](https://support.ramp.com/hc/en-us/articles/5506033900307-User-role-deep-dive-Assistant#h_01G4DJ94YTJ33KZFR7J8AFYD3J)\n### What can the Assistant user do?\nAssistants can do the following on behalf of their assigned user(s):\n- View transactions\n- Submit receipts\n- Fill out the transaction memo\n- Code accounting fields that are required by their **Expense Policy**\n- Submit/edit reimbursements\n- Request policy exceptions or add attendees\n- Book travel _(only if_ [_Ramp Travel_](https://app.ramp.com/settings/expense-policy/travel-rules?tab=Settings) _is enabled for all employees)_\n- Edit traveler profile _(only if_ [_Ramp Travel_](https://app.ramp.com/settings/expense-policy/travel-rules?tab=Settings) _is enabled for all employees)_\n**Notable limitations at this time:**\n- Assistants can create reimbursements on behalf of their assigned user(s), but they cannot add personal bank accounts on their behalf. Each user must link their own bank account. See our [How do I add/change my personal bank account details?](https://support.ramp.com/hc/en-us/articles/1500001353082-How-do-I-add-change-my-personal-bank-account-details) article for more.\n- Assistants will not be able to create trips on behalf of their assigned user(s)\n- If an Assistant forwards a receipt on behalf of their assigned user to [receipts@ramp.com,](mailto:receipts@ramp.com,) Ramp first searches for matching transactions among the Assistant's own transactions. If no match is found, Ramp will then search the transactions of the user(s) the Assistant is assigned to.\n### What notifications will the Assistant receive?\nAssistants will receive their assigned user's action items (such as missing business items) along with their action items in the weekly digest.\nThe assigned user/executive may set filters to automatically forward emails (receipts/memos/coding) to their Assistant. For example, setting the Gmail filters:\n`from: ` `[communications@ramp.com](mailto:communications@ramp.com)`\n`subject contains \"missing\"`\n`auto-forward: assistant email`\n### What can the Assistant user see?\nThe Assistant can see the transactions and related information for the user(s) who have assigned them as Assistant.\nAssistants are **not** able to see activity beyond their designated scope, such as card numbers and the transactions of other users that the user(s) they're assisting can see, even if they are assigned to an Admin user.\nAssistants will also be notified of their manager's missing items in their weekly \"Missing Items\" email.\n### Who can assign themselves an Assistant?\nAny user can assign one or more Assistant users to their Ramp account. One user can have multiple Assistants. Admins can assign any user as an Assistant to any other user on Ramp.\n### Who can be an Assistant?\nAny user can be granted Assistant permissions. Additionally, a user can be assigned as an Assistant to multiple other users.\n### How do I assign my Assistant?\nIf you are a Ramp user, you can assign your own Assistant by following these steps:\n1. Visit [Profile (top right) > My Settings > Delegation tab](https://app.ramp.com/settings/personal-settings/delegation)\n2. Click on the Assistant Role, begin typing the name of your assistant\n3. Click on the user you want to assign, and you're done\n### As an Admin user, how do I assign Assistants to others?\nIf you are an Admin, you can assign Assistants to other users by following these steps:\n1. Visit the [People tab](https://app.ramp.com/people/all) on the left side, your Ramp dashboard\n2. Select the user who needs an Assistant assigned to them, then click **Edit Profile**\n3. Click on the Company tab of **Edit Profile** drawer and begin typing the Assistant's name in the \" **Assistants**\" field\n4. Click on the Assistant you want to assign, and you're done!\n![assistant.png](https://support.ramp.com/hc/article_attachments/31127174190739)\n### I'm an Assistant, how do I view my manager's transactions?\nClick Profile on the top right. You'll now have a section titled \"View as...\" with your name and names of colleagues who you are an Assistant for in Ramp. Click on your colleague's name to view your colleague's Ramp account as their Assistant.\n![](https://support.ramp.com/hc/article_attachments/44666459887251)\n### Lastly, we will keep an audit trail of your Assistant's edits to your transactions:\n![yIqX8lbx6Jqy3lDWmG8OBSAU.png](https://support.ramp.com/hc/article_attachments/42920913016851)\n**The following tags apply to this article:**\n- [Admin](https://support.ramp.com/hc/en-us/search?content_tags=01HT5ZT220D4CR704YSY7VP405&utf8=%E2%9C%93 \"Search results\")\n- [Employee](https://support.ramp.com/hc/en-us/search?content_tags=01HT619YX13BJY8CSWDME8JP04&utf8=%E2%9C%93 \"Search results\")\n- [Manager](https://support.ramp.com/hc/en-us/search?content_tags=01HT61YWZ8KDABXW1HPKTPC72K&utf8=%E2%9C%93 \"Search results\")\n- [User management](https://support.ramp.com/hc/en-us/search?content_tags=01J80JW1CYT5KKQ31BSEJ182D6&utf8=%E2%9C%93 \"Search results\")\n- [Copilot](https://support.ramp.com/hc/en-us/search?content_tags=01J80NJ39PWC3B2943PVSQ9M93&utf8=%E2%9C%93 \"Search results\")\n- [Assistant](https://support.ramp.com/hc/en-us/search?content_tags=01J80NJ97YX2YKCEJF5AHVCZ1B&utf8=%E2%9C%93 \"Search results\")\nWas this article helpful?\nYesNo\nWe're sorry to hear that.\n[Please share your feedback on this article here](https://a.sprig.com/cGsyNm9lVWhPeX5zaWQ6YmIzYzkwODMtNzYyNy00MWZiLTlmM2ItMWMzY2Y2YjlmYzU0?articleID=/hc/en-us/articles/5506033900307-User-role-deep-dive-Assistant&userID=&userName=&userRole=)\nStill need help? [Reach our support team here](https://app.ramp.com/support/get-help)"
+        }
+      ],
+      "images": [
+        "https://support.ramp.com/hc/theming_assets/01HZKQ2DSZJ5MW0YEX9DWV49VM",
+        "https://support.ramp.com/hc/article_attachments/31127174190739",
+        "https://support.ramp.com/hc/article_attachments/44666459887251",
+        "https://support.ramp.com/hc/article_attachments/42920913016851"
+      ]
+    },
+    {
+      "url": "https://support.ramp.com/hc/en-us/articles/44072387128979-Policy-agent",
+      "slug": "hc-en-us-articles-44072387128979-policy-agent",
+      "title": "Policy agent – Ramp",
+      "sections": [
+        {
+          "type": "hero",
+          "h1": "**Policy agent ![Plus (1).svg](https://support.ramp.com/hc/article_attachments/44077947190675)![EarlyAccessBadge.png](https://support.ramp.com/hc/article_attachments/44182895122323)**",
+          "sub": "",
+          "cta": "",
+          "content": "[Skip to main content](https://support.ramp.com/hc/en-us/articles/44072387128979-Policy-agent#main-content)\n![](https://support.ramp.com/hc/theming_assets/01HZKQ2DSZJ5MW0YEX9DWV49VM)\nThe Policy agent is Ramp’s AI reviewer that applies your expense policy to every card transaction and reimbursement. It helps enforce compliance, reduce manual reviews, and give employees clear answers on what’s in-policy vs not.\nPlus customers can now access the agent by going to their [Early Access tab](https://app.ramp.com/settings/company-settings/early-access) and toggling it on! If you’re a business admin or owner and have questions about setup, please [book time](https://app.ramp.com/meeting-request?product=RAMP_PLUS&from_email=sunset-policy-agent-waitlist) with your Account Manager.\n**Jump to:**\n- [Overview](https://support.ramp.com/hc/en-us/articles/44072387128979-Policy-agent#h_01K39G4S6S9BBWY63NPA37PGWF)\n- [Policy setup & publishing](https://support.ramp.com/hc/en-us/articles/44072387128979-Policy-agent#h_01K39G119M18AD1YYWG4N1Z0D0)\n- [Visibility & controls](https://support.ramp.com/hc/en-us/articles/44072387128979-Policy-agent#h_01K39G119XBS9R7216Y5D05785)\n- [Policy agent capabilities & nuances](https://support.ramp.com/hc/en-us/articles/44072387128979-Policy-agent#h_01K39G11A04R35E53JR7G43T3M)\n- [Feedback & support](https://support.ramp.com/hc/en-us/articles/44072387128979-Policy-agent#h_01K39G11A1AZNBVV6ZNRHZWK3S)\n- [Privacy](https://support.ramp.com/hc/en-us/articles/44072387128979-Policy-agent#h_01K39G11A2EDVBHFE6P4ND7CMN)"
+        },
+        {
+          "type": "section",
+          "title": "**Overview**",
+          "content": "### **What is the Policy agent?**\nThe Policy agent reviews expenses against your written expense policy and helps automate compliance. It can function in two ways:\n1. **Recommendations only** – Reviews expenses and shows if they are in or out of policy, citing the relevant text. Reviewers make the final decision.\n![](https://support.ramp.com/hc/article_attachments/44077966195987)\n2. **Approvals + escalations** – Approves in-policy expenses automatically and escalates only uncertain ones to reviewers.\n![](https://support.ramp.com/hc/article_attachments/44077947197587)\n### **How does the Policy agent determine compliance?**\nThe agent evaluates expenses using three inputs:\n1. **Your policy**\n2. **Merchant data (L1–L3)** – e.g., merchant name, transaction date, item names, sales tax\n3. **Employee inputs** – e.g., receipt OCR, trip details, location\nThe agent approves expenses that clearly meet requirements and escalates when context is missing or a violation is detected. Admins can set thresholds and workflows to determine when the agent approves vs. escalates.\n### **How accurate is the Policy agent?**\nEarly customers have reduced manual reviews by ~85% with **99%+ accuracy**."
+        },
+        {
+          "type": "section",
+          "title": "**Policy setup & publishing**",
+          "content": "### **How do I get started with the Policy agent?**\nPlus customers can now access the agent by going to their [Early Access tab](https://app.ramp.com/settings/company-settings/early-access) and toggling it on! If you’re a business admin or owner and have questions about setup, please [book time](https://app.ramp.com/meeting-request?product=RAMP_PLUS&from_email=sunset-policy-agent-waitlist) with your Account Manager.\n### **How do I set up an AI-friendly policy?**\nGo to the Policy tab in Ramp and you’ll see a pop-up to set up the agent with a couple options. Note that the agents won’t begin reviewing expenses until your policy is published.\n- **No existing policy?** Use Ramp’s customizable best-practice template.\n- **Already have a policy?** Ramp automatically converts it into Ramp’s structure.\nYour expense policy is always editable and followed by the agent when making decisions. Review carefully before publishing to ensure clarity.\n![](https://support.ramp.com/hc/article_attachments/44077947206803)\n### **What about specific policy exceptions (e.g., CEO exceptions)?**\nExceptions can be added:\n- Directly into your policy text\n- Or in hidden notes within the template (visible only to admins)\nThe agent references both when reviewing expenses.\n### **How does the Policy agent work with my Ramp settings and policy flags?**\n- **Your existing Ramp settings** (spend requests, expense requirements, reviews, travel) override any conflicting written policy rules.\n- **Policy flags** still function and override the agent if there’s a conflict. Use them sparingly since many can now be expressed in your policy.\n**Recommendation:**\n- Disable category-based flags (e.g., alcohol, cigarettes, weekend spend, gifts).\n- Keep receipt-related flags (e.g., duplicate receipt, AI-generated receipt, itemized receipt).\n### **What happens once I publish my policy?**\n- Within ~24 hours, the agent backfills recent expenses and generates recommendations.\n- On your Home Page, you  will see expenses grouped either as **Approval recommended** or **Review recommended**.\n- No auto-approvals occur until the agent is added into approval workflows.\nYou can edit your policy anytime in the Policy tab. Changes only apply to future expenses.\n### **How can I enable the agent to approve in-policy expenses?**\nBy default, the agent only provides recommendations after you publish your policy. To enable approvals:\n1. Go to **Policy > Expense Reviews**.\n2. Add the agent into your existing approval workflows (the steps Ramp follows to decide who needs to review a transaction and when)\n3. Configure conditions, for the agent to approve:\n   - Expenses under a certain amount (e.g., <$1,000).\n   - Expenses for a specific spend program, department, entity, or merchant.\n   - Or replace the entire workflow so humans only review out-of-policy or uncertain expenses.\n### **![](https://support.ramp.com/hc/article_attachments/44077966205715)**\n### **Is there a separate employee-facing policy?**\nYes. In the **Policy** tab, there are two distinct versions of your policy documents:\n- **Policy agent document (admin-facing):** This is where you configure, edit, and update your company’s policy rules for the agent. You can use Ramp’s best-practice templates or upload your existing policy through the merge functionality when you set the agent up. This ensures the policy is structured in a way the agent can easily interpret.\n- **Employee-facing policy document:** This is the version employees see. It remains separate and unchanged when you update the agent document, so employees always have access to a clean, consistent view of the policy."
+        },
+        {
+          "type": "section",
+          "title": "**How can employees access the policy?**",
+          "content": "Employees have two easy ways to get policy information:\n1. **Text HIRAMP (447-267):** Employees can send questions by SMS and receive instant answers powered by the policy agent document. For example:   - “What’s my dinner budget when I travel?”\n   - “Can I reimburse coffee for a client meeting?”\n   - “How much do I have left in my WFH stipend?”\n2. **Profile > Employee Handbook:** Employees can click into their profile to view the full employee-facing policy for reference at any time.\nThe SMS feature provides fast, accurate answers based on the most up-to-date rules, while the handbook ensures there’s always a complete, consistent version of the policy available.\n![](https://support.ramp.com/hc/article_attachments/44077966209299)"
+        },
+        {
+          "type": "section",
+          "title": "**Visibility & controls**",
+          "content": "### **Who can see the Policy agent’s recommendations?**\nIn **Policy > Expense reviews**, you can configure visibility to:\n- **Admins only**\n- **All reviewers** (recommended to help reviewers learn in real time)\n### **How do I track accuracy and adoption?**\n- Use the **Policy Reports dashboard** in the **Insights tab** to monitor:\n  - % of spend in policy\n  - % of accepted agent recommendations\n  - Top out-of-policy departments and employees\n  - Trends over time\n- Every expense also includes a detailed audit log of agent action, giving you full visibility and the ability to step in when needed.\n![](https://support.ramp.com/hc/article_attachments/44077966209811)\n### **Can reviewers override the agent’s decision?**\nYes. Reviewers always have final authority:\n- With **recommendations**, reviewers can approve/reject and leave feedback.\n- With **approvals**, the agent escalates when uncertain. If an incorrect approval occurs, reviewers can **Reject → Request changes** or **Request repayment**.\n![](https://support.ramp.com/hc/article_attachments/44077947217427)"
+        },
+        {
+          "type": "section",
+          "title": "**Policy agent capabilities & nuances**",
+          "content": "- **Multi-entity policies** – The agent enforces entity-specific rules if written into the policy.\n- **IRS-level detail** – If required (e.g., memos), the agent flags missing information.\n- **Complex expenses** – The agent can flag hotel bills with out of policy meals included but cannot verify accounting splits.\n- **Accounting / ERP syncs** – The agent stops at expense approval and does not check whether  the correct GL category or budget was applied to a transaction. (Ramp’s **accounting agent** is in early testing. Contact your Account Manager to join.)"
+        },
+        {
+          "type": "section",
+          "title": "**Feedback & support**",
+          "content": "- Use the **thumbs up/down** feature on each recommendation to directly provide our team feedback on what was helpful in the recommendation, what aspects of the policy may need to be updated, or where Ramp’s interpretation may have been inaccurate.\n- If you have an **Account Manager**, they’re your main contact. Otherwise, reach out to **Customer Support**.\n- You can also sign up for a **20-minute call with Ramp’s Product team** for troubleshooting or feedback [here](https://ramp.zoom.us/zbook/d/mjvbn85m/ramp-policy-agent-office-hours)."
+        },
+        {
+          "type": "section",
+          "title": "**Privacy**",
+          "content": "### **How does Ramp work with OpenAI?**\nRamp partners with OpenAI to power the Policy agent. OpenAI does not retain or train on Ramp customer data.\n### **Should I be concerned about privacy?**\nNo, we take your privacy very seriously. As mentioned above, OpenAI does not retain any data we send them, and we do not mix business data when we are improving our models. Your business’s data is not used to train models for another business. Visit the [**Ramp Trust Center**](https://trust.ramp.com/) for more details.\n**The following tags apply to this article:**\n- [agent](https://support.ramp.com/hc/en-us/search?content_tags=01K397724ZM79VYJGGXF29M4SA&utf8=%E2%9C%93 \"Search results\")\n- [policy agent](https://support.ramp.com/hc/en-us/search?content_tags=01K39775PVS7ER57VX372Y9MHK&utf8=%E2%9C%93 \"Search results\")\n- [policy](https://support.ramp.com/hc/en-us/search?content_tags=01K39779HK5KRZXZ970G4TJMBA&utf8=%E2%9C%93 \"Search results\")\n- [AI](https://support.ramp.com/hc/en-us/search?content_tags=01K3977BVRNZVCFFDSJJW48VN6&utf8=%E2%9C%93 \"Search results\")\nWas this article helpful?\nYesNo\nWe're sorry to hear that.\n[Please share your feedback on this article here](https://a.sprig.com/cGsyNm9lVWhPeX5zaWQ6YmIzYzkwODMtNzYyNy00MWZiLTlmM2ItMWMzY2Y2YjlmYzU0?articleID=/hc/en-us/articles/44072387128979-Policy-agent&userID=&userName=&userRole=)\nStill need help? [Reach our support team here](https://app.ramp.com/support/get-help)"
+        }
+      ],
+      "images": [
+        "https://support.ramp.com/hc/theming_assets/01HZKQ2DSZJ5MW0YEX9DWV49VM",
+        "https://support.ramp.com/hc/article_attachments/44077947190675",
+        "https://support.ramp.com/hc/article_attachments/44182895122323",
+        "https://support.ramp.com/hc/article_attachments/44077966195987",
+        "https://support.ramp.com/hc/article_attachments/44077947197587",
+        "https://support.ramp.com/hc/article_attachments/44077947206803",
+        "https://support.ramp.com/hc/article_attachments/44077966205715",
+        "https://support.ramp.com/hc/article_attachments/44077966209299",
+        "https://support.ramp.com/hc/article_attachments/44077966209811",
+        "https://support.ramp.com/hc/article_attachments/44077947217427"
+      ]
+    },
+    {
+      "url": "https://support.ramp.com/hc/en-us/articles/34496771857555-Travel-Delegate-Booking-via-Assistant-Role",
+      "slug": "hc-en-us-articles-34496771857555-travel-delegate-booking-via-assistant-role",
+      "title": "Travel Delegate Booking via Assistant Role – Ramp",
+      "sections": [
+        {
+          "type": "section",
+          "title": "Overview",
+          "content": "[Skip to main content](https://support.ramp.com/hc/en-us/articles/34496771857555-Travel-Delegate-Booking-via-Assistant-Role#main-content)\n![](https://support.ramp.com/hc/theming_assets/01HZKQ2DSZJ5MW0YEX9DWV49VM)\nTravel Delegate Booking allows assistants to book travel for other team members without needing to manually input traveler details each time on Ramp Travel. Once an assistant is assigned, they can book travel in **Assistant Mode**, where the traveler’s details and preferences are auto-filled. This removes the need for back-and-forth communication to gather traveler information and ensures policies are consistently followed.\n> **Watch a walkthrough video of the Travel Delegate Booking feature [here](https://www.loom.com/share/4e19cd12168a4a06a26fe79cf6335e83?sid=d14e661a-3a0d-48b5-bce7-a7ef6a88695b).**"
+        },
+        {
+          "type": "section",
+          "title": "How to Set Up Delegate Booking",
+          "content": "Travelers can assign assistants to book on their behalf through one of the following methods:\n1. **Home > My Trips > [Traveler Profile](http://app.ramp.com/home/travel/bookings/traveler-profile)**\nUnder \"Who can book on my behalf?\" assign your assistant by typing their name. Ensure that traveler details (birthday, loyalty numbers, preferences) are up-to-date in the profile.\n2. **My Settings > [Delegation](https://app.ramp.com/settings/personal-settings/delegation)**\nAssign assistant(s) by typing in their names. This is available to all users.\nAdmins can assign assistants for employees by navigating to:\n- **[People](http://app.ramp.com/people/all) \\> Select Employee > Edit Profile > Account Settings > Assistants**"
+        },
+        {
+          "type": "section",
+          "title": "How to Use Delegate Booking",
+          "content": "Once assigned, the assistant can access **Assistant Mode** to book travel for the traveler.\n1. **Access Assistant Mode**\nFrom the bottom left, enter Assistant Mode, then navigate to **Home > [Travel](https://app.ramp.com/home/travel/bookings)**.\n2. **Initiate Booking**\nBegin the booking flow. The traveler's details will automatically populate in the checkout page if they’ve been pre-filled by the traveler. If not, fill them in during this booking; they’ll be saved for future trips.\n3. **Choose Available Funds**\nUnder \"spend from,\" only available funds from the traveler will appear. Funds assigned to the assistant won’t show up here.\n4. **Confirmation and Notifications**\nUpon booking confirmation, both the assistant and the traveler will receive email notifications. The traveler receives the original email, and the assistant is CC’d. Follow-up emails from airlines or Priceline are sent only to the traveler.\n5. **Managing Multiple Travelers**\nAssistants can toggle between profiles at the top to manage multiple travelers and make bookings for each as needed."
+        },
+        {
+          "type": "section",
+          "title": "Key Callouts",
+          "content": "- **Eligibility**: Delegate booking works only for businesses that have **Ramp Travel enabled** for all employees.\n- **Role Requirements**: The feature is available through the **Assistant Role**. Users designated as assistants can also handle non-travel-related tasks on behalf of travelers, such as submitting receipts, coding expenses, and managing reimbursements.\n- **Profile Access**: When an assistant books on behalf of another, they can update the traveler’s profile, view what’s in or out of policy, and manage bookings more efficiently."
+        },
+        {
+          "type": "section",
+          "title": "Frequently Asked Questions (FAQ)",
+          "content": "**1\\. How do I enable delegate booking?**\nDelegate booking becomes available once **Ramp Travel is enabled** for all employees in the business. Travelers or admins can then assign assistants as described above.\n**2\\. Who can book on behalf of others?**\nOnly users marked as an “Assistant” for others. Assistants can also view and edit other transactions on behalf of the individual they are booking for.\n**3\\. Who will receive follow-up emails from Priceline or airlines?**\nOnly the traveler receives these emails, while the assistant is CC’d only on the booking confirmation.\n**4\\. Can assistants book on behalf of multiple people?**\nYes, assistants can manage multiple profiles, though they can only book for one traveler at a time.\n**5\\. What’s the main benefit of delegate booking?**\nDelegate booking simplifies the process for assistants, allowing them to automatically access traveler profile information during the booking flow.\n**6\\. Is this feature available for Guest Role?**\nNo, delegate booking is not currently available for users with the Guest role.\nFor more information on setting up Assistant Mode and additional assistant functions, refer to [Assistant Role (Previously Copilot)](https://support.ramp.com/hc/en-us/articles/5506033900307).\n**The following tags apply to this article:**\n- [Travel](https://support.ramp.com/hc/en-us/search?content_tags=01J83E49VEST3TSMBC0XWQCHX1&utf8=%E2%9C%93 \"Search results\")\nWas this article helpful?\nYesNo\nWe're sorry to hear that.\n[Please share your feedback on this article here](https://a.sprig.com/cGsyNm9lVWhPeX5zaWQ6YmIzYzkwODMtNzYyNy00MWZiLTlmM2ItMWMzY2Y2YjlmYzU0?articleID=/hc/en-us/articles/34496771857555-Travel-Delegate-Booking-via-Assistant-Role&userID=&userName=&userRole=)\nStill need help? [Reach our support team here](https://app.ramp.com/support/get-help)"
+        }
+      ],
+      "images": [
+        "https://support.ramp.com/hc/theming_assets/01HZKQ2DSZJ5MW0YEX9DWV49VM"
+      ]
+    }
+  ],
+  "assetsPolicy": {
+    "useOriginalImages": true,
+    "rewriteText": false
+  }
+}
