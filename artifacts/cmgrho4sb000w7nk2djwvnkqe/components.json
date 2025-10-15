@@ -1,0 +1,41 @@
+{
+  "designDomain": "ramp.com",
+  "designLanguage": "Clean and professional interface focused on clarity and usability. Uses system fonts and subtle shadows to create depth while maintaining a lightweight feel. Color palette emphasizes blue brand colors with neutral supporting tones.",
+  "components": [
+    {
+      "name": "Button",
+      "purpose": "Primary call-to-action component",
+      "description": "Clickable button element used for key actions and form submissions",
+      "keyStyles": [
+        "Consistent padding and height",
+        "Clear hover/active states",
+        "Bold text for emphasis"
+      ],
+      "usageNotes": [
+        "Use primary variant for main actions",
+        "Secondary style for alternative choices",
+        "Maintain adequate spacing between buttons"
+      ]
+    },
+    {
+      "name": "Card",
+      "purpose": "Content container for related information",
+      "description": "Surface element that groups content and provides visual hierarchy",
+      "keyStyles": [
+        "White background",
+        "Subtle shadow for depth",
+        "Rounded corners"
+      ]
+    },
+    {
+      "name": "Search",
+      "purpose": "Enable quick content discovery",
+      "description": "Search input with icon and suggestions dropdown",
+      "keyStyles": [
+        "Full-width input field",
+        "Search icon prefix",
+        "Clean, minimal styling"
+      ]
+    }
+  ]
+}
