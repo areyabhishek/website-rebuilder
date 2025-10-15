@@ -1,0 +1,46 @@
+{
+  "designDomain": "figma.com",
+  "designLanguage": "Clean and modern with emphasis on whitespace and subtle depth. Uses rounded corners extensively with interactive hover states that square off corners. Typography is clear and hierarchical. Color is used sparingly for emphasis and brand moments.",
+  "components": [
+    {
+      "name": "Button",
+      "purpose": "Primary call-to-action",
+      "description": "Interactive button with hover animation that removes border radius",
+      "keyStyles": [
+        "Rounded corners that square on hover",
+        "Consistent padding",
+        "Optional icon animation"
+      ]
+    },
+    {
+      "name": "Card",
+      "purpose": "Content container",
+      "description": "Container for grouped content with subtle shadow and border",
+      "keyStyles": [
+        "Rounded corners",
+        "Light shadow",
+        "Border"
+      ]
+    },
+    {
+      "name": "Tag",
+      "purpose": "Label or category indicator",
+      "description": "Compact label for metadata and categories",
+      "keyStyles": [
+        "Small text",
+        "Rounded corners",
+        "Optional background color"
+      ]
+    },
+    {
+      "name": "Search",
+      "purpose": "Content discovery",
+      "description": "Full-width search input with placeholder text",
+      "keyStyles": [
+        "Prominent placement",
+        "Clear placeholder text",
+        "Rounded corners"
+      ]
+    }
+  ]
+}
