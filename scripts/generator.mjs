@@ -363,61 +363,6 @@ async function main() {
 
   console.log(`Site type: ${siteType}`);
 
-  // Skip docs sites - they're too complex and hit token limits
-  if (siteType === "docs") {
-    console.log("⚠️  Skipping docs site - these are too complex for the current token limits");
-    console.log("Docs sites typically have many pages and hit the maxTokens limit.");
-    console.log("Consider increasing maxTokens in config/generator-prompt.json for docs sites.");
-
-    // Close the issue with a comment explaining why
-    await fetch(
-      `https://api.github.com/repos/${process.env.GITHUB_REPOSITORY}/issues/${issueNumber}/comments`,
-      {
-        method: "POST",
-        headers: {
-          Authorization: `token ${process.env.GITHUB_TOKEN}`,
-          Accept: "application/vnd.github.v3+json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          body: `## ⚠️ Documentation Site Skipped
-
-This site was detected as a **documentation site** and has been skipped due to complexity constraints.
-
-**Why?**
-Documentation sites typically have many pages (8+), which causes the AI response to exceed token limits and results in incomplete JSON output.
-
-**Solutions:**
-1. **Reduce page count**: Manually edit the blueprint to include fewer pages
-2. **Increase token limit**: Update \`maxTokens\` in \`config/generator-prompt.json\` from 16000 to 24000
-3. **Use a different site type**: Re-label this issue with a different category (portfolio, blog, saas-landing, etc.)
-
-For now, this issue will be closed. Feel free to re-open with adjustments!`,
-        }),
-      }
-    );
-
-    // Close the issue
-    await fetch(
-      `https://api.github.com/repos/${process.env.GITHUB_REPOSITORY}/issues/${issueNumber}`,
-      {
-        method: "PATCH",
-        headers: {
-          Authorization: `token ${process.env.GITHUB_TOKEN}`,
-          Accept: "application/vnd.github.v3+json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          state: "closed",
-          labels: ["generate-site", "docs", "skipped"],
-        }),
-      }
-    );
-
-    console.log("✓ Issue closed with explanation comment");
-    process.exit(0);
-  }
-
   // Fetch artifacts
   console.log("Fetching artifacts...");
   const { blueprint, tokens, components, designLanguage } =
