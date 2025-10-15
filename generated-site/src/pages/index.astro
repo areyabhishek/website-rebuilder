@@ -1,0 +1,486 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What is Vapi? | Vapi</title>
+  <meta name="description" content="Vapi is the developer platform for building voice AI agents. We handle the complex infrastructure so you can focus on creating great voice experiences.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <h1>Vapi</h1>
+      </div>
+      <div class="nav-links">
+        <a href="/" class="nav-link active">Home</a>
+        <a href="/chat/non-streaming" class="nav-link">Non Streaming</a>
+        <a href="/api-reference/calls/create" class="nav-link">Create</a>
+        <a href="/api-reference/files/delete" class="nav-link">Delete</a>
+        <a href="/api" class="nav-link">Api</a>
+        <a href="/assistants/quickstart" class="nav-link">Quickstart</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main">
+    <section class="hero">
+      <div class="container">
+        <h1 class="hero-title">What is Vapi?</h1>
+        <p class="hero-description">Vapi is the developer platform for building voice AI agents. We handle the complex infrastructure so you can focus on creating great voice experiences.</p>
+        <div class="hero-content">
+          <p><strong>Voice agents</strong> allow you to:</p>
+          <ul class="feature-list">
+            <li>Have natural conversations with users</li>
+            <li>Handle complex customer queries</li>
+            <li>Automate voice-based workflows</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="card">
+          <h2>How voice agents work</h2>
+          <p>Every Vapi assistant combines three core technologies:</p>
+          <div class="tech-grid">
+            <div class="tech-item">
+              <h3>Speech-to-Text</h3>
+              <p>Converts user speech into text that your agent can understand</p>
+            </div>
+            <div class="tech-item">
+              <h3>Large Language Model</h3>
+              <p>Processes the conversation and generates intelligent responses</p>
+            </div>
+            <div class="tech-item">
+              <h3>Text-to-Speech</h3>
+              <p>Converts responses back to natural speech</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="card">
+          <h2>Two ways to build voice agents</h2>
+          <p>Vapi offers two main primitives, designed for different use cases:</p>
+          <div class="approach-grid">
+            <div class="approach-card">
+              <h3>Assistants</h3>
+              <p><strong>Best for:</strong> Most use cases and fast iteration</p>
+              <p>Assistants use a single system prompt plus tools and structured responses</p>
+            </div>
+            <div class="approach-card">
+              <h3>Squads</h3>
+              <p><strong>Best for:</strong> Complex workflows</p>
+              <p>Multiple assistants working together for sophisticated interactions</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="card">
+          <h2>Key capabilities</h2>
+          <ul class="capabilities-list">
+            <li><strong>Real-time conversations:</strong> Sub-600ms response times with natural turn-taking</li>
+            <li><strong>Phone integration:</strong> Make and receive calls on any phone number</li>
+            <li><strong>Web integration:</strong> Embed voice calls directly in your applications</li>
+            <li><strong>Multi-language support:</strong> Handle conversations in multiple languages</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="card">
+          <h2>Choose your path</h2>
+          <div class="path-grid">
+            <div class="path-card">
+              <h3>Phone Calls</h3>
+              <ul>
+                <li>Create a voice agent for inbound/outbound calls</li>
+                <li>Build customer support or sales automation</li>
+                <li>Get started with no coding required</li>
+              </ul>
+              <p><em>Build your first voice agent in 5 minutes</em></p>
+            </div>
+            <div class="path-card">
+              <h3>Web Integration</h3>
+              <ul>
+                <li>Embed voice chat in your website</li>
+                <li>Create voice-enabled applications</li>
+                <li>Full API control and customization</li>
+              </ul>
+              <p><em>Perfect for developers who want full control</em></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="card">
+          <h2>Developer tools</h2>
+          <h3>Vapi CLI</h3>
+          <p>The Vapi CLI brings the full power of the platform to your terminal:</p>
+          <div class="cli-info">
+            <h4>CLI Overview</h4>
+            <p>Install in seconds with:</p>
+            <pre class="code-block">npm install -g @vapi/cli</pre>
+            <p>Everything from the dashboard, now in your terminal</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="card">
+          <h2>Popular use cases</h2>
+          <div class="use-case">
+            <h3>Customer Support</h3>
+            <p>Built with Assistants</p>
+            <p>Automate inbound support calls with agents that can access your knowledge base and escalate to humans when needed.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <style>
+    :root {
+      --brand: #2563eb;
+      --brand-alt: #1d4ed8;
+      --bg: #ffffff;
+      --surface: #f8fafc;
+      --text: #0f172a;
+      --muted: #64748b;
+      
+      --font-heading: "Inter", sans-serif;
+      --font-body: "Inter", sans-serif;
+      
+      --space-0: 0px;
+      --space-1: 4px;
+      --space-2: 8px;
+      --space-3: 12px;
+      --space-4: 16px;
+      --space-5: 20px;
+      --space-6: 24px;
+      --space-7: 28px;
+      --space-8: 32px;
+      --space-10: 40px;
+      --space-12: 48px;
+      --space-16: 64px;
+      --space-20: 80px;
+      
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+      
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text);
+      background-color: var(--bg);
+      line-height: 1.6;
+    }
+
+    .navbar {
+      background: var(--surface);
+      border-bottom: 1px solid #e2e8f0;
+      padding: var(--space-4) 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-6);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-brand h1 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--brand);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: var(--space-8);
+    }
+
+    .nav-link {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 500;
+      padding: var(--space-2) var(--space-4);
+      border-radius: var(--radius-sm);
+      transition: all 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--text);
+      background: rgba(37, 99, 235, 0.1);
+    }
+
+    .nav-link.active {
+      color: var(--brand);
+      background: rgba(37, 99, 235, 0.1);
+    }
+
+    .main {
+      padding: var(--space-16) 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-6);
+    }
+
+    .section {
+      margin-bottom: var(--space-16);
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: var(--space-20);
+    }
+
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: var(--space-6);
+    }
+
+    .hero-description {
+      font-size: 1.25rem;
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto var(--space-8);
+    }
+
+    .hero-content {
+      max-width: 500px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .feature-list {
+      list-style: none;
+      padding-left: var(--space-6);
+    }
+
+    .feature-list li {
+      position: relative;
+      margin-bottom: var(--space-2);
+    }
+
+    .feature-list li::before {
+      content: '•';
+      color: var(--brand);
+      position: absolute;
+      left: calc(-1 * var(--space-6));
+      font-weight: bold;
+    }
+
+    .card {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      padding: var(--space-8);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #e2e8f0;
+    }
+
+    .card h2 {
+      font-family: var(--font-heading);
+      font-size: 1.875rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: var(--space-6);
+    }
+
+    .card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: var(--space-3);
+    }
+
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--space-6);
+      margin-top: var(--space-6);
+    }
+
+    .tech-item {
+      padding: var(--space-6);
+      background: var(--bg);
+      border-radius: var(--radius-md);
+      border: 1px solid #e2e8f0;
+    }
+
+    .approach-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-6);
+      margin-top: var(--space-6);
+    }
+
+    .approach-card {
+      padding: var(--space-6);
+      background: var(--bg);
+      border-radius: var(--radius-md);
+      border: 1px solid #e2e8f0;
+    }
+
+    .capabilities-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .capabilities-list li {
+      padding: var(--space-4) 0;
+      border-bottom: 1px solid #e2e8f0;
+      position: relative;
+      padding-left: var(--space-6);
+    }
+
+    .capabilities-list li:last-child {
+      border-bottom: none;
+    }
+
+    .capabilities-list li::before {
+      content: '✓';
+      color: var(--brand);
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+
+    .path-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-6);
+      margin-top: var(--space-6);
+    }
+
+    .path-card {
+      padding: var(--space-6);
+      background: var(--bg);
+      border-radius: var(--radius-md);
+      border: 1px solid #e2e8f0;
+    }
+
+    .path-card ul {
+      list-style: none;
+      padding: 0;
+      margin: var(--space-4) 0;
+    }
+
+    .path-card li {
+      padding: var(--space-2) 0;
+      position: relative;
+      padding-left: var(--space-6);
+    }
+
+    .path-card li::before {
+      content: '•';
+      color: var(--brand);
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+
+    .cli-info {
+      margin-top: var(--space-6);
+      padding: var(--space-6);
+      background: var(--bg);
+      border-radius: var(--radius-md);
+      border: 1px solid #e2e8f0;
+    }
+
+    .cli-info h4 {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      margin-bottom: var(--space-4);
+    }
+
+    .code-block {
+      background: #1e293b;
+      color: #e2e8f0;
+      padding: var(--space-4);
+      border-radius: var(--radius-sm);
+      font-family: 'Courier New', monospace;
+      font-size: 0.875rem;
+      margin: var(--space-4) 0;
+      overflow-x: auto;
+    }
+
+    .use-case {
+      padding: var(--space-6);
+      background: var(--bg);
+      border-radius: var(--radius-md);
+      border: 1px solid #e2e8f0;
+      margin-top: var(--space-6);
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      
+      .hero-title {
+        font-size: 2rem;
+      }
+      
+      .hero-description {
+        font-size: 1.125rem;
+      }
+      
+      .container {
+        padding: 0 var(--space-4);
+      }
+      
+      .tech-grid,
+      .approach-grid,
+      .path-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</body>
+</html>

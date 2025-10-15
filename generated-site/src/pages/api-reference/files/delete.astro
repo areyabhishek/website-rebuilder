@@ -1,0 +1,546 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delete File | Vapi</title>
+  <meta name="description" content="API reference for deleting files in Vapi. Learn how to authenticate and delete files using the Vapi API.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="/"><h1>Vapi</h1></a>
+      </div>
+      <div class="nav-links">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/chat/non-streaming" class="nav-link">Non Streaming</a>
+        <a href="/api-reference/calls/create" class="nav-link">Create</a>
+        <a href="/api-reference/files/delete" class="nav-link active">Delete</a>
+        <a href="/api" class="nav-link">Api</a>
+        <a href="/assistants/quickstart" class="nav-link">Quickstart</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main">
+    <section class="hero">
+      <div class="container">
+        <h1 class="hero-title">Delete File</h1>
+        <p class="hero-description">API reference for deleting files in Vapi</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="card">
+          <h2>API Explorer</h2>
+          
+          <div class="api-section">
+            <h3>Authentication</h3>
+            <div class="auth-info">
+              <div class="auth-type">
+                <strong>Authorization</strong>
+                <span class="auth-method">Bearer</span>
+              </div>
+              <p>Retrieve your API Key from <a href="https://dashboard.vapi.ai" class="link" target="_blank">Dashboard</a>.</p>
+            </div>
+          </div>
+
+          <div class="api-section">
+            <h3>Path parameters</h3>
+            <div class="parameter">
+              <div class="param-header">
+                <code class="param-name">id</code>
+                <span class="param-type">string</span>
+                <span class="param-required">Required</span>
+              </div>
+              <p class="param-description">The unique identifier of the file to delete</p>
+            </div>
+          </div>
+
+          <div class="api-section">
+            <h3>Response</h3>
+            <div class="response-info">
+              <div class="response-field">
+                <code class="field-name">id</code>
+                <span class="field-type">string</span>
+                <p class="field-description">The ID of the deleted file</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="api-section">
+            <h3>Example Request</h3>
+            <pre class="code-block">DELETE /files/{id}
+Authorization: Bearer YOUR_API_KEY
+Content-Type: application/json</pre>
+          </div>
+
+          <div class="api-section">
+            <h3>Example Response</h3>
+            <pre class="code-block">{
+  "id": "file_123456789",
+  "deleted": true,
+  "message": "File successfully deleted"
+}</pre>
+          </div>
+
+          <div class="api-section">
+            <h3>Error Responses</h3>
+            <div class="error-examples">
+              <div class="error-item">
+                <h4>404 Not Found</h4>
+                <pre class="code-block error">{
+  "error": {
+    "code": "file_not_found",
+    "message": "The specified file could not be found"
+  }
+}</pre>
+              </div>
+              
+              <div class="error-item">
+                <h4>401 Unauthorized</h4>
+                <pre class="code-block error">{
+  "error": {
+    "code": "unauthorized",
+    "message": "Invalid API key provided"
+  }
+}</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="card">
+          <h2>Code Examples</h2>
+          
+          <div class="code-examples">
+            <div class="example-section">
+              <h3>JavaScript</h3>
+              <pre class="code-block">const response = await fetch(`https://api.vapi.ai/files/${fileId}`, {
+  method: 'DELETE',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json'
+  }
+});
+
+if (response.ok) {
+  const result = await response.json();
+  console.log('File deleted:', result.id);
+} else {
+  console.error('Failed to delete file:', response.statusText);
+}</pre>
+            </div>
+
+            <div class="example-section">
+              <h3>Python</h3>
+              <pre class="code-block">import requests
+
+file_id = "file_123456789"
+api_key = "YOUR_API_KEY"
+
+response = requests.delete(
+    f"https://api.vapi.ai/files/{file_id}",
+    headers={
+        "Authorization": f"Bearer {api_key}",
+        "Content-Type": "application/json"
+    }
+)
+
+if response.status_code == 200:
+    result = response.json()
+    print(f"File deleted: {result['id']}")
+else:
+    print(f"Failed to delete file: {response.text}")</pre>
+            </div>
+
+            <div class="example-section">
+              <h3>cURL</h3>
+              <pre class="code-block">curl -X DELETE "https://api.vapi.ai/files/file_123456789" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json"</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <style>
+    :root {
+      --brand: #2563eb;
+      --brand-alt: #1d4ed8;
+      --bg: #ffffff;
+      --surface: #f8fafc;
+      --text: #0f172a;
+      --muted: #64748b;
+      
+      --font-heading: "Inter", sans-serif;
+      --font-body: "Inter", sans-serif;
+      
+      --space-0: 0px;
+      --space-1: 4px;
+      --space-2: 8px;
+      --space-3: 12px;
+      --space-4: 16px;
+      --space-5: 20px;
+      --space-6: 24px;
+      --space-7: 28px;
+      --space-8: 32px;
+      --space-10: 40px;
+      --space-12: 48px;
+      --space-16: 64px;
+      --space-20: 80px;
+      
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+      
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text);
+      background-color: var(--bg);
+      line-height: 1.6;
+    }
+
+    .navbar {
+      background: var(--surface);
+      border-bottom: 1px solid #e2e8f0;
+      padding: var(--space-4) 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-6);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-brand a {
+      text-decoration: none;
+    }
+
+    .nav-brand h1 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--brand);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: var(--space-8);
+    }
+
+    .nav-link {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 500;
+      padding: var(--space-2) var(--space-4);
+      border-radius: var(--radius-sm);
+      transition: all 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--text);
+      background: rgba(37, 99, 235, 0.1);
+    }
+
+    .nav-link.active {
+      color: var(--brand);
+      background: rgba(37, 99, 235, 0.1);
+    }
+
+    .main {
+      padding: var(--space-16) 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-6);
+    }
+
+    .section {
+      margin-bottom: var(--space-16);
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: var(--space-20);
+    }
+
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: var(--space-6);
+    }
+
+    .hero-description {
+      font-size: 1.25rem;
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      padding: var(--space-8);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #e2e8f0;
+    }
+
+    .card h2 {
+      font-family: var(--font-heading);
+      font-size: 1.875rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: var(--space-8);
+    }
+
+    .api-section {
+      margin-bottom: var(--space-8);
+      padding-bottom: var(--space-6);
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .api-section:last-child {
+      border-bottom: none;
+    }
+
+    .api-section h3 {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: var(--space-4);
+    }
+
+    .api-section h4 {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: var(--space-3);
+    }
+
+    .auth-info {
+      background: var(--bg);
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: var(--space-6);
+    }
+
+    .auth-type {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+      margin-bottom: var(--space-3);
+    }
+
+    .auth-method {
+      background: var(--brand);
+      color: white;
+      padding: var(--space-1) var(--space-3);
+      border-radius: var(--radius-sm);
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+
+    .parameter {
+      background: var(--bg);
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: var(--space-6);
+      margin-bottom: var(--space-4);
+    }
+
+    .param-header {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      margin-bottom: var(--space-3);
+    }
+
+    .param-name {
+      background: #f1f5f9;
+      color: var(--text);
+      padding: var(--space-1) var(--space-2);
+      border-radius: var(--radius-sm);
+      font-family: 'Courier New', monospace;
+      font-size: 0.875rem;
+    }
+
+    .param-type {
+      background: #dbeafe;
+      color: var(--brand);
+      padding: var(--space-1) var(--space-2);
+      border-radius: var(--radius-sm);
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    .param-required {
+      background: #fef3c7;
+      color: #d97706;
+      padding: var(--space-1) var(--space-2);
+      border-radius: var(--radius-sm);
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    .param-description {
+      color: var(--muted);
+    }
+
+    .response-info {
+      background: var(--bg);
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: var(--space-6);
+    }
+
+    .response-field {
+      margin-bottom: var(--space-4);
+    }
+
+    .response-field:last-child {
+      margin-bottom: 0;
+    }
+
+    .field-name {
+      background: #f1f5f9;
+      color: var(--text);
+      padding: var(--space-1) var(--space-2);
+      border-radius: var(--radius-sm);
+      font-family: 'Courier New', monospace;
+      font-size: 0.875rem;
+      margin-right: var(--space-3);
+    }
+
+    .field-type {
+      background: #dbeafe;
+      color: var(--brand);
+      padding: var(--space-1) var(--space-2);
+      border-radius: var(--radius-sm);
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    .field-description {
+      color: var(--muted);
+      margin-top: var(--space-2);
+    }
+
+    .code-block {
+      background: #1e293b;
+      color: #e2e8f0;
+      padding: var(--space-6);
+      border-radius: var(--radius-md);
+      font-family: 'Courier New', monospace;
+      font-size: 0.875rem;
+      overflow-x: auto;
+      line-height: 1.5;
+    }
+
+    .code-block.error {
+      background: #991b1b;
+      color: #fecaca;
+    }
+
+    .error-examples {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-6);
+    }
+
+    .error-item h4 {
+      margin-bottom: var(--space-3);
+      color: #dc2626;
+    }
+
+    .code-examples {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-8);
+    }
+
+    .example-section h3 {
+      font-family: var(--font-heading);
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: var(--space-4);
+    }
+
+    .link {
+      color: var(--brand);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .link:hover {
+      color: var(--brand-alt);
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      
+      .hero-title {
+        font-size: 2rem;
+      }
+      
+      .hero-description {
+        font-size: 1.125rem;
+      }
+      
+      .container {
+        padding: 0 var(--space-4);
+      }
+      
+      .param-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-2);
+      }
+      
+      .code-block {
+        font-size: 0.8rem;
+        padding: var(--space-4);
+      }
+    }
+  </style>
+</body>
+</html>
