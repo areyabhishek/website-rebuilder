@@ -1,0 +1,254 @@
+---
+// 404 Page
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | Appsmith</title>
+    <meta name="description" content="The page you're looking for doesn't exist.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-content">
+                <div class="nav-brand">
+                    <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=120&h=32&fit=crop" alt="Appsmith" class="logo">
+                </div>
+                <div class="nav-links">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/enterprise" class="nav-link">Enterprise</a>
+                    <a href="/ai/low-code" class="nav-link">Low Code</a>
+                    <a href="/case-study/f22-labs" class="nav-link">F22 Labs</a>
+                    <a href="/case-study/gsk" class="nav-link">GSK</a>
+                    <a href="/case-study/hifi" class="nav-link">HiFi</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="error-page">
+        <div class="container">
+            <div class="error-content">
+                <div class="error-illustration">
+                    <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop" alt="404 Error" class="error-image">
+                </div>
+                <div class="error-text">
+                    <h1 class="error-title">404</h1>
+                    <h2 class="error-subtitle">Page Not Found</h2>
+                    <p class="error-description">The page you're looking for doesn't exist or has been moved.</p>
+                    <div class="error-actions">
+                        <a href="/" class="btn btn-primary">Go Home</a>
+                        <a href="/about" class="btn btn-secondary">Read Blog</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <style>
+        :root {
+            --brand: #6366f1;
+            --brand-alt: #4f46e5;
+            --bg: #ffffff;
+            --surface: #f8fafc;
+            --text: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --space-xs: 8px;
+            --space-sm: 16px;
+            --space-md: 24px;
+            --space-lg: 32px;
+            --space-xl: 48px;
+            --space-2xl: 64px;
+            --space-3xl: 96px;
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--bg);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+
+        /* Navigation */
+        .nav {
+            background-color: var(--bg);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--space-sm) 0;
+        }
+
+        .logo {
+            height: 32px;
+            width: auto;
+            border-radius: var(--radius-sm);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: var(--space-lg);
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--brand);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: var(--radius-md);
+            font-weight: 500;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--brand);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--brand-alt);
+        }
+
+        .btn-secondary {
+            background-color: var(--surface);
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--border);
+        }
+
+        /* Error Page */
+        .error-page {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-2xl) 0;
+        }
+
+        .error-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-2xl);
+            align-items: center;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .error-illustration {
+            text-align: center;
+        }
+
+        .error-image {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: var(--radius-lg);
+        }
+
+        .error-text {
+            text-align: left;
+        }
+
+        .error-title {
+            font-size: 96px;
+            font-weight: 700;
+            color: var(--brand);
+            line-height: 1;
+            margin-bottom: var(--space-sm);
+        }
+
+        .error-subtitle {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: var(--space-md);
+            color: var(--text);
+        }
+
+        .error-description {
+            font-size: 18px;
+            color: var(--text-muted);
+            margin-bottom: var(--space-xl);
+        }
+
+        .error-actions {
+            display: flex;
+            gap: var(--space-sm);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .error-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .error-text {
+                text-align: center;
+            }
+
+            .error-title {
+                font-size: 64px;
+            }
+
+            .error-subtitle {
+                font-size: 24px;
+            }
+
+            .error-actions {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</body>
+</html>
