@@ -1,0 +1,359 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Page Not Found | Appsmith</title>
+  <meta name="description" content="The page you're looking for doesn't exist. Return to Appsmith home.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <div class="nav-brand">
+        <a href="/" class="brand-link">Appsmith</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="/" class="nav-link">Home</a></li>
+        <li><a href="/sign-up" class="nav-link">Sign Up</a></li>
+        <li><a href="/getting-started/setup" class="nav-link">Setup</a></li>
+        <li><a href="/pricing" class="nav-link">Pricing</a></li>
+        <li><a href="/blog/buying-guide-why-appsmith" class="nav-link">Why Appsmith</a></li>
+        <li><a href="/blog/user-education" class="nav-link">User Education</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="error-section">
+      <div class="container">
+        <div class="error-content">
+          <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop" alt="404 Error" class="error-image">
+          <h1 class="error-title">404</h1>
+          <h2 class="error-subtitle">Page Not Found</h2>
+          <p class="error-description">The page you're looking for doesn't exist or has been moved. Let's get you back on track.</p>
+          <div class="error-actions">
+            <a href="/" class="button primary">Go Home</a>
+            <a href="/blog/buying-guide-why-appsmith" class="button secondary">Learn About Appsmith</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="help-section">
+      <div class="container">
+        <h3 class="help-title">Looking for something specific?</h3>
+        <div class="help-grid">
+          <div class="help-card">
+            <h4 class="help-card-title">Getting Started</h4>
+            <p class="help-card-description">New to Appsmith? Start building your first application.</p>
+            <a href="/getting-started/setup" class="help-link">Setup Guide</a>
+          </div>
+          <div class="help-card">
+            <h4 class="help-card-title">Documentation</h4>
+            <p class="help-card-description">Find detailed guides and API references.</p>
+            <a href="/docs" class="help-link">Browse Docs</a>
+          </div>
+          <div class="help-card">
+            <h4 class="help-card-title">Community</h4>
+            <p class="help-card-description">Join our community for support and discussions.</p>
+            <a href="https://community.appsmith.com/" class="help-link">Join Community</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-text">&copy; 2025 Appsmith. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <style>
+    :root {
+      --brand: #2f4842;
+      --brand-alt: #253934;
+      --bg: #ffffff;
+      --surface: #efefef;
+      --text: #122124;
+      --muted: #6e7879;
+      
+      --font-heading: sans-serif, sans-serif;
+      --font-body: sans-serif, sans-serif;
+      
+      --space-0: 0px;
+      --space-1: 4px;
+      --space-2: 8px;
+      --space-3: 16px;
+      --space-4: 24px;
+      --space-5: 32px;
+      --space-6: 48px;
+      
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 12px;
+      
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+      --shadow-md: 0 4px 6px rgba(0,0,0,0.15);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text);
+      background-color: var(--bg);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-3);
+    }
+
+    .header {
+      background-color: var(--bg);
+      border-bottom: 1px solid var(--surface);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--space-3) var(--space-3);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .brand-link {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--brand);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: var(--space-5);
+    }
+
+    .nav-link {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--brand);
+    }
+
+    main {
+      flex: 1;
+    }
+
+    .error-section {
+      padding: var(--space-6) 0;
+      text-align: center;
+      background-color: var(--surface);
+    }
+
+    .error-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .error-image {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: var(--radius-md);
+      margin-bottom: var(--space-4);
+    }
+
+    .error-title {
+      font-family: var(--font-heading);
+      font-size: 6rem;
+      font-weight: 600;
+      color: var(--brand);
+      margin-bottom: var(--space-3);
+      line-height: 1;
+    }
+
+    .error-subtitle {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: var(--space-4);
+    }
+
+    .error-description {
+      font-size: 1.125rem;
+      color: var(--muted);
+      margin-bottom: var(--space-6);
+    }
+
+    .error-actions {
+      display: flex;
+      gap: var(--space-3);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-block;
+      padding: var(--space-2) var(--space-3);
+      border-radius: var(--radius-md);
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: none;
+      cursor: pointer;
+      height: 43px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .button.primary {
+      background-color: var(--brand);
+      color: var(--bg);
+    }
+
+    .button.primary:hover {
+      background-color: var(--brand-alt);
+    }
+
+    .button.secondary {
+      background-color: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--muted);
+    }
+
+    .button.secondary:hover {
+      background-color: var(--muted);
+      color: var(--bg);
+    }
+
+    .help-section {
+      padding: var(--space-6) 0;
+    }
+
+    .help-title {
+      font-family: var(--font-heading);
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--text);
+      text-align: center;
+      margin-bottom: var(--space-5);
+    }
+
+    .help-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-4);
+    }
+
+    .help-card {
+      background-color: var(--bg);
+      border-radius: var(--radius-lg);
+      padding: var(--space-5);
+      box-shadow: var(--shadow-sm);
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .help-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .help-card-title {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: var(--space-3);
+    }
+
+    .help-card-description {
+      color: var(--muted);
+      margin-bottom: var(--space-4);
+    }
+
+    .help-link {
+      color: var(--brand);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .help-link:hover {
+      color: var(--brand-alt);
+      text-decoration: underline;
+    }
+
+    .footer {
+      padding: var(--space-5) 0;
+      background-color: var(--brand);
+      text-align: center;
+      margin-top: auto;
+    }
+
+    .footer-text {
+      color: var(--bg);
+    }
+
+    @media (max-width: 768px) {
+      .nav {
+        flex-direction: column;
+        gap: var(--space-3);
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--space-3);
+      }
+
+      .error-title {
+        font-size: 4rem;
+      }
+
+      .error-subtitle {
+        font-size: 1.5rem;
+      }
+
+      .error-actions {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .button {
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .help-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</body>
+</html>
