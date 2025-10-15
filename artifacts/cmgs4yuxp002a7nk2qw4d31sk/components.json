@@ -1,0 +1,36 @@
+{
+  "designDomain": "lovable.dev",
+  "designLanguage": "Modern and friendly with rounded corners and smooth transitions. Uses a vibrant blue brand color balanced with neutrals. Typography is clean and legible with consistent spacing. Components have subtle shadows and borders for depth while maintaining a light, airy feel.",
+  "components": [
+    {
+      "name": "Button",
+      "purpose": "Primary call-to-action element",
+      "description": "Buttons communicate actions users can take. They have different visual weights based on hierarchy.",
+      "keyStyles": [
+        "Rounded full corners for friendly feel",
+        "Consistent padding for touch targets",
+        "Smooth hover transitions"
+      ]
+    },
+    {
+      "name": "Card",
+      "purpose": "Container for related content",
+      "description": "Cards group related information into digestible sections with consistent spacing and borders.",
+      "keyStyles": [
+        "Subtle border for definition",
+        "Rounded corners match system",
+        "White background for contrast"
+      ]
+    },
+    {
+      "name": "Navigation",
+      "purpose": "Primary site navigation",
+      "description": "The main navigation provides consistent access to key sections across all pages.",
+      "usageNotes": [
+        "Use for main site sections only",
+        "Keep items concise",
+        "Highlight active state"
+      ]
+    }
+  ]
+}
