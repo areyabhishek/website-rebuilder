@@ -1,0 +1,40 @@
+{
+  "designDomain": "betterup.com",
+  "designLanguage": "The BetterUp design system emphasizes clarity and professionalism through clean typography, subtle depth, and focused interactions. The color palette balances trustworthy blues with energetic accents. Components maintain consistent spacing and interaction patterns to create a cohesive, premium experience.",
+  "components": [
+    {
+      "name": "Button",
+      "purpose": "Primary call-to-action component",
+      "description": "Buttons communicate actions users can take. They can be filled, outlined or text-only variants.",
+      "keyStyles": [
+        "Consistent padding and height",
+        "Clear hover/active states",
+        "Bold text for emphasis"
+      ]
+    },
+    {
+      "name": "Card",
+      "purpose": "Container for grouped content",
+      "description": "Cards group related content and actions into a padded container with subtle depth.",
+      "keyStyles": [
+        "Light background",
+        "Rounded corners",
+        "Subtle shadow"
+      ]
+    },
+    {
+      "name": "Navigation",
+      "purpose": "Primary site navigation",
+      "description": "The main navigation provides consistent access to key sections and actions.",
+      "keyStyles": [
+        "Sticky positioning",
+        "Dropdown menus",
+        "Mobile responsive"
+      ],
+      "usageNotes": [
+        "Keep menu items concise",
+        "Highlight active state"
+      ]
+    }
+  ]
+}
