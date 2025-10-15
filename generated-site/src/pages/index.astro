@@ -1,0 +1,386 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentation | Stripe</title>
+  <meta name="description" content="Stripe documentation and API reference for payments, billing, and financial infrastructure.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="layout">
+    <nav class="nav">
+      <div class="nav-container">
+        <div class="nav-brand">
+          <span class="nav-logo">Stripe</span>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="/" class="nav-link active">Home</a></li>
+          <li><a href="/billing/subscriptions/coupons" class="nav-link">Coupons</a></li>
+          <li><a href="/capital/marketing" class="nav-link">Marketing</a></li>
+          <li><a href="/payments/mobilepay/accept-a-payment" class="nav-link">Accept A Payment</a></li>
+          <li><a href="/payments" class="nav-link">Payments</a></li>
+          <li><a href="/upgrades" class="nav-link">Upgrades</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="main">
+      <div class="hero">
+        <div class="hero-content">
+          <h1 class="hero-title">Documentation</h1>
+          <p class="hero-subtitle">Everything you need to integrate payments and build a successful business online.</p>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="grid">
+          <div class="card">
+            <h2 class="card-title">No-code</h2>
+            <ul class="card-list">
+              <li><a href="https://docs.stripe.com/no-code/payment-links" class="card-link">Sell and get paid online</a></li>
+              <li><a href="https://docs.stripe.com/no-code/invoices" class="card-link">Invoice clients and customers</a></li>
+              <li><a href="#" class="card-link">Set up recurring payments</a></li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h2 class="card-title">Stripe-hosted</h2>
+            <ul class="card-list">
+              <li><a href="https://docs.stripe.com/payments/checkout" class="card-link">Use a prebuilt checkout page</a></li>
+              <li><a href="https://docs.stripe.com/no-code/customer-portal" class="card-link">Set up the customer portal</a></li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h2 class="card-title">For developers</h2>
+            <ul class="card-list">
+              <li><a href="https://docs.stripe.com/api" class="card-link">API reference</a></li>
+              <li><a href="https://docs.stripe.com/get-started/development-environment" class="card-link">Development quickstart</a></li>
+              <li><a href="https://docs.stripe.com/samples" class="card-link">Browse our sample projects</a></li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h2 class="card-title">Try it out</h2>
+            <ul class="card-list">
+              <li><span class="card-text">Start a payment</span></li>
+              <li><span class="card-text">Sell a product</span></li>
+              <li><span class="card-text">Issue coupons</span></li>
+              <li><span class="card-text">Get your balance</span></li>
+              <li><span class="card-text">Manage taxes</span></li>
+            </ul>
+            <div class="card-actions">
+              <a href="https://docs.stripe.com/stripe-cli#install" class="btn">Download Stripe CLI</a>
+              <a href="https://dashboard.stripe.com/login" class="btn btn-secondary">Sign in</a>
+            </div>
+          </div>
+
+          <div class="card featured">
+            <div class="card-header">
+              <h2 class="card-title">Browse by product</h2>
+              <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=32&h=32&fit=crop" alt="Product icon" class="card-icon">
+            </div>
+            <div class="product-grid">
+              <div class="product-item">
+                <h3 class="product-title">Payments</h3>
+                <p class="product-subtitle">Online payments</p>
+                <a href="https://docs.stripe.com/payments" class="product-link">Learn more</a>
+              </div>
+              <div class="product-item">
+                <h3 class="product-title">Terminal</h3>
+                <p class="product-subtitle">In-person and omnichannel payments</p>
+                <a href="https://docs.stripe.com/terminal" class="product-link">Learn more</a>
+              </div>
+              <div class="product-item">
+                <h3 class="product-title">Connect</h3>
+                <p class="product-subtitle">Payments for platforms</p>
+                <a href="#" class="product-link">Learn more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <style>
+    :root {
+      --brand: #635BFF;
+      --brand-alt: #0A2540;
+      --bg: #FFFFFF;
+      --surface: #F7F9FA;
+      --text: #0A2540;
+      --muted: #6B7280;
+      
+      --font-heading: 'Inter', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      
+      --space-0: 0px;
+      --space-1: 4px;
+      --space-2: 8px;
+      --space-3: 12px;
+      --space-4: 16px;
+      --space-5: 20px;
+      --space-6: 24px;
+      --space-7: 28px;
+      --space-8: 32px;
+      --space-10: 40px;
+      --space-12: 48px;
+      --space-16: 64px;
+      --space-20: 80px;
+      
+      --radius-sm: 6px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+      
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text);
+      background-color: var(--bg);
+      line-height: 1.6;
+    }
+
+    .layout {
+      min-height: 100vh;
+    }
+
+    .nav {
+      border-bottom: 1px solid var(--surface);
+      background: var(--bg);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--space-4) var(--space-6);
+    }
+
+    .nav-logo {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 1.25rem;
+      color: var(--brand);
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: var(--space-6);
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--text);
+    }
+
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: var(--space-6);
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: var(--space-16);
+    }
+
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: var(--space-4);
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-6);
+    }
+
+    .card {
+      background: var(--bg);
+      border: 1px solid var(--surface);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6);
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: var(--shadow-md);
+    }
+
+    .card.featured {
+      grid-column: 1 / -1;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      margin-bottom: var(--space-4);
+    }
+
+    .card-title {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: var(--space-4);
+    }
+
+    .card-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: var(--radius-sm);
+    }
+
+    .card-list {
+      list-style: none;
+    }
+
+    .card-list li {
+      margin-bottom: var(--space-3);
+    }
+
+    .card-link {
+      color: var(--brand);
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .card-link:hover {
+      opacity: 0.8;
+    }
+
+    .card-text {
+      color: var(--muted);
+    }
+
+    .card-actions {
+      display: flex;
+      gap: var(--space-4);
+      margin-top: var(--space-6);
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: var(--space-3) var(--space-4);
+      background: var(--brand);
+      color: var(--bg);
+      text-decoration: none;
+      border-radius: var(--radius-md);
+      font-weight: 500;
+      transition: opacity 0.2s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    .btn-secondary {
+      background: var(--surface);
+      color: var(--text);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-4);
+    }
+
+    .product-item {
+      padding: var(--space-4);
+      border: 1px solid var(--surface);
+      border-radius: var(--radius-md);
+      transition: border-color 0.2s ease;
+    }
+
+    .product-item:hover {
+      border-color: var(--brand);
+    }
+
+    .product-title {
+      font-weight: 600;
+      margin-bottom: var(--space-2);
+      color: var(--text);
+    }
+
+    .product-subtitle {
+      color: var(--muted);
+      font-size: 0.875rem;
+      margin-bottom: var(--space-3);
+    }
+
+    .product-link {
+      color: var(--brand);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        display: none;
+      }
+
+      .hero-title {
+        font-size: 2rem;
+      }
+
+      .main {
+        padding: var(--space-4);
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card-actions {
+        flex-direction: column;
+      }
+
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</body>
+</html>

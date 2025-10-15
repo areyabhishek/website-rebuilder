@@ -1,0 +1,394 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Renames the authorize_with_url field for Payment Intents to redirect_to_url | Stripe Documentation</title>
+  <meta name="description" content="Breaking changes: Renames the authorize_with_url property on the PaymentIntent to redirect_to_url.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="layout">
+    <nav class="nav">
+      <div class="nav-container">
+        <div class="nav-brand">
+          <span class="nav-logo">Stripe</span>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="/" class="nav-link">Home</a></li>
+          <li><a href="/billing/subscriptions/coupons" class="nav-link">Coupons</a></li>
+          <li><a href="/capital/marketing" class="nav-link">Marketing</a></li>
+          <li><a href="/payments/mobilepay/accept-a-payment" class="nav-link">Accept A Payment</a></li>
+          <li><a href="/payments" class="nav-link">Payments</a></li>
+          <li><a href="/upgrades" class="nav-link">Upgrades</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="main">
+      <div class="breadcrumb">
+        <a href="/" class="breadcrumb-link">Documentation</a>
+        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-current">Breaking Changes</span>
+      </div>
+
+      <div class="hero">
+        <div class="hero-badge">Breaking changes</div>
+        <h1 class="hero-title">Renames the <code>authorize_with_url</code> field for Payment Intents to <code>redirect_to_url</code></h1>
+      </div>
+
+      <div class="content">
+        <div class="grid">
+          <div class="card">
+            <div class="card-header">
+              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=24&h=24&fit=crop" alt="What's new" class="card-icon">
+              <h2 class="card-title">What's new</h2>
+            </div>
+            <p class="card-content">
+              Renames the <code>authorize_with_url</code> property on the PaymentIntent to <code>redirect_to_url</code>.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=24&h=24&fit=crop" alt="Impact" class="card-icon">
+              <h2 class="card-title">Impact</h2>
+            </div>
+            <p class="card-content">
+              Update your code to reference <code>redirect_to_url</code> instead of <code>authorize_with_url</code> when handling URL-based authorization steps in the payment process.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=24&h=24&fit=crop" alt="Upgrade" class="card-icon">
+              <h2 class="card-title">Upgrade</h2>
+            </div>
+            <div class="card-content">
+              <ol class="upgrade-list">
+                <li><a href="https://docs.stripe.com/upgrades#view-your-api-version-and-the-latest-available-upgrade-in-workbench" class="upgrade-link">View your current API version</a> in Workbench.</li>
+                <li>If you use an SDK, upgrade to the corresponding version.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div class="code-example">
+          <h3 class="code-title">Code Example</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <span class="code-label">Before</span>
+            </div>
+            <pre class="code-content"><code>{
+  "id": "pi_1234567890",
+  "object": "payment_intent",
+  "status": "requires_action",
+  "authorize_with_url": "https://js.stripe.com/v3/..."
+}</code></pre>
+          </div>
+          
+          <div class="code-block">
+            <div class="code-header">
+              <span class="code-label">After</span>
+            </div>
+            <pre class="code-content"><code>{
+  "id": "pi_1234567890",
+  "object": "payment_intent",
+  "status": "requires_action",
+  "redirect_to_url": "https://js.stripe.com/v3/..."
+}</code></pre>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <style>
+    :root {
+      --brand: #635BFF;
+      --brand-alt: #0A2540;
+      --bg: #FFFFFF;
+      --surface: #F7F9FA;
+      --text: #0A2540;
+      --muted: #6B7280;
+      
+      --font-heading: 'Inter', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      
+      --space-0: 0px;
+      --space-1: 4px;
+      --space-2: 8px;
+      --space-3: 12px;
+      --space-4: 16px;
+      --space-5: 20px;
+      --space-6: 24px;
+      --space-7: 28px;
+      --space-8: 32px;
+      --space-10: 40px;
+      --space-12: 48px;
+      --space-16: 64px;
+      --space-20: 80px;
+      
+      --radius-sm: 6px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+      
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text);
+      background-color: var(--bg);
+      line-height: 1.6;
+    }
+
+    .layout {
+      min-height: 100vh;
+    }
+
+    .nav {
+      border-bottom: 1px solid var(--surface);
+      background: var(--bg);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--space-4) var(--space-6);
+    }
+
+    .nav-logo {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 1.25rem;
+      color: var(--brand);
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: var(--space-6);
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--text);
+    }
+
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: var(--space-6);
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      margin-bottom: var(--space-8);
+      font-size: 0.875rem;
+    }
+
+    .breadcrumb-link {
+      color: var(--brand);
+      text-decoration: none;
+    }
+
+    .breadcrumb-separator {
+      color: var(--muted);
+    }
+
+    .breadcrumb-current {
+      color: var(--muted);
+    }
+
+    .hero {
+      margin-bottom: var(--space-16);
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: #FEF3C7;
+      color: #92400E;
+      padding: var(--space-2) var(--space-3);
+      border-radius: var(--radius-sm);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: var(--space-4);
+    }
+
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.2;
+    }
+
+    .hero-title code {
+      background: var(--surface);
+      padding: var(--space-1) var(--space-2);
+      border-radius: var(--radius-sm);
+      font-size: 0.9em;
+      font-family: 'Monaco', 'Consolas', monospace;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-6);
+      margin-bottom: var(--space-16);
+    }
+
+    .card {
+      background: var(--bg);
+      border: 1px solid var(--surface);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6);
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: var(--shadow-md);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      margin-bottom: var(--space-4);
+    }
+
+    .card-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: var(--radius-sm);
+    }
+
+    .card-title {
+      font-family: var(--font-heading);
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .card-content {
+      color: var(--muted);
+    }
+
+    .card-content code {
+      background: var(--surface);
+      padding: var(--space-1) var(--space-2);
+      border-radius: var(--radius-sm);
+      font-family: 'Monaco', 'Consolas', monospace;
+      font-size: 0.875rem;
+    }
+
+    .upgrade-list {
+      padding-left: var(--space-5);
+    }
+
+    .upgrade-list li {
+      margin-bottom: var(--space-2);
+      color: var(--muted);
+    }
+
+    .upgrade-link {
+      color: var(--brand);
+      text-decoration: none;
+    }
+
+    .upgrade-link:hover {
+      opacity: 0.8;
+    }
+
+    .code-example {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6);
+    }
+
+    .code-title {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: var(--space-6);
+    }
+
+    .code-block {
+      margin-bottom: var(--space-4);
+    }
+
+    .code-block:last-child {
+      margin-bottom: 0;
+    }
+
+    .code-header {
+      background: var(--text);
+      color: var(--bg);
+      padding: var(--space-3) var(--space-4);
+      border-radius: var(--radius-md) var(--radius-md) 0 0;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .code-content {
+      background: var(--bg);
+      padding: var(--space-4);
+      border-radius: 0 0 var(--radius-md) var(--radius-md);
+      border: 1px solid var(--surface);
+      border-top: none;
+      font-family: 'Monaco', 'Consolas', monospace;
+      font-size: 0.875rem;
+      overflow-x: auto;
+      white-space: pre;
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        display: none;
+      }
+
+      .hero-title {
+        font-size: 2rem;
+      }
+
+      .main {
+        padding: var(--space-4);
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</body>
+</html>
