@@ -1,0 +1,291 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found | Stripe Documentation</title>
+  <meta name="description" content="The page you're looking for doesn't exist.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="layout">
+    <nav class="nav">
+      <div class="nav-container">
+        <div class="nav-brand">
+          <span class="nav-logo">Stripe</span>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="/" class="nav-link">Home</a></li>
+          <li><a href="/billing/subscriptions/coupons" class="nav-link">Coupons</a></li>
+          <li><a href="/capital/marketing" class="nav-link">Marketing</a></li>
+          <li><a href="/payments/mobilepay/accept-a-payment" class="nav-link">Accept A Payment</a></li>
+          <li><a href="/payments" class="nav-link">Payments</a></li>
+          <li><a href="/upgrades" class="nav-link">Upgrades</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="main">
+      <div class="error-container">
+        <div class="error-icon">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+            <path d="M15 9l-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M9 9l6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        
+        <h1 class="error-title">Page not found</h1>
+        <p class="error-description">
+          The page you're looking for doesn't exist or has been moved.
+        </p>
+        
+        <div class="error-actions">
+          <a href="/" class="btn">Go to Documentation</a>
+          <a href="https://stripe.com" class="btn btn-secondary">Visit Stripe.com</a>
+        </div>
+        
+        <div class="suggestions">
+          <h2 class="suggestions-title">Popular documentation</h2>
+          <div class="suggestions-grid">
+            <a href="https://docs.stripe.com/payments" class="suggestion-card">
+              <h3 class="suggestion-title">Accept payments</h3>
+              <p class="suggestion-description">Start accepting payments online</p>
+            </a>
+            <a href="https://docs.stripe.com/api" class="suggestion-card">
+              <h3 class="suggestion-title">API Reference</h3>
+              <p class="suggestion-description">Complete API documentation</p>
+            </a>
+            <a href="https://docs.stripe.com/get-started" class="suggestion-card">
+              <h3 class="suggestion-title">Get Started</h3>
+              <p class="suggestion-description">Quick start guide</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <style>
+    :root {
+      --brand: #635BFF;
+      --brand-alt: #0A2540;
+      --bg: #FFFFFF;
+      --surface: #F7F9FA;
+      --text: #0A2540;
+      --muted: #6B7280;
+      
+      --font-heading: 'Inter', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      
+      --space-0: 0px;
+      --space-1: 4px;
+      --space-2: 8px;
+      --space-3: 12px;
+      --space-4: 16px;
+      --space-5: 20px;
+      --space-6: 24px;
+      --space-7: 28px;
+      --space-8: 32px;
+      --space-10: 40px;
+      --space-12: 48px;
+      --space-16: 64px;
+      --space-20: 80px;
+      
+      --radius-sm: 6px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+      
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text);
+      background-color: var(--bg);
+      line-height: 1.6;
+    }
+
+    .layout {
+      min-height: 100vh;
+    }
+
+    .nav {
+      border-bottom: 1px solid var(--surface);
+      background: var(--bg);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--space-4) var(--space-6);
+    }
+
+    .nav-logo {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 1.25rem;
+      color: var(--brand);
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: var(--space-6);
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--text);
+    }
+
+    .main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: var(--space-20) var(--space-6);
+    }
+
+    .error-container {
+      text-align: center;
+    }
+
+    .error-icon {
+      color: var(--muted);
+      margin-bottom: var(--space-6);
+    }
+
+    .error-title {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: var(--space-4);
+    }
+
+    .error-description {
+      font-size: 1.125rem;
+      color: var(--muted);
+      margin-bottom: var(--space-8);
+    }
+
+    .error-actions {
+      display: flex;
+      gap: var(--space-4);
+      justify-content: center;
+      margin-bottom: var(--space-16);
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: var(--space-3) var(--space-6);
+      background: var(--brand);
+      color: var(--bg);
+      text-decoration: none;
+      border-radius: var(--radius-md);
+      font-weight: 500;
+      transition: opacity 0.2s ease;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    .btn-secondary {
+      background: var(--surface);
+      color: var(--text);
+    }
+
+    .suggestions {
+      text-align: left;
+    }
+
+    .suggestions-title {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: var(--space-6);
+      text-align: center;
+    }
+
+    .suggestions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--space-4);
+    }
+
+    .suggestion-card {
+      display: block;
+      padding: var(--space-6);
+      background: var(--bg);
+      border: 1px solid var(--surface);
+      border-radius: var(--radius-lg);
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .suggestion-card:hover {
+      box-shadow: var(--shadow-md);
+      border-color: var(--brand);
+    }
+
+    .suggestion-title {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: var(--space-2);
+    }
+
+    .suggestion-description {
+      color: var(--muted);
+      font-size: 0.875rem;
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        display: none;
+      }
+
+      .main {
+        padding: var(--space-12) var(--space-4);
+      }
+
+      .error-title {
+        font-size: 2rem;
+      }
+
+      .error-actions {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .suggestions-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</body>
+</html>

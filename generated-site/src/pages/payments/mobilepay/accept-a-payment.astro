@@ -1,0 +1,485 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MobilePay payments | Stripe Documentation</title>
+  <meta name="description" content="Learn how to accept MobilePay, a popular payment method in Denmark and Finland.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="layout">
+    <nav class="nav">
+      <div class="nav-container">
+        <div class="nav-brand">
+          <span class="nav-logo">Stripe</span>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="/" class="nav-link">Home</a></li>
+          <li><a href="/billing/subscriptions/coupons" class="nav-link">Coupons</a></li>
+          <li><a href="/capital/marketing" class="nav-link">Marketing</a></li>
+          <li><a href="/payments/mobilepay/accept-a-payment" class="nav-link active">Accept A Payment</a></li>
+          <li><a href="/payments" class="nav-link">Payments</a></li>
+          <li><a href="/upgrades" class="nav-link">Upgrades</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="main">
+      <div class="breadcrumb">
+        <a href="/" class="breadcrumb-link">Documentation</a>
+        <span class="breadcrumb-separator">/</span>
+        <a href="/payments" class="breadcrumb-link">Payments</a>
+        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-current">MobilePay</span>
+      </div>
+
+      <div class="hero">
+        <h1 class="hero-title">MobilePay payments</h1>
+        <p class="hero-subtitle">Learn how to accept MobilePay, a popular payment method in Denmark and Finland.</p>
+        
+        <div class="hero-actions">
+          <button class="btn">Ask about this page</button>
+          <button class="btn btn-secondary">Copy for LLM</button>
+          <button class="btn btn-secondary">View as Markdown</button>
+        </div>
+
+        <div class="integration-tabs">
+          <button class="tab-btn active">Web</button>
+          <button class="tab-btn">Mobile</button>
+          <button class="tab-btn">Stripe-hosted page</button>
+          <button class="tab-btn">Advanced integration</button>
+          <button class="tab-btn">Direct API</button>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="intro-card">
+          <p>MobilePay is a <a href="https://docs.stripe.com/payments/payment-methods#usage" class="inline-link">single-use</a> card payment method popular in Denmark and Finland. It allows customers to pay using their mobile phones through the MobilePay app.</p>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <div class="card-header">
+              <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=24&h=24&fit=crop" alt="Failed payments" class="card-icon">
+              <h2 class="card-title">Failed payments</h2>
+            </div>
+            <div class="card-content">
+              <p>MobilePay transactions can fail if the underlying card transaction is declined. Learn more about <a href="https://docs.stripe.com/declines/card" class="inline-link">card declines</a>. In this case, the PaymentMethod is detached and cannot be reused.</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=24&h=24&fit=crop" alt="Refunds and disputes" class="card-icon">
+              <h2 class="card-title">Refunds and disputes</h2>
+            </div>
+            <div class="card-content">
+              <p>Stripe performs a card transaction using standard card rails as part of a MobilePay transaction. <a href="https://docs.stripe.com/refunds" class="inline-link">Refunds</a> and <a href="https://docs.stripe.com/disputes/how-disputes" class="inline-link">disputes</a> work the same way as regular card payments.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-section">
+          <h2 class="section-title">Integration steps</h2>
+          <div class="step-list">
+            <div class="step">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <h3 class="step-title">Enable MobilePay</h3>
+                <p class="step-description">Enable MobilePay in your Stripe Dashboard under Payment Methods.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <h3 class="step-title">Create Payment Intent</h3>
+                <p class="step-description">Create a PaymentIntent with MobilePay as an available payment method.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <h3 class="step-title">Handle authentication</h3>
+                <p class="step-description">Direct customers to the MobilePay app for payment confirmation.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="see-also">
+          <div class="card-header">
+            <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=24&h=24&fit=crop" alt="See also" class="card-icon">
+            <h2 class="card-title">See also</h2>
+          </div>
+          <ul class="see-also-list">
+            <li><a href="https://docs.stripe.com/payments/mobilepay" class="inline-link">More about MobilePay</a></li>
+            <li><a href="https://docs.stripe.com/checkout/fulfillment" class="inline-link">Checkout fulfillment</a></li>
+            <li><a href="https://docs.stripe.com/payments/checkout" class="inline-link">Customize Checkout</a></li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <style>
+    :root {
+      --brand: #635BFF;
+      --brand-alt: #0A2540;
+      --bg: #FFFFFF;
+      --surface: #F7F9FA;
+      --text: #0A2540;
+      --muted: #6B7280;
+      
+      --font-heading: 'Inter', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      
+      --space-0: 0px;
+      --space-1: 4px;
+      --space-2: 8px;
+      --space-3: 12px;
+      --space-4: 16px;
+      --space-5: 20px;
+      --space-6: 24px;
+      --space-7: 28px;
+      --space-8: 32px;
+      --space-10: 40px;
+      --space-12: 48px;
+      --space-16: 64px;
+      --space-20: 80px;
+      
+      --radius-sm: 6px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+      
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text);
+      background-color: var(--bg);
+      line-height: 1.6;
+    }
+
+    .layout {
+      min-height: 100vh;
+    }
+
+    .nav {
+      border-bottom: 1px solid var(--surface);
+      background: var(--bg);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--space-4) var(--space-6);
+    }
+
+    .nav-logo {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 1.25rem;
+      color: var(--brand);
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: var(--space-6);
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--text);
+    }
+
+    .main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: var(--space-6);
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      margin-bottom: var(--space-8);
+      font-size: 0.875rem;
+    }
+
+    .breadcrumb-link {
+      color: var(--brand);
+      text-decoration: none;
+    }
+
+    .breadcrumb-separator {
+      color: var(--muted);
+    }
+
+    .breadcrumb-current {
+      color: var(--muted);
+    }
+
+    .hero {
+      margin-bottom: var(--space-16);
+    }
+
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: var(--space-4);
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: var(--muted);
+      margin-bottom: var(--space-6);
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: var(--space-3);
+      margin-bottom: var(--space-8);
+      flex-wrap: wrap;
+    }
+
+    .integration-tabs {
+      display: flex;
+      gap: var(--space-1);
+      background: var(--surface);
+      padding: var(--space-1);
+      border-radius: var(--radius-md);
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      padding: var(--space-2) var(--space-4);
+      background: transparent;
+      border: none;
+      border-radius: var(--radius-sm);
+      color: var(--muted);
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 0.875rem;
+    }
+
+    .tab-btn.active {
+      background: var(--bg);
+      color: var(--text);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .tab-btn:hover {
+      color: var(--text);
+    }
+
+    .intro-card {
+      background: var(--surface);
+      padding: var(--space-6);
+      border-radius: var(--radius-lg);
+      margin-bottom: var(--space-12);
+    }
+
+    .inline-link {
+      color: var(--brand);
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .inline-link:hover {
+      opacity: 0.8;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: var(--space-6);
+      margin-bottom: var(--space-16);
+    }
+
+    .card {
+      background: var(--bg);
+      border: 1px solid var(--surface);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6);
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: var(--shadow-md);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      margin-bottom: var(--space-4);
+    }
+
+    .card-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: var(--radius-sm);
+    }
+
+    .card-title {
+      font-family: var(--font-heading);
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .card-content {
+      color: var(--muted);
+    }
+
+    .feature-section {
+      margin-bottom: var(--space-16);
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: var(--space-8);
+    }
+
+    .step-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-6);
+    }
+
+    .step {
+      display: flex;
+      gap: var(--space-4);
+      align-items: flex-start;
+    }
+
+    .step-number {
+      width: 32px;
+      height: 32px;
+      background: var(--brand);
+      color: var(--bg);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 0.875rem;
+      flex-shrink: 0;
+    }
+
+    .step-title {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: var(--space-2);
+    }
+
+    .step-description {
+      color: var(--muted);
+    }
+
+    .see-also {
+      background: var(--surface);
+      padding: var(--space-6);
+      border-radius: var(--radius-lg);
+    }
+
+    .see-also-list {
+      list-style: none;
+      margin-top: var(--space-4);
+    }
+
+    .see-also-list li {
+      margin-bottom: var(--space-2);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: var(--space-3) var(--space-4);
+      background: var(--brand);
+      color: var(--bg);
+      text-decoration: none;
+      border-radius: var(--radius-md);
+      font-weight: 500;
+      transition: opacity 0.2s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 0.875rem;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    .btn-secondary {
+      background: var(--surface);
+      color: var(--text);
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        display: none;
+      }
+
+      .hero-title {
+        font-size: 2rem;
+      }
+
+      .main {
+        padding: var(--space-4);
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .integration-tabs {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .step {
+        flex-direction: column;
+        gap: var(--space-3);
+      }
+    }
+  </style>
+</body>
+</html>
