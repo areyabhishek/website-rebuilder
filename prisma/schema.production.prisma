@@ -10,6 +10,17 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model User {
+  id            String   @id @default(cuid())
+  email         String   @unique
+  supabaseId    String   @unique
+  credits       Int      @default(2) // 2 free sites
+  jobs          Job[]
+  transactions  Transaction[]
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
 model Job {
   id           String   @id @default(cuid())
   domain       String
@@ -25,8 +36,22 @@ model Job {
   prUrl        String?
   previewUrl   String?
   deploymentId String?
+  userId       String?  // Link to user
+  user         User?    @relation(fields: [userId], references: [id])
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
+}
+
+model Transaction {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+  amount      Float    // Amount in USD
+  credits     Int      // Number of credits purchased
+  paymentId   String   // Dodo Payments transaction ID
+  status      String   // pending, completed, failed
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }
 
 model Page {

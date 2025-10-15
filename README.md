@@ -1,15 +1,15 @@
 # Portfolio Site Rebuilder
 
-Automatically crawl, classify, and rebuild websites with a single URL. This tool uses Firecrawl for crawling, Claude 4.5 for classification and generation, and GitHub Actions to create fresh Astro sites.
+Automatically crawl, classify, and rebuild websites by combining the visual language of one domain with the content of another. This tool uses Firecrawl for crawling, Claude 4.5 for classification and generation, and GitHub Actions to create fresh Astro sites.
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/areyabhishek/website-rebuilder)
 
 ## Features
 
-- **One-Click Generation**: Paste a URL, click Generate, get a PR with a new site
-- **Smart Classification**: Automatically detects site type (portfolio, blog, SaaS, docs, event, restaurant)
-- **Theme-Aware**: Generates appropriate design tokens based on site category
-- **GitHub Integration**: Auto-creates issues with artifacts and triggers PR generation
+- **Design Transfer**: Point at a design reference URL and a separate content URL; we fuse them into a new Astro site
+- **Smart Classification**: Automatically detects site type (portfolio, blog, SaaS, docs, event, restaurant) for labeling
+- **Dynamic Design Tokens**: Extracts fonts, palette, spacing, and key components straight from the reference site
+- **GitHub Integration**: Auto-creates issues with blueprint + design system artifacts and triggers PR generation
 - **Vercel Preview**: Each PR gets an automatic preview deployment
 
 ## Prerequisites
@@ -121,30 +121,29 @@ Open [http://localhost:3000](http://localhost:3000) to see the app.
 ### User Flow
 
 1. Go to `/generate`
-2. Paste a URL from your allowlist
-3. Click "Generate"
-4. The app:
-   - Maps the site (discovers URLs)
-   - Crawls up to 25 pages
-   - Generates a blueprint (navigation, sections, content)
-   - Classifies the site type
-   - Generates theme tokens
-   - Writes artifacts to GitHub
-   - Creates an issue with the `generate-site` label
+2. Paste a **design source URL** (the site whose look & feel you want)
+3. Paste a **content source URL** (the site whose copy/structure you want)
+4. Click "Generate"
+5. The app:
+   - Maps and crawls the design source to extract fonts, color tokens, spacing, and component patterns
+   - Maps and crawls the content source (up to 12 pages) to build a detailed blueprint
+   - Classifies the content site type for labeling
+   - Writes three artifacts to GitHub: blueprint.json, tokens.json, components.json
+   - Creates an issue with the `generate-site` label including all artifact links
 
-5. GitHub Action automatically:
-   - Reads the blueprint and tokens
-   - Calls Claude to generate Astro site files
+6. GitHub Action automatically:
+   - Fetches blueprint + design system artifacts
+   - Prompts Claude Sonnet 4.5 to rebuild the site in Astro using those tokens/components
    - Creates a PR with the generated site
-   - Vercel deploys a preview
+   - Deploys a Vercel preview (if token provided)
 
 ### API Endpoints
 
 - `POST /api/generate` - Main generation endpoint
-  - Body: `{ url: string, limit?: number }`
+  - Body: `{ designUrl: string, contentUrl: string, limit?: number }`
   - Returns: Job ID, issue URL, artifact URLs
 
-- `GET /api/job/[id]` - Check job status
+- `GET /api/status/:jobId` - Check job status
   - Returns: Job details, status, links
 
 ### Site Categories
@@ -158,15 +157,14 @@ The classifier detects these categories:
 - **Event**: Conference/event sites with schedules/tickets
 - **Restaurant**: Restaurant/cafe sites with menus
 
-### Theme Packs
+### Dynamic Design System
 
-Each category has a unique theme with:
-- Custom fonts (heading + body)
-- Color palette (brand, bg, surface, text, muted)
-- Border radii (sm, md, lg)
-- Shadows (sm, md)
-- Spacing scale
-- Component styles (button, card, menu)
+For every job we derive:
+- Custom fonts (heading + body) from the reference site
+- Color palette (brand, alt, background, surface, text, muted)
+- Radii, shadows, and spacing scale
+- Component guidelines captured in `components.json`
+- A plain-language description of the visual language (stored on the job)
 
 ## Project Structure
 
@@ -178,14 +176,15 @@ portfolio-rebuilder/
 │   │   ├── generate/page.tsx     # Main UI
 │   │   └── api/
 │   │       ├── generate/route.ts # Generation endpoint
-│   │       └── job/[id]/route.ts # Job status endpoint
+│   │       ├── restyle/route.ts  # Styling update endpoint
+│   │       └── status/[jobId]/route.ts # Job status endpoint
 │   ├── lib/
 │   │   ├── allowlist.ts          # Domain checking
 │   │   ├── prisma.ts             # DB client
 │   │   ├── firecrawl.ts          # Firecrawl integration
 │   │   ├── classifier.ts         # Site classification
 │   │   ├── blueprint.ts          # Blueprint generator
-│   │   ├── theme-packs.ts        # Theme token generator
+│   │   ├── design-system.ts      # Dynamic design system extraction
 │   │   └── github.ts             # GitHub API client
 │   └── types/
 │       └── index.ts              # TypeScript types

@@ -66,6 +66,16 @@ export default async function SiteDetailPage({
             Created on {new Date(job.createdAt).toLocaleDateString()} at{" "}
             {new Date(job.createdAt).toLocaleTimeString()}
           </p>
+          {job.designDomain && (
+            <p className="mt-1 text-sm text-slate-500">
+              Design replicated from <span className="font-medium text-slate-300">{job.designDomain}</span>
+            </p>
+          )}
+          {job.designLanguage && (
+            <p className="text-sm text-slate-500">
+              Visual language: <span className="font-medium text-slate-300">{job.designLanguage}</span>
+            </p>
+          )}
         </div>
 
         {/* Preview Section */}
@@ -201,6 +211,60 @@ export default async function SiteDetailPage({
               </div>
             </a>
           )}
+
+          {job.tokensUrl && (
+            <a
+              href={job.tokensUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 rounded-xl border border-slate-800 bg-slate-900/40 p-4 transition hover:border-slate-700 hover:bg-slate-900/60"
+            >
+              <svg
+                className="h-5 w-5 text-slate-400"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2-1.343-2-3-2zm0 0V4m0 8v4m0 4v4"
+                />
+              </svg>
+              <div>
+                <div className="text-sm font-medium">Design Tokens</div>
+                <div className="text-xs text-slate-400">View JSON</div>
+              </div>
+            </a>
+          )}
+
+          {job.componentsUrl && (
+            <a
+              href={job.componentsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 rounded-xl border border-slate-800 bg-slate-900/40 p-4 transition hover:border-slate-700 hover:bg-slate-900/60"
+            >
+              <svg
+                className="h-5 w-5 text-slate-400"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6h12v12H6z"
+                />
+              </svg>
+              <div>
+                <div className="text-sm font-medium">Component Library</div>
+                <div className="text-xs text-slate-400">Design specs</div>
+              </div>
+            </a>
+          )}
         </div>
 
         {/* Pages List */}
@@ -230,6 +294,7 @@ export default async function SiteDetailPage({
 function StatusBadge({ status }: { status: string }) {
   const colors: Record<string, string> = {
     new: "bg-blue-500/20 text-blue-400",
+    design_ready: "bg-sky-500/20 text-sky-400",
     mapped: "bg-purple-500/20 text-purple-400",
     crawled: "bg-yellow-500/20 text-yellow-400",
     blueprinted: "bg-orange-500/20 text-orange-400",

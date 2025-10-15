@@ -18,6 +18,7 @@ interface ActionStatus {
 interface JobStatus {
   jobId: string;
   domain: string;
+  designDomain?: string;
   status: string;
   category?: string;
   issueNumber?: number;
@@ -25,11 +26,16 @@ interface JobStatus {
   prUrl?: string;
   previewUrl?: string;
   deploymentId?: string;
+  designLanguage?: string;
   actionStatus?: ActionStatus;
 }
 
 const STAGE_MAP: Record<string, { label: string; description: string }> = {
   new: { label: "Starting", description: "Initializing job..." },
+  design_ready: {
+    label: "Design Ready",
+    description: "Extracting design tokens and components...",
+  },
   mapped: { label: "Mapping", description: "Discovering site structure..." },
   crawled: { label: "Crawling", description: "Extracting content from pages..." },
   blueprinted: { label: "Analyzing", description: "Creating site blueprint..." },
@@ -108,6 +114,16 @@ export function ProgressTracker({ jobId }: { jobId: string }) {
         {status.category && (
           <p className="text-sm text-slate-400">
             Type: <span className="font-medium text-slate-300">{status.category}</span>
+          </p>
+        )}
+        {status.designDomain && (
+          <p className="text-xs text-slate-500">
+            Design system sourced from {status.designDomain}
+          </p>
+        )}
+        {status.designLanguage && (
+          <p className="text-xs text-slate-500">
+            Visual language: {status.designLanguage}
           </p>
         )}
       </div>
@@ -355,7 +371,7 @@ function getProgressPercentage(
   status: string,
   actionStatus?: ActionStatus
 ): string {
-  const stages = ["new", "mapped", "crawled", "blueprinted", "issued"];
+  const stages = ["new", "design_ready", "mapped", "crawled", "blueprinted", "issued"];
   const currentIndex = stages.indexOf(status);
 
   if (status === "failed") return "100%";

@@ -8,6 +8,7 @@ export type SiteCategory =
 
 export type JobStatus =
   | "new"
+  | "design_ready"
   | "mapped"
   | "crawled"
   | "blueprinted"
@@ -75,4 +76,18 @@ export interface FirecrawlPage {
   markdown?: string;
   html?: string;
   links?: string[];
+}
+
+export interface DesignComponentSpec {
+  name: string;
+  purpose: string;
+  description: string;
+  keyStyles?: string[];
+  usageNotes?: string[];
+}
+
+export interface DesignSystemArtifacts {
+  tokens: ThemeTokens;
+  components: DesignComponentSpec[];
+  designLanguage: string;
 }

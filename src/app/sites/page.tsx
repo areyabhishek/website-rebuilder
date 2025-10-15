@@ -68,6 +68,16 @@ export default async function SitesPage() {
                       </span>
                     )}
                   </div>
+                  {job.designDomain && (
+                    <p className="mt-2 text-xs text-slate-500">
+                      Design from {job.designDomain}
+                    </p>
+                  )}
+                  {job.designLanguage && (
+                    <p className="text-xs text-slate-600">
+                      Visual language: {job.designLanguage}
+                    </p>
+                  )}
                 </div>
 
                 {job.previewUrl && (
@@ -130,6 +140,7 @@ export default async function SitesPage() {
 function StatusBadge({ status }: { status: string }) {
   const colors: Record<string, string> = {
     new: "bg-blue-500/20 text-blue-400",
+    design_ready: "bg-sky-500/20 text-sky-400",
     mapped: "bg-purple-500/20 text-purple-400",
     crawled: "bg-yellow-500/20 text-yellow-400",
     blueprinted: "bg-orange-500/20 text-orange-400",

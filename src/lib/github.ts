@@ -1,5 +1,10 @@
 import { Octokit } from "@octokit/rest";
-import type { Blueprint, ThemeTokens, SiteCategory } from "@/types";
+import type {
+  Blueprint,
+  ThemeTokens,
+  SiteCategory,
+  DesignComponentSpec,
+} from "@/types";
 
 const octokit = new Octokit({
   auth: process.env.GITHUB_TOKEN,
@@ -15,11 +20,22 @@ function parseRepo(repoString: string): { owner: string; repo: string } {
   return { owner, repo };
 }
 
+interface DesignDetails {
+  components?: DesignComponentSpec[];
+  designLanguage?: string;
+  designDomain?: string;
+}
+
 export async function writeArtifacts(
   jobId: string,
   blueprint: Blueprint,
-  tokens: ThemeTokens
-): Promise<{ blueprintUrl: string; tokensUrl: string }> {
+  tokens: ThemeTokens,
+  designDetails: DesignDetails = {},
+): Promise<{
+  blueprintUrl: string;
+  tokensUrl: string;
+  componentsUrl?: string;
+}> {
   if (!process.env.GITHUB_TOKEN) {
     throw new Error("GITHUB_TOKEN environment variable is not set");
   }
@@ -67,17 +83,47 @@ export async function writeArtifacts(
     content: tokensContent,
   });
 
+  let componentsUrl: string | undefined;
+
+  if (designDetails.components && designDetails.components.length > 0) {
+    const componentsPath = `artifacts/${jobId}/components.json`;
+    const componentsContent = Buffer.from(
+      JSON.stringify(
+        {
+          designDomain: designDetails.designDomain ?? blueprint.domain,
+          designLanguage:
+            designDetails.designLanguage ?? "Design system derived from source",
+          components: designDetails.components,
+        },
+        null,
+        2,
+      ),
+    ).toString("base64");
+
+    await octokit.repos.createOrUpdateFileContents({
+      owner,
+      repo,
+      path: componentsPath,
+      message: `Add component guide for ${blueprint.domain}`,
+      content: componentsContent,
+    });
+
+    componentsUrl = `https://github.com/${owner}/${repo}/blob/main/${componentsPath}`;
+  }
+
   const blueprintUrl = `https://github.com/${owner}/${repo}/blob/main/${blueprintPath}`;
   const tokensUrl = `https://github.com/${owner}/${repo}/blob/main/${tokensPath}`;
 
-  return { blueprintUrl, tokensUrl };
+  return { blueprintUrl, tokensUrl, componentsUrl };
 }
 
 export async function createIssue(
   domain: string,
   category: SiteCategory,
   blueprintUrl: string,
-  tokensUrl: string
+  tokensUrl: string,
+  componentsUrl?: string,
+  designLanguage?: string,
 ): Promise<number> {
   const { owner, repo } = parseRepo(process.env.GITHUB_REPO!);
 
@@ -90,8 +136,11 @@ export async function createIssue(
 
 - [Blueprint](${blueprintUrl})
 - [Theme Tokens](${tokensUrl})
+${componentsUrl ? `- [Component Library](${componentsUrl})\n` : ""}
 
 ---
+
+Design language: ${designLanguage ?? "Derived from source design"}
 
 This issue was created automatically by the Portfolio Rebuilder. The generator action will process these artifacts and create a pull request with the new Astro site.
 `;

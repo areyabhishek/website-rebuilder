@@ -28,7 +28,9 @@ export async function POST(request: NextRequest) {
       job.domain,
       job.category || "portfolio",
       job.blueprintUrl || "",
-      job.tokensUrl || ""
+      job.tokensUrl || "",
+      job.componentsUrl || undefined,
+      "Styling update request"
     );
 
     // Add a comment to the issue with styling instructions

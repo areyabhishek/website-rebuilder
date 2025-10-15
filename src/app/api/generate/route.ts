@@ -4,56 +4,95 @@ import { prisma } from "@/lib/prisma";
 import { mapSite, crawlPages } from "@/lib/firecrawl";
 import { generateBlueprint } from "@/lib/blueprint";
 import { classifySite } from "@/lib/classifier";
-import { generateTokens } from "@/lib/theme-packs";
 import { writeArtifacts, createIssue } from "@/lib/github";
+import { extractDesignSystem } from "@/lib/design-system";
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { url, limit = 5 } = body;
+    const {
+      designUrl,
+      contentUrl,
+      url,
+      limit = 8,
+    }: {
+      designUrl?: string;
+      contentUrl?: string;
+      url?: string;
+      limit?: number;
+    } = body;
 
-    if (!url) {
-      return NextResponse.json({ error: "URL is required" }, { status: 400 });
+    const designSource = designUrl ?? url;
+    const contentSource = contentUrl ?? url;
+
+    if (!designSource || !contentSource) {
+      return NextResponse.json(
+        {
+          error:
+            "Both designUrl and contentUrl are required. Provide a design source and a content source.",
+        },
+        { status: 400 },
+      );
     }
 
-    // Allowlist check removed - crawl any site
-    const domain = extractDomain(url);
+    const designDomain = extractDomain(designSource);
+    const contentDomain = extractDomain(contentSource);
+
+    if (designDomain === contentDomain) {
+      console.warn(
+        `Design and content domains match (${designDomain}). Proceeding but resulting site may mirror original design.`,
+      );
+    }
 
     // Step 2: Create Job
     const job = await prisma.job.create({
       data: {
-        domain,
+        domain: contentDomain,
+        designDomain,
         status: "new",
       },
     });
 
     try {
-      // Step 3: Map site
-      const mappedUrls = await mapSite(url);
+      // Step 3: Crawl & extract design system
+      const designMappedUrls = await mapSite(designSource);
+      const designPages = await crawlPages(designMappedUrls, Math.min(limit, 6));
+      const designSystem = await extractDesignSystem(designPages);
+
+      await prisma.job.update({
+        where: { id: job.id },
+        data: {
+          status: "design_ready",
+          designLanguage: designSystem.designLanguage,
+        },
+      });
+
+      // Step 4: Map content site
+      const mappedUrls = await mapSite(contentSource);
       await prisma.job.update({
         where: { id: job.id },
         data: { status: "mapped" },
       });
 
-    // Step 4: Crawl pages
-    const crawledPages = await crawlPages(mappedUrls, limit);
+      // Step 5: Crawl content pages
+      const crawledPages = await crawlPages(mappedUrls, limit);
 
-    // Validate page count to prevent token limit issues
-    if (crawledPages.length > 10) {
-      await prisma.job.update({
-        where: { id: job.id },
-        data: { status: "failed" },
-      });
-      return NextResponse.json(
-        {
-          error: "Site too large",
-          message: `Site has ${crawledPages.length} pages, maximum allowed is 10 to prevent token limit issues. Please try a smaller site.`
-        },
-        { status: 400 }
-      );
-    }
+      // Validate page count to prevent token limit issues
+      if (crawledPages.length > 12) {
+        await prisma.job.update({
+          where: { id: job.id },
+          data: { status: "failed" },
+        });
+        return NextResponse.json(
+          {
+            error: "Site too large",
+            message: `Content site has ${crawledPages.length} pages. Maximum allowed is 12 to keep design transfer high-quality. Try narrowing the URL to a smaller section.`,
+          },
+          { status: 400 },
+        );
+      }
 
-    // Save pages to database
+      // Save content pages to database
       await Promise.all(
         crawledPages.map((page) =>
           prisma.page.create({
@@ -73,14 +112,11 @@ export async function POST(request: NextRequest) {
         data: { status: "crawled" },
       });
 
-      // Step 5: Generate blueprint
-      const blueprint = generateBlueprint(domain, crawledPages);
+      // Step 6: Generate content blueprint
+      const blueprint = generateBlueprint(contentDomain, crawledPages);
 
-      // Step 6: Classify site
+      // Step 7: Classify content site for labeling
       const category = await classifySite(crawledPages);
-
-      // Step 7: Generate tokens
-      const tokens = generateTokens(category);
 
       await prisma.job.update({
         where: { id: job.id },
@@ -88,18 +124,25 @@ export async function POST(request: NextRequest) {
       });
 
       // Step 8: Write artifacts to GitHub
-      const { blueprintUrl, tokensUrl } = await writeArtifacts(
+      const { blueprintUrl, tokensUrl, componentsUrl } = await writeArtifacts(
         job.id,
         blueprint,
-        tokens
+        designSystem.tokens,
+        {
+          components: designSystem.components,
+          designLanguage: designSystem.designLanguage,
+          designDomain,
+        },
       );
 
       // Step 9: Create GitHub issue
       const issueNumber = await createIssue(
-        domain,
+        contentDomain,
         category,
         blueprintUrl,
-        tokensUrl
+        tokensUrl,
+        componentsUrl,
+        designSystem.designLanguage,
       );
 
       // Step 10: Update job with final status
@@ -109,6 +152,8 @@ export async function POST(request: NextRequest) {
           status: "issued",
           blueprintUrl,
           tokensUrl,
+          componentsUrl,
+          designLanguage: designSystem.designLanguage,
           issueNumber,
         },
       });
@@ -120,6 +165,7 @@ export async function POST(request: NextRequest) {
         issueUrl: `https://github.com/${process.env.GITHUB_REPO}/issues/${issueNumber}`,
         blueprintUrl,
         tokensUrl,
+        componentsUrl,
       });
     } catch (error) {
       // Update job status to failed
