@@ -1,0 +1,44 @@
+{
+  "designDomain": "stripe.com",
+  "designLanguage": "Clean and minimal design system emphasizing readability and subtle depth through shadows and spacing. Uses a cool, professional color palette centered around blues and teals. Components feature consistent rounded corners and smooth interactions.",
+  "components": [
+    {
+      "name": "Button",
+      "purpose": "Primary call-to-action component",
+      "description": "Interactive button element with consistent styling and states",
+      "keyStyles": [
+        "Rounded corners (4px)",
+        "Medium font weight",
+        "Smooth hover transitions",
+        "Brand colors for primary/secondary variants"
+      ]
+    },
+    {
+      "name": "Card",
+      "purpose": "Container for grouped content",
+      "description": "Surface-level component that provides visual hierarchy through elevation",
+      "keyStyles": [
+        "White background",
+        "Light border",
+        "Subtle shadow",
+        "Rounded corners"
+      ]
+    },
+    {
+      "name": "Menu",
+      "purpose": "Dropdown and navigation lists",
+      "description": "Vertically stacked interactive items with consistent spacing",
+      "keyStyles": [
+        "White background",
+        "Border outline",
+        "Shadow for depth",
+        "Rounded corners"
+      ],
+      "usageNotes": [
+        "Use for navigation dropdowns",
+        "Maintain consistent item height",
+        "Include hover states"
+      ]
+    }
+  ]
+}
