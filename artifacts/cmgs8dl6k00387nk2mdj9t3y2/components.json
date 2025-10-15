@@ -1,0 +1,36 @@
+{
+  "designDomain": "ramp.com",
+  "designLanguage": "Clean and minimal with an emphasis on typography and whitespace. The color palette uses deep, natural tones that convey trust and professionalism. Components maintain consistent spacing and interaction patterns.",
+  "components": [
+    {
+      "name": "Button",
+      "purpose": "Primary call-to-action component",
+      "description": "Buttons communicate actions users can take. They can be filled, outlined or text-only.",
+      "keyStyles": [
+        "Consistent height (43px mobile, 51px desktop)",
+        "Clear hover states",
+        "Loading and disabled states"
+      ]
+    },
+    {
+      "name": "Card",
+      "purpose": "Container for related content",
+      "description": "Cards group related information and actions. They have consistent padding and optional shadows.",
+      "keyStyles": [
+        "Rounded corners",
+        "Optional hover states",
+        "Flexible content areas"
+      ]
+    },
+    {
+      "name": "Navigation",
+      "purpose": "Primary site navigation",
+      "description": "The main navigation provides consistent access to key sections and actions.",
+      "keyStyles": [
+        "Sticky positioning",
+        "Dropdown menus",
+        "Mobile responsive"
+      ]
+    }
+  ]
+}
