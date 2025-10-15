@@ -1,0 +1,36 @@
+{
+  "designDomain": "motherduck.com",
+  "designLanguage": "Modern, clean and accessible design system emphasizing readability and usability. Uses subtle shadows and rounded corners for depth, with a warm accent color palette centered around coral red and orange. Typography is clear and functional with consistent spacing and hierarchy.",
+  "components": [
+    {
+      "name": "Button",
+      "purpose": "Primary call-to-action component",
+      "description": "Clickable button with consistent styling and hover states",
+      "keyStyles": [
+        "Rounded corners",
+        "Padding for touch targets",
+        "Clear hover states"
+      ]
+    },
+    {
+      "name": "Card",
+      "purpose": "Content container component",
+      "description": "Surface-elevated container for grouping related content",
+      "keyStyles": [
+        "Subtle shadow",
+        "Rounded corners",
+        "Light background"
+      ]
+    },
+    {
+      "name": "Navigation",
+      "purpose": "Site navigation component",
+      "description": "Horizontal navigation bar with logo and menu items",
+      "keyStyles": [
+        "Sticky positioning",
+        "Dropdown menus",
+        "Mobile responsive"
+      ]
+    }
+  ]
+}
