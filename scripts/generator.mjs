@@ -54,7 +54,42 @@ async function getIssueArtifacts(issueNumber) {
 
   const blueprint = await fetchArtifact(blueprintUrl);
 
-  return { blueprint };
+  const tokensMatch = issue.body.match(/\[Theme Tokens\]\(([^)]+)\)/);
+  if (!tokensMatch) {
+    throw new Error("Could not find theme tokens URL in issue body");
+  }
+
+  const tokensUrl = tokensMatch[1]
+    .replace("github.com", "raw.githubusercontent.com")
+    .replace("/blob/", "/");
+
+  const tokens = await fetchArtifact(tokensUrl);
+
+  const componentsMatch = issue.body.match(/\[Component Library\]\(([^)]+)\)/);
+  let components = null;
+  if (componentsMatch) {
+    const componentsUrl = componentsMatch[1]
+      .replace("github.com", "raw.githubusercontent.com")
+      .replace("/blob/", "/");
+
+    try {
+      components = await fetchArtifact(componentsUrl);
+    } catch (error) {
+      console.warn("Failed to fetch components artifact:", error.message);
+    }
+  }
+
+  const designLanguageMatch = issue.body.match(/Design language:\s*(.+)/i);
+  const designLanguage = designLanguageMatch
+    ? designLanguageMatch[1].trim()
+    : "Design system derived from source";
+
+  return {
+    blueprint,
+    tokens,
+    components,
+    designLanguage,
+  };
 }
 
 function getCategoryFromLabels(labels) {
@@ -74,7 +109,13 @@ function getCategoryFromLabels(labels) {
   return "portfolio";
 }
 
-async function generateSite(siteType, blueprint) {
+async function generateSite({
+  siteType,
+  blueprint,
+  tokens,
+  components,
+  designLanguage,
+}) {
   // Extract content from blueprint
   const domain = blueprint.domain;
   const pages = blueprint.pages.map((page) => ({
@@ -110,14 +151,39 @@ async function generateSite(siteType, blueprint) {
     })
     .join("\n\n");
 
+  const designTokensSummary = JSON.stringify(tokens, null, 2);
+  const componentGuideSummary =
+    components && Array.isArray(components.components)
+      ? JSON.stringify(components.components, null, 2)
+      : JSON.stringify(
+          [
+            {
+              name: "Hero",
+              purpose: "page-intro",
+              description:
+                "Create a dramatic first impression using the primary brand color and layered backgrounds.",
+            },
+          ],
+          null,
+          2,
+        );
+
+  const designLanguageSummary =
+    (components && components.designLanguage) || designLanguage || "";
+
   // Use prompts from config file with variable substitution
-  const systemPrompt = promptConfig.systemPrompt.replace('{{siteType}}', siteType);
+  const systemPrompt = promptConfig.systemPrompt
+    .replaceAll("{{siteType}}", siteType)
+    .replaceAll("{{designLanguage}}", designLanguageSummary || siteType);
 
   const userPrompt = promptConfig.userPromptTemplate
-    .replace('{{domain}}', domain)
-    .replace('{{siteType}}', siteType)
-    .replace('{{navigation}}', navigation)
-    .replace('{{contentSummary}}', contentSummary);
+    .replaceAll("{{domain}}", domain)
+    .replaceAll("{{siteType}}", siteType)
+    .replaceAll("{{navigation}}", navigation)
+    .replaceAll("{{contentSummary}}", contentSummary)
+    .replaceAll("{{designTokens}}", designTokensSummary)
+    .replaceAll("{{componentGuide}}", componentGuideSummary)
+    .replaceAll("{{designLanguage}}", designLanguageSummary || siteType);
 
   console.log(`Sending request to ${promptConfig.model}...`);
 
@@ -138,6 +204,13 @@ async function generateSite(siteType, blueprint) {
 
   console.log("Response received, parsing...");
 
+  // Check if response was truncated
+  const stopReason = message.stop_reason;
+  if (stopReason === "max_tokens") {
+    console.warn("⚠️  Response was truncated due to max_tokens limit!");
+    console.warn("The JSON may be incomplete. Attempting to parse anyway...");
+  }
+
   // Clean up response - remove markdown code blocks if present
   responseText = responseText
     .replace(/```json\s*/g, "")
@@ -152,6 +225,19 @@ async function generateSite(siteType, blueprint) {
   } catch (error) {
     console.log("JSON parsing failed. Response preview:");
     console.log(responseText.substring(0, 500));
+    console.log("\nResponse end:");
+    console.log(responseText.substring(responseText.length - 200));
+
+    // Check if truncated
+    if (stopReason === "max_tokens") {
+      throw new Error(
+        `Response was truncated at max_tokens limit. The JSON is incomplete.\n` +
+        `This usually means the generated site was too large.\n` +
+        `Try: 1) Reduce the number of pages to crawl, or 2) Increase maxTokens in config.\n` +
+        `Parse error: ${error.message}`
+      );
+    }
+
     throw new Error(
       `Failed to parse JSON response: ${error.message}\nResponse: ${responseText.substring(0, 200)}...`
     );
@@ -277,15 +363,24 @@ async function main() {
 
   console.log(`Site type: ${siteType}`);
 
-  // Fetch blueprint
-  console.log("Fetching blueprint...");
-  const { blueprint } = await getIssueArtifacts(issueNumber);
+  // Fetch artifacts
+  console.log("Fetching artifacts...");
+  const { blueprint, tokens, components, designLanguage } =
+    await getIssueArtifacts(issueNumber);
 
-  console.log(`Blueprint loaded: ${blueprint.domain} with ${blueprint.pages.length} pages`);
+  console.log(
+    `Blueprint loaded: ${blueprint.domain} with ${blueprint.pages.length} pages`,
+  );
 
   // Generate site
   console.log("Generating site with Claude Sonnet 4.5...");
-  const result = await generateSite(siteType, blueprint);
+  const result = await generateSite({
+    siteType,
+    blueprint,
+    tokens,
+    components,
+    designLanguage,
+  });
 
   // Write files
   console.log("Writing files...");
