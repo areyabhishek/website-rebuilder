@@ -1,0 +1,234 @@
+---
+// 404 page
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found | Mixpanel</title>
+  <meta name="description" content="The page you're looking for doesn't exist. Return to Mixpanel's homepage to explore our product analytics platform.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="/" class="logo">Mixpanel</a>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/partners">Partners</a></li>
+          <li><a href="/platform/product-analytics">Product Analytics</a></li>
+          <li><a href="/platform/web-analytics">Web Analytics</a></li>
+          <li><a href="/platform/mobile-analytics">Mobile Analytics</a></li>
+          <li><a href="/releases/data-warehouse-connectors">Data Warehouse Connectors</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="error-main">
+    <div class="container">
+      <div class="error-content">
+        <div class="error-code">404</div>
+        <h1 class="error-title">Page Not Found</h1>
+        <p class="error-description">The page you're looking for doesn't exist or has been moved. Let's get you back on track.</p>
+        <div class="error-actions">
+          <a href="/" class="btn btn-primary">Go Home</a>
+          <a href="/partners" class="btn btn-secondary">Browse Partners</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <style>
+    :root {
+      --brand: #6366f1;
+      --brand-alt: #8b5cf6;
+      --bg: #ffffff;
+      --surface: #f8fafc;
+      --text: #1e293b;
+      --muted: #64748b;
+      
+      --font-heading: 'Inter', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      
+      --space-0: 0px;
+      --space-1: 4px;
+      --space-2: 8px;
+      --space-3: 12px;
+      --space-4: 16px;
+      --space-5: 20px;
+      --space-6: 24px;
+      --space-8: 32px;
+      --space-10: 40px;
+      --space-12: 48px;
+      --space-16: 64px;
+      --space-20: 80px;
+      --space-24: 96px;
+      
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+      
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-4);
+    }
+
+    .header {
+      border-bottom: 1px solid var(--surface);
+      padding: var(--space-4) 0;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--brand);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: var(--space-8);
+    }
+
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--brand);
+    }
+
+    .error-main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding: var(--space-24) 0;
+    }
+
+    .error-content {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .error-code {
+      font-family: var(--font-heading);
+      font-size: 8rem;
+      font-weight: 700;
+      color: var(--brand);
+      margin-bottom: var(--space-6);
+      opacity: 0.8;
+    }
+
+    .error-title {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: var(--space-6);
+      color: var(--text);
+    }
+
+    .error-description {
+      font-size: 1.25rem;
+      color: var(--muted);
+      margin-bottom: var(--space-10);
+    }
+
+    .error-actions {
+      display: flex;
+      gap: var(--space-4);
+      justify-content: center;
+    }
+
+    .btn {
+      padding: var(--space-4) var(--space-8);
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.2s;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background-color: var(--brand);
+      color: white;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--brand-alt);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--text);
+      border: 2px solid var(--surface);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--surface);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .error-code {
+        font-size: 6rem;
+      }
+
+      .error-title {
+        font-size: 2rem;
+      }
+
+      .error-actions {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</body>
+</html>
