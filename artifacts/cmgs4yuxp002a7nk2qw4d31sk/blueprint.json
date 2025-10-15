@@ -1,0 +1,273 @@
+{
+  "domain": "vapi.ai",
+  "nav": [
+    {
+      "text": "Home",
+      "href": "/"
+    },
+    {
+      "text": "Non Streaming",
+      "href": "/chat/non-streaming"
+    },
+    {
+      "text": "Create",
+      "href": "/api-reference/calls/create"
+    },
+    {
+      "text": "Delete",
+      "href": "/api-reference/files/delete"
+    },
+    {
+      "text": "Api",
+      "href": "/api"
+    },
+    {
+      "text": "Quickstart",
+      "href": "/assistants/quickstart"
+    }
+  ],
+  "pages": [
+    {
+      "url": "https://docs.vapi.ai",
+      "slug": "index",
+      "title": "Introduction | Vapi",
+      "sections": [
+        {
+          "type": "section",
+          "title": "What is Vapi?",
+          "content": "Vapi is the developer platform for building voice AI agents. We handle the complex infrastructure so you can focus on creating great voice experiences.\n**Voice agents** allow you to:\n- Have natural conversations with users\n- Make and receive phone calls\n- Integrate with your existing systems and APIs\n- Handle complex workflows like appointment scheduling, customer support, and more"
+        },
+        {
+          "type": "section",
+          "title": "How voice agents work",
+          "content": "Every Vapi assistant combines three core technologies:\nSpeech-to-Text\nConverts user speech into text that your agent can understand\nLarge Language Model\nProcesses the conversation and generates intelligent responses\nText-to-Speech\nConverts your agent’s responses back into natural speech\nYou have full control over each component, with dozens of providers and models to choose from; OpenAI, Anthropic, Google, Deepgram, ElevenLabs, and many, many more."
+        },
+        {
+          "type": "section",
+          "title": "Two ways to build voice agents",
+          "content": "Vapi offers two main primitives, designed for different use cases:\n[Assistants\\\\\n\\\\\n**Best for:** Most use cases and fast iteration\\\\\n\\\\\nAssistants use a single system prompt plus tools and structured outputs. Perfect for:\\\\\n\\\\\n- Customer support\\\\\n- Lead qualification\\\\\n- Booking and routing](https://docs.vapi.ai/assistants/quickstart) [Squads\\\\\n\\\\\n**Best for:** Multi-assistant setups with specialization\\\\\n\\\\\nSquads orchestrate multiple assistants with context-preserving transfers. Ideal for:\\\\\n\\\\\n- Medical triage and scheduling\\\\\n- E‑commerce orders, returns, VIP\\\\\n- Property management routing](https://docs.vapi.ai/squads)"
+        },
+        {
+          "type": "section",
+          "title": "Key capabilities",
+          "content": "- **Real-time conversations:** Sub-600ms response times with natural turn-taking\n- **Phone integration:** Make and receive calls on any phone number\n- **Web integration:** Embed voice calls directly in your applications\n- **Tool integration:** Connect to your APIs, databases, and existing systems\n- **Multi-assistant orchestration (Squads):** Compose specialized assistants with seamless transfers"
+        },
+        {
+          "type": "section",
+          "title": "Choose your path",
+          "content": "[Phone Calls\\\\\n\\\\\n- Create a voice agent for inbound/outbound calls\\\\\n- Build customer support or sales automation\\\\\n- Get started with no coding required\\\\\n\\\\\n_Build your first voice agent in 5 minutes using our dashboard._](https://docs.vapi.ai/quickstart/phone) [Web Integration\\\\\n\\\\\n- Add voice capabilities to your web application\\\\\n- Integrate voice chat into your existing product\\\\\n- Build with code and SDKs\\\\\n\\\\\n_Embed live voice conversations directly in your app._](https://docs.vapi.ai/quickstart/web)"
+        },
+        {
+          "type": "section",
+          "title": "Developer tools",
+          "content": "### Vapi CLI\nThe Vapi CLI brings the full power of the platform to your terminal:\n[CLI Overview\\\\\n\\\\\nInstall in seconds with:\\\\\n\\\\\n```code-block text-sm\\\\\n\\\\\n```\\\\\n\\\\\nEverything from the dashboard, now in your terminal.](https://docs.vapi.ai/cli)"
+        },
+        {
+          "type": "section",
+          "title": "Popular use cases",
+          "content": "[Customer Support\\\\\n\\\\\nBuilt with Assistants\\\\\n\\\\\nAutomate inbound support calls with agents that can access your knowledge base and escalate to humans when needed.](https://docs.vapi.ai/assistants/examples/inbound-support) [Sales & Lead Qualification\\\\\n\\\\\nBuilt with Assistants\\\\\n\\\\\nMake outbound sales calls, qualify leads, and schedule appointments with sophisticated branching logic.](https://docs.vapi.ai/assistants/examples/lead-qualification) [Appointment Scheduling\\\\\n\\\\\nBuilt with Assistants\\\\\n\\\\\nHandle booking requests, check availability, and confirm appointments with conditional routing.](https://docs.vapi.ai/assistants/examples/appointment-scheduling) [Medical Triage & Scheduling\\\\\n\\\\\nBuilt with Squads\\\\\n\\\\\nEmergency routing and appointment scheduling for healthcare.](https://docs.vapi.ai/squads/examples/clinic-triage-scheduling) [E-commerce Order Management\\\\\n\\\\\nBuilt with Squads\\\\\n\\\\\nOrder tracking, returns, and customer support workflows.](https://docs.vapi.ai/squads/examples/ecommerce-order-management) [See more examples\\\\\n\\\\\nSee our collection of examples covering a wide range of use cases.](https://docs.vapi.ai/examples)\nAsk AI\nAssistant\nHi, I'm an AI assistant with access to documentation and other content.\nTip: you can toggle this pane with\n`⌘`\n+\n`/`\nSuggestions\nHow do I get started with this documentation?\nWhat are the main features covered in this guide?\nWhere can I find API reference documentation?\nWhat are the common use cases and examples?\nHow can I troubleshoot common issues?"
+        }
+      ],
+      "images": []
+    },
+    {
+      "url": "https://docs.vapi.ai/chat/non-streaming",
+      "slug": "chat-non-streaming",
+      "title": "Non-streaming chat | Vapi",
+      "sections": [
+        {
+          "type": "section",
+          "title": "Overview",
+          "content": "Build a chat integration that receives complete responses after processing, perfect for batch processing, simple UIs, or when you need the full response before proceeding. Ideal for integrations where real-time display isn’t essential.\n**What You’ll Build:**\n- Simple request-response chat patterns with immediate complete responses\n- Context management using `previousChatId` for linked conversations\n- Basic integration with predictable response timing\nFor comprehensive context management options including sessions, see **[Session management](https://docs.vapi.ai/chat/session-management)**."
+        },
+        {
+          "type": "section",
+          "title": "Prerequisites",
+          "content": "- Completed [Chat quickstart](https://docs.vapi.ai/chat/quickstart) tutorial\n- Understanding of basic HTTP requests and JSON handling\n- Familiarity with JavaScript/TypeScript promises or async/await"
+        },
+        {
+          "type": "section",
+          "title": "Scenario",
+          "content": "We’ll build a help desk system for “TechFlow” that processes support messages through text chat and maintains conversation history using `previousChatId`.\n* * *"
+        },
+        {
+          "type": "section",
+          "title": "1\\. Basic Non-Streaming Implementation",
+          "content": "[1](https://docs.vapi.ai/chat/non-streaming#create-a-simple-chat-function)\n### Create a simple chat function\nStart with a basic non-streaming chat implementation:\nBasic Non-Streaming Request\n```code-block text-sm\n```\n[2](https://docs.vapi.ai/chat/non-streaming#understand-the-response-structure)\n### Understand the response structure\nNon-streaming responses come back as complete JSON objects:\nComplete Chat Response\n```code-block text-sm\n```\n[3](https://docs.vapi.ai/chat/non-streaming#implement-in-typescript)\n### Implement in TypeScript\nCreate a reusable function for non-streaming chat:\nnon-streaming-chat.ts\n```code-block text-sm\n```\n* * *"
+        },
+        {
+          "type": "section",
+          "title": "2\\. Context Management with previousChatId",
+          "content": "[1](https://docs.vapi.ai/chat/non-streaming#link-chats-for-conversation-context)\n### Link chats for conversation context\nUse `previousChatId` to maintain context across multiple chats:\nconversation-chain.ts\n```code-block text-sm\n```\n* * *"
+        },
+        {
+          "type": "section",
+          "title": "3\\. Custom Assistant Configuration",
+          "content": "[1](https://docs.vapi.ai/chat/non-streaming#use-inline-assistant-configuration)\n### Use inline assistant configuration\nInstead of pre-created assistants, define configuration per request:\nCustom Assistant Request\n```code-block text-sm\n```\n[2](https://docs.vapi.ai/chat/non-streaming#create-specialized-chat-handlers)\n### Create specialized chat handlers\nBuild different chat handlers for different types of requests:\nspecialized-handlers.ts\n```code-block text-sm\n```\n* * *"
+        },
+        {
+          "type": "section",
+          "title": "Next Steps",
+          "content": "Enhance your non-streaming chat system further:\n- **[Add streaming capabilities](https://docs.vapi.ai/chat/streaming)** \\- Upgrade to real-time responses for better UX\n- **[OpenAI compatibility](https://docs.vapi.ai/chat/openai-compatibility)** \\- Use familiar OpenAI SDK patterns\n- **[Integrate tools](https://docs.vapi.ai/tools)** \\- Enable your assistant to call external APIs and databases\n- **[Session management](https://docs.vapi.ai/chat/session-management)** \\- Learn about advanced context management with sessions\n- **[Add voice capabilities](https://docs.vapi.ai/calls/outbound-calling)** \\- Extend your text chat to voice interactions\nNeed help? Chat with the team on our [Discord](https://discord.com/invite/pUFNcf2WmH) or mention us on [X/Twitter](https://x.com/Vapi_AI).\nAsk AI\nAssistant\nHi, I'm an AI assistant with access to documentation and other content.\nTip: you can toggle this pane with\n`⌘`\n+\n`/`\nSuggestions\nHow do I get started with this documentation?\nWhat are the main features covered in this guide?\nWhere can I find API reference documentation?\nWhat are the common use cases and examples?\nHow can I troubleshoot common issues?"
+        }
+      ],
+      "images": []
+    },
+    {
+      "url": "https://docs.vapi.ai/assistants/voice-formatting-plan",
+      "slug": "assistants-voice-formatting-plan",
+      "title": "Voice formatting plan | Vapi",
+      "sections": [
+        {
+          "type": "section",
+          "title": "Overview",
+          "content": "Voice formatting automatically transforms raw text from your language model (LLM) into a format that sounds natural when spoken by a text-to-speech (TTS) provider. This process—called **Voice Input Formatted**—is enabled by default for all assistants.\nFormatting helps with things like:\n- Expanding numbers and currency (e.g., `$42.50` → “forty two dollars and fifty cents”)\n- Expanding abbreviations (e.g., `ST` → “STREET”)\n- Spacing out phone numbers (e.g., `123-456-7890` → “1 2 3 4 5 6 7 8 9 0”)\nYou can turn off formatting if you want the TTS to read the raw LLM output."
+        },
+        {
+          "type": "section",
+          "title": "How voice input formatting works",
+          "content": "When enabled, the formatter runs a series of transformations on your text, each handled by a specific function. Here’s the order and what each function does:\n| **Step** | **Function Name** | **Description** | **Before** | **After** | **Default** | **Precedence** |\n| --- | --- | --- | --- | --- | --- | --- |\n| 1 | `removeAngleBracketContent` | Removes anything within `<...>`, except for `<break>`, `<spell>`, or double angle brackets `<< >>`. | `Hello <tag> world` | `Hello  world` | ✅ | - |\n| 2 | `removeMarkdownSymbols` | Removes markdown symbols like `_`, `` ` ``, and `~`. Asterisks ( `*`) are preserved in this step. | `**Wanted** to say *hi*` | `**Wanted** to say *hi*` | ✅ | 0 |\n| 3 | `removePhrasesInAsterisks` | Removes text surrounded by single or double asterisks. | `**Wanted** to say *hi*` | ` to say` | ❌ | 0 |\n| 4 | `replaceNewLinesWithPeriods` | Converts new lines ( `\\n`) to periods for smoother speech. | `Hello  world\\n to say\\nWe have NASA` | `Hello  world .  to say . We have NASA` | ✅ | 0 |\n| 5 | `replaceColonsWithPeriods` | Replaces `:` with `.` for better phrasing. | `price: $42.50` | `price. $42.50` | ✅ | 0 |\n| 6 | `formatAcronyms` | Converts known acronyms to lowercase (e.g., NASA → nasa) or spaces out unknown all-caps words unless they contain vowels. | `NASA and .NET` | `nasa and .net` | ✅ | 0 |\n| 7 | `formatDollarAmounts` | Converts currency amounts to spoken words. | `$42.50` | `forty two dollars and fifty cents` | ✅ | 0 |\n| 8 | `formatEmails` | Replaces `@` with “at” and `.` with “dot” in emails. | `JOHN.DOE@example.COM` | `JOHN dot DOE at example dot COM` | ✅ | 0 |\n| 9 | `formatDates` | Converts date strings into spoken date format. | `2023 05 10` | `Wednesday, May 10, 2023` | ✅ | 0 |\n| 10 | `formatTimes` | Expands or simplifies time expressions. | `14:00` | `14` | ✅ | 0 |\n| 11 | `formatDistances`, `formatUnits`, `formatPercentages`, `formatPhoneNumbers` | Converts units, distances, percentages, and phone numbers into spoken words. | `5km`, `43 lb`, `50%`, `123-456-7890` | `5 kilometers`, `forty three pounds`, `50 percent`, `1 2 3 4 5 6 7 8 9 0` | ✅ | 0 |\n| 12 | `formatNumbers` | Formats general numbers: years read as digits, large numbers spelled out, negative and decimal numbers clarified. | `-9`, `2.5`, `2023` | `minus nine`, `two point five`, `2023` | ✅ | 0 |\n| 13 | `removeAsterisks` | Removes all asterisk characters from the text. | `**Bold** and *italic*` | `Bold and italic` | ✅ | 1 |\n| 14 | `Applying Replacements` | Applies user-defined final replacements like expanding street abbreviations. | `320 ST 21 RD` | `320 STREET 21 ROAD` | ✅ | - |\n* * *"
+        },
+        {
+          "type": "section",
+          "title": "Customizing the formatting plan",
+          "content": "You can control some aspects of formatting:\n### Enabled\nFormatting is on by default. To disable, set:\n```code-block text-sm\n```\n### Number-to-digits cutoff\nControls when numbers are read as digits instead of words.\n- **Default:** `2025` (current year)\n- Example: With a cutoff of `2025`, numbers above this are read as digits.\n- To spell out larger numbers, set the cutoff higher (e.g., `300000`).\n### Replacements\nAdd exact or regex-based substitutions to customize output.\n- **Example 1:** Replace `hello` with `hi`:\n```code-block text-sm\n```\n- **Example 2:** Replace words matching a pattern:\n```code-block text-sm\n```\nCurrently, only replacements and the number-to-digits cutoff are customizable. Other options are not exposed.\n* * *"
+        },
+        {
+          "type": "section",
+          "title": "Turning formatting off",
+          "content": "To disable all formatting and use raw LLM output, set either of these to `false`:\n```code-block text-sm\n```\n* * *"
+        },
+        {
+          "type": "section",
+          "title": "Summary",
+          "content": "- Voice input formatting improves clarity and naturalness for TTS.\n- Each transformation step targets a specific pattern for better speech output.\n- You can customize or disable formatting as needed.\nAsk AI\nAssistant\nHi, I'm an AI assistant with access to documentation and other content.\nTip: you can toggle this pane with\n`⌘`\n+\n`/`\nSuggestions\nHow do I get started with this documentation?\nWhat are the main features covered in this guide?\nWhere can I find API reference documentation?\nWhat are the common use cases and examples?\nHow can I troubleshoot common issues?"
+        }
+      ],
+      "images": []
+    },
+    {
+      "url": "https://docs.vapi.ai/assistants/call-recording",
+      "slug": "assistants-call-recording",
+      "title": "Call recording, logging and transcribing | Vapi",
+      "sections": [
+        {
+          "type": "section",
+          "title": "Overview",
+          "content": "**Deprecated**: The old `recordingEnabled`, `recordingPath`, and `recordingCredentials` properties are deprecated. Use the new `artifactPlan` configuration instead for recording, logging, and transcript generation.\nVapi’s artifact plan system provides comprehensive call recording, logging, and transcription capabilities that allow you to capture, store, and analyze voice conversations for quality assurance, training, and compliance purposes.\n**Artifact plans enable you to:**\n- Record audio conversations for quality monitoring\n- Generate detailed call logs for debugging and analysis\n- Create transcripts for conversation analysis\n- Store artifacts in custom storage or Vapi’s secure cloud\n- Monitor conversation quality and assistant performance\n- Ensure compliance with regulatory requirements"
+        },
+        {
+          "type": "section",
+          "title": "Use Cases",
+          "content": "### Payment Processing Flows\nProtect sensitive payment information by using a middle assistant with all artifacts disabled:\n```code-block text-sm\n```\nThis flow ensures that:\n- Service conversations are recorded for quality assurance\n- Payment details (credit card numbers, CVV codes) are never recorded or logged\n- Confirmation conversations are recorded for compliance\n### Consent Gathering\nFor Enterprise customers, Vapi provides built-in [recording consent plans](https://docs.vapi.ai/security-and-privacy/recording-consent-plan) that automatically create a consent assistant to request recording permission before transferring to your main assistant.\nThe Enterprise consent feature supports both:\n- **Verbal consent**: Requires explicit “yes” confirmation from users\n- **Implicit consent**: Assumes consent if users stay on the line after hearing the consent message\nThe system automatically tracks consent decisions and provides compliance data in the end-of-call report, including whether consent was granted and when it was obtained.\nAlternatively, you can implement custom consent flows using squads:\n```code-block text-sm\n```\nThe consent assistant runs without generating artifacts, while the main assistant records the actual conversation after consent is obtained."
+        },
+        {
+          "type": "section",
+          "title": "Artifact Plan Configuration",
+          "content": "### Basic Configuration\nConfigure recording, logging, and transcript generation using the `artifactPlan`:\nAssistant ConfigurationPer-Call Configuration\n```code-block text-sm\n```\n### Artifact Plan Options\nConfigure different types of artifacts with these options:\n- **`recordingEnabled`**: Enable call recording (stored in `call.artifact.recording`) Default: `true`\n- **`recordingFormat`**: Audio format for recordings (e.g., “wav;l16”, “mp3”) Default: “wav;l16”\n- **`loggingEnabled`**: Enable detailed call logs (stored in `call.artifact.logUrl`) Default: `true`\n- **`pcapEnabled`**: Enable SIP packet capture for phone calls (stored in `call.artifact.pcapUrl`) Default: `true`\n- **`transcriptPlan`**: Configure transcript generation with speaker names"
+        },
+        {
+          "type": "section",
+          "title": "Storage Configuration",
+          "content": "### Default Storage\nBy default, Vapi stores artifacts securely in the cloud:\n- Recordings, logs, and transcripts are encrypted at rest and in transit\n- Access is controlled through your API credentials\n- Artifacts are automatically cleaned up based on your retention policy\n### Custom Storage\nConfigure custom storage for different artifact types:\nS3 Storage ConfigurationGoogle Cloud Storage\n```code-block text-sm\n```\n### Storage Control Options\nControl where each artifact type is stored:\n- **`recordingUseCustomStorageEnabled`**: Use custom storage for recordings (default: true)\n- **`loggingUseCustomStorageEnabled`**: Use custom storage for logs (default: true)\n- **`pcapUseCustomStorageEnabled`**: Use custom storage for SIP packet capture (default: true)\n- **`recordingPath`**: Custom path for recording storage\n- **`loggingPath`**: Custom path for log storage\n- **`pcapS3PathPrefix`**: S3 path prefix for PCAP files"
+        },
+        {
+          "type": "section",
+          "title": "Squad and Transfer Behavior",
+          "content": "### Dynamic Artifact Control\nIn squads with multiple assistants, artifact generation (recording, logging, transcripts) can be controlled per assistant. When assistants are swapped or transferred during a call:\n- **Recording**: Pauses when `recordingEnabled: false` assistant is active, resumes when `recordingEnabled: true` assistant takes over\n- **Logging**: Pauses when `loggingEnabled: false` assistant is active, resumes when `loggingEnabled: true` assistant takes over\n- **Transcripts**: Pauses when `transcriptPlan.enabled: false` assistant is active, resumes when `transcriptPlan.enabled: true` assistant takes over"
+        },
+        {
+          "type": "section",
+          "title": "Transcript Configuration",
+          "content": "### Automatic Transcription\nConfigure transcript generation using the `transcriptPlan`:\n```code-block text-sm\n```\n### Transcript Plan Options\n- **`enabled`**: Enable or disable transcript generation\n- **`assistantName`**: Name to use for assistant messages in transcripts\n- **`userName`**: Name to use for user messages in transcripts\n### Transcript Features\n- **Real-time transcription**: Transcripts are generated during the call\n- **Speaker identification**: Distinguishes between assistant and user messages\n- **Timestamps**: Each message includes timing information\n- **OpenAI formatting**: Available in `call.artifact.messagesOpenAIFormatted`\n### Transcript Structure\n```code-block text-sm\n```"
+        },
+        {
+          "type": "section",
+          "title": "Logging Configuration",
+          "content": "### Detailed Call Logs\nEnable comprehensive logging for debugging and analysis:\n```code-block text-sm\n```\n### Log Features\n- **Debug information**: Detailed logs for troubleshooting\n- **Performance metrics**: Call timing and performance data\n- **Error tracking**: Comprehensive error logs and stack traces\n- **Workflow execution**: Step-by-step workflow node execution\n### Accessing Logs\nLogs are available through:\n- **Dashboard**: View logs in the call details page\n- **API**: Access via `call.artifact.logUrl`\n- **Custom storage**: Store logs in your S3/GCP bucket"
+        },
+        {
+          "type": "section",
+          "title": "Accessing Artifacts",
+          "content": "### Via Dashboard\n1. Navigate to **Calls** in your Vapi dashboard\n2. Select a specific call from the list\n3. View artifacts in the **Artifacts** section:\n   - **Recording**: Play or download the audio recording\n   - **Transcript**: View the full conversation transcript\n   - **Logs**: Access detailed call logs for debugging\n   - **PCAP**: Download SIP packet capture (phone calls only)\n### Via API\nRetrieve artifact URLs programmatically:\n```code-block text-sm\n```"
+        },
+        {
+          "type": "section",
+          "title": "Privacy and Compliance",
+          "content": "### Legal Considerations\n**Important**: Call recording laws vary by jurisdiction. Ensure compliance with:\n- **Consent requirements** \\- Inform participants about recording\n- **Data protection** regulations (GDPR, CCPA, etc.)\n- **Industry standards** (PCI DSS, HIPAA, etc.)\n### Built-in Consent Management\nFor Enterprise customers, Vapi provides automated consent management through [recording consent plans](https://docs.vapi.ai/security-and-privacy/recording-consent-plan). This feature automatically:\n- Creates a consent assistant that requests recording permission\n- Handles both verbal and stay-on-line consent types\n- Only begins recording after consent is granted\n- Maintains audit trails of consent decisions\n### Best Practices\n- **Inform callers** about recording at the start of conversations\n- **Secure storage** with encryption and access controls\n- **Retention policies** to automatically delete old recordings\n- **Access logs** to track who accesses recordings\nAlways comply with local laws regarding call recording. Some jurisdictions require explicit consent from all parties before recording."
+        },
+        {
+          "type": "section",
+          "title": "Recording Analysis",
+          "content": "### Call Artifacts\nUse the comprehensive artifact data for analysis:\n```code-block text-sm\n```\n### Analysis Use Cases\nUse artifact data for comprehensive insights:\n- **Conversation flow** analysis using `artifact.nodes`\n- **Response quality** evaluation using `artifact.messages`\n- **Customer satisfaction** metrics from transcript analysis\n- **Assistant performance** tracking using logs and recordings\n- **Workflow optimization** using node execution data\n- **Variable tracking** using `artifact.variableValues`"
+        },
+        {
+          "type": "section",
+          "title": "FAQ",
+          "content": "###### How do I enable recording, logging, and transcripts?\nUse the `artifactPlan` configuration in your assistant or call settings. Set `recordingEnabled`, `loggingEnabled`, and configure `transcriptPlan.enabled` to `true` to enable all three features.\n###### Where are artifacts stored?\nBy default, artifacts are stored securely in Vapi’s cloud storage. You can configure custom storage using S3 or Google Cloud Storage with the `recordingPath`, `loggingPath`, and storage control options.\n###### How do I access artifacts after a call?\nArtifacts are available through the API via `call.artifact.recording`, `call.artifact.transcript`, `call.artifact.logUrl`, and other properties. You can also view them in the Vapi dashboard.\n###### What's the difference between transcript and messages?\nThe `transcript` includes timing information and is optimized for conversation analysis. The `messages` property contains the same content but in a simpler format, while `messagesOpenAIFormatted` is structured for OpenAI API compatibility.\n###### How do I configure speaker names in transcripts?\nUse the `transcriptPlan` configuration with `assistantName` and `userName` properties to customize how speakers are identified in the transcript output.\n###### Can I disable recording for specific calls?\nYes, you can configure artifact plans at both the assistant level and per individual call. This gives you granular control over what artifacts are generated for each conversation.\n###### What is PCAP and when is it available?\nPCAP (Packet Capture) is available for phone calls and contains SIP packet data for debugging telephony issues. It’s stored in `call.artifact.pcapUrl` when `pcapEnabled` is set to `true`.\n###### How long are artifacts stored?\nDefault retention is 30 days for all artifacts. You can configure custom retention policies and use custom storage for longer-term archival.\n###### How do artifacts work with squad transfers?\nIn squads, each assistant can have different artifact settings. Recording, logging, and transcripts pause when an assistant with disabled artifacts is active, and resume when an assistant with enabled artifacts takes over. This allows for privacy-conscious flows like consent collection."
+        },
+        {
+          "type": "section",
+          "title": "Next Steps",
+          "content": "- **[Call Analysis](https://docs.vapi.ai/assistants/call-analysis)** \\- Analyze recorded conversations for insights\n- **[Recording Consent Plans](https://docs.vapi.ai/security-and-privacy/recording-consent-plan)** \\- Automated consent management for Enterprise customers\n- **[Privacy Compliance](https://docs.vapi.ai/security-and-privacy/GDPR)** \\- Ensure GDPR and privacy compliance\n- **[API Reference](https://docs.vapi.ai/api-reference/calls/create)** \\- Explore recording configuration options\nAsk AI\nAssistant\nHi, I'm an AI assistant with access to documentation and other content.\nTip: you can toggle this pane with\n`⌘`\n+\n`/`\nSuggestions\nHow do I get started with this documentation?\nWhat are the main features covered in this guide?\nWhere can I find API reference documentation?\nWhat are the common use cases and examples?\nHow can I troubleshoot common issues?"
+        }
+      ],
+      "images": []
+    },
+    {
+      "url": "https://docs.vapi.ai/api-reference/files/delete?explorer=true",
+      "slug": "api-reference-files-delete",
+      "title": "Delete File | Vapi",
+      "sections": [
+        {
+          "type": "section",
+          "title": "API Explorer",
+          "content": "### Authentication\nAuthorizationBearer\nRetrieve your API Key from [Dashboard](https://docs.vapi.ai/api-reference/files/dashboard.vapi.ai).\n### Path parameters\nidstringRequired\n### Response\nidstring\nThis is the unique identifier for the file.\norgIdstring\nThis is the unique identifier for the org that this file belongs to.\ncreatedAtstring `format: \"date-time\"`\nThis is the ISO 8601 date-time string of when the file was created.\nupdatedAtstring `format: \"date-time\"`\nThis is the ISO 8601 date-time string of when the file was last updated.\nobjectenum or null\nAllowed values:file\nstatusenum or null\nAllowed values:processingdonefailed\nnamestring or null `<=40 characters`\nThis is the name of the file. This is just for your own reference.\noriginalNamestring or null\nbytesdouble or null\npurposestring or null\nmimetypestring or null\nkeystring or null\npathstring or null\nbucketstring or null\nurlstring or null\nparsedTextUrlstring or null\nparsedTextBytesdouble or null\nmetadataobject or null\nBrowse, explore, and try out API endpoints without leaving the documentation.\n- Assistants\n  - [GETList Assistants](https://docs.vapi.ai/api-reference/assistants/list?explorer=true)\n  - [POSTCreate Assistant](https://docs.vapi.ai/api-reference/assistants/create?explorer=true)\n  - [GETGet Assistant](https://docs.vapi.ai/api-reference/assistants/get?explorer=true)\n  - [DELDelete Assistant](https://docs.vapi.ai/api-reference/assistants/delete?explorer=true)\n  - [PATCHUpdate Assistant](https://docs.vapi.ai/api-reference/assistants/update?explorer=true)\n- Squads\n  - [GETList Squads](https://docs.vapi.ai/api-reference/squads/list?explorer=true)\n  - [POSTCreate Squad](https://docs.vapi.ai/api-reference/squads/create?explorer=true)\n  - [GETGet Squad](https://docs.vapi.ai/api-reference/squads/get?explorer=true)\n  - [DELDelete Squad](https://docs.vapi.ai/api-reference/squads/delete?explorer=true)\n  - [PATCHUpdate Squad](https://docs.vapi.ai/api-reference/squads/update?explorer=true)\n- Calls\n  - [GETList Calls](https://docs.vapi.ai/api-reference/calls/list?explorer=true)\n  - [POSTCreate Call](https://docs.vapi.ai/api-reference/calls/create?explorer=true)\n  - [GETList Calls](https://docs.vapi.ai/api-reference/calls/call-controller-find-all-paginated?explorer=true)\n  - [GETGet Call](https://docs.vapi.ai/api-reference/calls/get?explorer=true)\n  - [DELDelete Call Data](https://docs.vapi.ai/api-reference/calls/delete?explorer=true)\n  - [PATCHUpdate Call](https://docs.vapi.ai/api-reference/calls/update?explorer=true)\n- Chats\n  - [GETList Chats](https://docs.vapi.ai/api-reference/chats/list?explorer=true)\n  - [POSTCreate Chat](https://docs.vapi.ai/api-reference/chats/create?explorer=true)\n  - [GETGet Chat](https://docs.vapi.ai/api-reference/chats/get?explorer=true)\n  - [DELDelete Chat](https://docs.vapi.ai/api-reference/chats/delete?explorer=true)\n  - [POSTCreate Chat (OpenAI Compatible)](https://docs.vapi.ai/api-reference/chats/create-response?explorer=true)\n- Campaigns\n  - [GETList Campaigns](https://docs.vapi.ai/api-reference/campaigns/campaign-controller-find-all?explorer=true)\n  - [POSTCreate Campaign](https://docs.vapi.ai/api-reference/campaigns/campaign-controller-create?explorer=true)\n  - [GETGet Campaign](https://docs.vapi.ai/api-reference/campaigns/campaign-controller-find-one?explorer=true)\n  - [DELDelete Campaign](https://docs.vapi.ai/api-reference/campaigns/campaign-controller-remove?explorer=true)\n  - [PATCHUpdate Campaign](https://docs.vapi.ai/api-reference/campaigns/campaign-controller-update?explorer=true)\n- Sessions\n  - [GETList Sessions](https://docs.vapi.ai/api-reference/sessions/list?explorer=true)\n  - [POSTCreate Session](https://docs.vapi.ai/api-reference/sessions/create?explorer=true)\n  - [GETGet Session](https://docs.vapi.ai/api-reference/sessions/get?explorer=true)\n  - [DELDelete Session](https://docs.vapi.ai/api-reference/sessions/delete?explorer=true)\n  - [PATCHUpdate Session](https://docs.vapi.ai/api-reference/sessions/update?explorer=true)\n- Phone Numbers\n  - [GETList Phone Numbers](https://docs.vapi.ai/api-reference/phone-numbers/list?explorer=true)\n  - [POSTCreate Phone Number](https://docs.vapi.ai/api-reference/phone-numbers/create?explorer=true)\n  - [GETList Phone Numbers](https://docs.vapi.ai/api-reference/phone-numbers/phone-number-controller-find-all-paginated?explorer=true)\n  - [GETGet Phone Number](https://docs.vapi.ai/api-reference/phone-numbers/get?explorer=true)\n  - [DELDelete Phone Number](https://docs.vapi.ai/api-reference/phone-numbers/delete?explorer=true)\n  - [PATCHUpdate Phone Number](https://docs.vapi.ai/api-reference/phone-numbers/update?explorer=true)\n- Tools\n  - [GETList Tools](https://docs.vapi.ai/api-reference/tools/list?explorer=true)\n  - [POSTCreate Tool](https://docs.vapi.ai/api-reference/tools/create?explorer=true)\n  - [GETGet Tool](https://docs.vapi.ai/api-reference/tools/get?explorer=true)\n  - [DELDelete Tool](https://docs.vapi.ai/api-reference/tools/delete?explorer=true)\n  - [PATCHUpdate Tool](https://docs.vapi.ai/api-reference/tools/update?explorer=true)\n- Files\n  - [GETList Files](https://docs.vapi.ai/api-reference/files/list?explorer=true)\n  - [POSTUpload File](https://docs.vapi.ai/api-reference/files/create?explorer=true)\n  - [GETGet File](https://docs.vapi.ai/api-reference/files/get?explorer=true)\n  - [DELDelete File](https://docs.vapi.ai/api-reference/files/delete?explorer=true)\n  - [PATCHUpdate File](https://docs.vapi.ai/api-reference/files/update?explorer=true)\n- Structured Outputs\n  - [GETList Structured Outputs](https://docs.vapi.ai/api-reference/structured-outputs/structured-output-controller-find-all?explorer=true)\n  - [POSTCreate Structured Output](https://docs.vapi.ai/api-reference/structured-outputs/structured-output-controller-create?explorer=true)\n  - [GETGet Structured Output](https://docs.vapi.ai/api-reference/structured-outputs/structured-output-controller-find-one?explorer=true)\n  - [DELDelete Structured Output](https://docs.vapi.ai/api-reference/structured-outputs/structured-output-controller-remove?explorer=true)\n  - [PATCHUpdate Structured Output](https://docs.vapi.ai/api-reference/structured-outputs/structured-output-controller-update?explorer=true)\n- Eval\n  - [GETList Evals](https://docs.vapi.ai/api-reference/eval/eval-controller-get-paginated?explorer=true)\n  - [POSTCreate Eval](https://docs.vapi.ai/api-reference/eval/eval-controller-create?explorer=true)\n  - [GETGet Eval](https://docs.vapi.ai/api-reference/eval/eval-controller-get?explorer=true)\n  - [DELDelete Eval](https://docs.vapi.ai/api-reference/eval/eval-controller-remove?explorer=true)\n  - [PATCHUpdate Eval](https://docs.vapi.ai/api-reference/eval/eval-controller-update?explorer=true)\n  - [GETGet Eval Run](https://docs.vapi.ai/api-reference/eval/eval-controller-get-run?explorer=true)\n  - [DELDelete Eval Run](https://docs.vapi.ai/api-reference/eval/eval-controller-remove-run?explorer=true)\n  - [GETList Eval Runs](https://docs.vapi.ai/api-reference/eval/eval-controller-get-runs-paginated?explorer=true)\n  - [POSTCreate Eval Run](https://docs.vapi.ai/api-reference/eval/eval-controller-run?explorer=true)\n- Provider Resources\n  - [GETList Provider Resources](https://docs.vapi.ai/api-reference/provider-resources/provider-resource-controller-get-provider-resources-paginated?explorer=true)\n  - [POSTCreate Provider Resource](https://docs.vapi.ai/api-reference/provider-resources/provider-resource-controller-create-provider-resource?explorer=true)\n  - [GETGet Provider Resource](https://docs.vapi.ai/api-reference/provider-resources/provider-resource-controller-get-provider-resource?explorer=true)\n  - [DELDelete Provider Resource](https://docs.vapi.ai/api-reference/provider-resources/provider-resource-controller-delete-provider-resource?explorer=true)\n  - [PATCHUpdate Provider Resource](https://docs.vapi.ai/api-reference/provider-resources/provider-resource-controller-update-provider-resource?explorer=true)\n- Analytics\n  - [POSTCreate Analytics Queries](https://docs.vapi.ai/api-reference/analytics/get?explorer=true)\n- Webhooks\n  - [POSTServer Message](https://docs.vapi.ai/api-reference/webhooks/server-message?explorer=true)\n  - [POSTClient Message](https://docs.vapi.ai/api-reference/webhooks/client-message?explorer=true)\n[Built with](https://buildwithfern.com/?utm_campaign=buildWith&utm_medium=docs&utm_source=docs.vapi.ai)\nDELETEhttps://api.vapi.ai/file/id\nSend Request\nEnter your bearer tokenNot Authenticated\n##### Path Parameters\n- idstringRequired\nUse exampleClear form [View in API Reference](https://docs.vapi.ai/api-reference/files/delete)\nRequestcURLTypeScriptPython\n```code-block text-xs\n```\nResponse\nSend Request\nAsk AI\nAssistant\nHi, I'm an AI assistant with access to documentation and other content.\nTip: you can toggle this pane with\n`⌘`\n+\n`/`\nSuggestions\nHow do I get started with this documentation?\nWhat are the main features covered in this guide?\nWhere can I find API reference documentation?\nWhat are the common use cases and examples?\nHow can I troubleshoot common issues?"
+        }
+      ],
+      "images": []
+    },
+    {
+      "url": "https://docs.vapi.ai/api-reference/tools/list?explorer=true",
+      "slug": "api-reference-tools-list",
+      "title": "List Tools | Vapi",
+      "sections": [
+        {
+          "type": "content",
+          "content": "### Authentication\n\nAuthorizationBearer\n\nRetrieve your API Key from [Dashboard](https://docs.vapi.ai/api-reference/tools/dashboard.vapi.ai).\n\n### Query parameters\n\nlimitdoubleOptional `>=0` `<=1000`\n\nThis is the maximum number of items to return. Defaults to 100.\n\ncreatedAtGtstringOptional `format: \"date-time\"`\n\nThis will return items where the createdAt is greater than the specified value.\n\ncreatedAtLtstringOptional `format: \"date-time\"`\n\nThis will return items where the createdAt is less than the specified value.\n\ncreatedAtGestringOptional `format: \"date-time\"`\n\nThis will return items where the createdAt is greater than or equal to the specified value.\n\ncreatedAtLestringOptional `format: \"date-time\"`\n\nThis will return items where the createdAt is less than or equal to the specified value.\n\nupdatedAtGtstringOptional `format: \"date-time\"`\n\nThis will return items where the updatedAt is greater than the specified value.\n\nupdatedAtLtstringOptional `format: \"date-time\"`\n\nThis will return i"
+        }
+      ],
+      "images": []
+    },
+    {
+      "url": "https://docs.vapi.ai/changelog/2025/4/29",
+      "slug": "changelog-2025-4-29",
+      "title": "April 29, 2025 | Vapi",
+      "sections": [
+        {
+          "type": "content",
+          "content": "Get the (almost) daily changelog\n\nE-mail address\nSubmit\n\n[April 29, 2025](https://docs.vapi.ai/changelog/2025/4/29)\n\n1. **Simplified Assistant Schema**: The `Assistant` schema is now simplified to focus on essential properties like `assistantId`, `name`, `type`, and `metadata`. Other advanced settings have been moved to the Call schema.\n\nConfigure advanced call-specific assistant parameters using `Call.assistant` instead of `Assistant`.\n\n2. **New Structured Recording Properties in Artifact Schema**: You can now access recording details through `Call.artifact.recording`, which provides a structured way to obtain mono, stereo, and video recordings. This replaces the old recording url properties with a more organized format. You can also access this data through the [dashboard (Observe > Call Logs)](https://dashboard.vapi.ai/calls)\n\n![Call Artifact Recording](https://files.buildwithfern.com/https://vapi.docs.buildwithfern.com/2025-10-13T22:15:30.699Z/static/images/changelog/call-artifact-"
+        }
+      ],
+      "images": [
+        "https://files.buildwithfern.com/https://vapi.docs.buildwithfern.com/2025-10-13T22:15:30.699Z/static/images/changelog/call-artifact-recording.png"
+      ]
+    },
+    {
+      "url": "https://docs.vapi.ai/api-reference/eval/eval-controller-get-runs-paginated",
+      "slug": "api-reference-eval-eval-controller-get-runs-paginated",
+      "title": "List Eval Runs | Vapi",
+      "sections": [
+        {
+          "type": "content",
+          "content": "### Authentication\n\nAuthorizationBearer\n\nRetrieve your API Key from [Dashboard](https://docs.vapi.ai/api-reference/eval/dashboard.vapi.ai).\n\n### Query parameters\n\nidstringOptional\n\npagedoubleOptional `>=1`\n\nThis is the page number to return. Defaults to 1.\n\nsortOrderenumOptional\n\nThis is the sort order for pagination. Defaults to 'DESC'.\n\nAllowed values:ASCDESC\n\nlimitdoubleOptional `>=0` `<=1000`\n\nThis is the maximum number of items to return. Defaults to 100.\n\ncreatedAtGtstringOptional `format: \"date-time\"`\n\nThis will return items where the createdAt is greater than the specified value.\n\ncreatedAtLtstringOptional `format: \"date-time\"`\n\nThis will return items where the createdAt is less than the specified value.\n\ncreatedAtGestringOptional `format: \"date-time\"`\n\nThis will return items where the createdAt is greater than or equal to the specified value.\n\ncreatedAtLestringOptional `format: \"date-time\"`\n\nThis will return items where the createdAt is less than or equal to the specified valu"
+        }
+      ],
+      "images": []
+    }
+  ],
+  "assetsPolicy": {
+    "useOriginalImages": true,
+    "rewriteText": false
+  }
+}
