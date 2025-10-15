@@ -4,14 +4,18 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "prisma generate && next build",
+    "build": "npm run db:generate:prod && next build",
+    "build:local": "npm run db:generate && next build",
     "start": "next start",
     "lint": "eslint",
     "db:generate": "prisma generate",
+    "db:generate:prod": "prisma generate --schema=./prisma/schema.production.prisma",
     "db:push": "prisma db push",
+    "db:push:prod": "prisma db push --schema=./prisma/schema.production.prisma",
     "db:studio": "prisma studio",
+    "db:studio:prod": "prisma studio --schema=./prisma/schema.production.prisma",
     "setup": "npm install && prisma generate && prisma db push",
-    "postinstall": "prisma generate"
+    "postinstall": "if [ \"$NODE_ENV\" = \"production\" ]; then npm run db:generate:prod; else npm run db:generate; fi"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.65.0",

@@ -1,0 +1,43 @@
+// Production schema for PostgreSQL (Vercel, Render, Railway)
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Job {
+  id           String   @id @default(cuid())
+  domain       String
+  designDomain String?
+  designLanguage String?
+  status       String
+  category     String?
+  pages        Page[]
+  blueprintUrl String?
+  tokensUrl    String?
+  componentsUrl String?
+  issueNumber  Int?
+  prUrl        String?
+  previewUrl   String?
+  deploymentId String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Page {
+  id    String  @id @default(cuid())
+  jobId String
+  url   String
+  title String?
+  md    String?
+  html  String?
+
+  Job Job @relation(fields: [jobId], references: [id], onDelete: Cascade)
+
+  @@unique([jobId, url])
+}

@@ -1,0 +1,13 @@
+{
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "regions": ["iad1"],
+  "env": {
+    "DATABASE_URL": "@database_url",
+    "FIRECRAWL_API_KEY": "@firecrawl_api_key",
+    "ANTHROPIC_API_KEY": "@anthropic_api_key",
+    "GITHUB_TOKEN": "@github_token",
+    "GITHUB_REPO": "@github_repo"
+  }
+}
