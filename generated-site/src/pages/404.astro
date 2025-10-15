@@ -1,0 +1,346 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found | Vapi</title>
+  <meta name="description" content="The page you're looking for could not be found.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="/"><h1>Vapi</h1></a>
+      </div>
+      <div class="nav-links">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/chat/non-streaming" class="nav-link">Non Streaming</a>
+        <a href="/api-reference/calls/create" class="nav-link">Create</a>
+        <a href="/api-reference/files/delete" class="nav-link">Delete</a>
+        <a href="/api" class="nav-link">Api</a>
+        <a href="/assistants/quickstart" class="nav-link">Quickstart</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main">
+    <section class="error-section">
+      <div class="container">
+        <div class="error-content">
+          <div class="error-code">404</div>
+          <h1 class="error-title">Page Not Found</h1>
+          <p class="error-description">The page you're looking for doesn't exist or has been moved.</p>
+          <div class="error-actions">
+            <a href="/" class="btn btn-primary">Go Home</a>
+            <a href="/assistants/quickstart" class="btn btn-secondary">Get Started</a>
+          </div>
+          <div class="helpful-links">
+            <h3>Popular Pages</h3>
+            <ul class="link-list">
+              <li><a href="/" class="help-link">Documentation Home</a></li>
+              <li><a href="/chat/non-streaming" class="help-link">Non-Streaming Chat</a></li>
+              <li><a href="/assistants/quickstart" class="help-link">Quickstart Guide</a></li>
+              <li><a href="/api-reference/files/delete" class="help-link">API Reference</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <style>
+    :root {
+      --brand: #2563eb;
+      --brand-alt: #1d4ed8;
+      --bg: #ffffff;
+      --surface: #f8fafc;
+      --text: #0f172a;
+      --muted: #64748b;
+      
+      --font-heading: "Inter", sans-serif;
+      --font-body: "Inter", sans-serif;
+      
+      --space-0: 0px;
+      --space-1: 4px;
+      --space-2: 8px;
+      --space-3: 12px;
+      --space-4: 16px;
+      --space-5: 20px;
+      --space-6: 24px;
+      --space-7: 28px;
+      --space-8: 32px;
+      --space-10: 40px;
+      --space-12: 48px;
+      --space-16: 64px;
+      --space-20: 80px;
+      
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+      
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text);
+      background-color: var(--bg);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .navbar {
+      background: var(--surface);
+      border-bottom: 1px solid #e2e8f0;
+      padding: var(--space-4) 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-6);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-brand a {
+      text-decoration: none;
+    }
+
+    .nav-brand h1 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--brand);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: var(--space-8);
+    }
+
+    .nav-link {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 500;
+      padding: var(--space-2) var(--space-4);
+      border-radius: var(--radius-sm);
+      transition: all 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--text);
+      background: rgba(37, 99, 235, 0.1);
+    }
+
+    .main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-20) 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0 var(--space-6);
+    }
+
+    .error-section {
+      text-align: center;
+    }
+
+    .error-content {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      padding: var(--space-16);
+      box-shadow: var(--shadow-md);
+      border: 1px solid #e2e8f0;
+    }
+
+    .error-code {
+      font-family: var(--font-heading);
+      font-size: 6rem;
+      font-weight: 700;
+      color: var(--brand);
+      line-height: 1;
+      margin-bottom: var(--space-6);
+    }
+
+    .error-title {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: var(--space-4);
+    }
+
+    .error-description {
+      font-size: 1.125rem;
+      color: var(--muted);
+      margin-bottom: var(--space-8);
+    }
+
+    .error-actions {
+      display: flex;
+      gap: var(--space-4);
+      justify-content: center;
+      margin-bottom: var(--space-12);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-3) var(--space-6);
+      border-radius: var(--radius-md);
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--brand);
+      color: white;
+      border-color: var(--brand);
+    }
+
+    .btn-primary:hover {
+      background: var(--brand-alt);
+      border-color: var(--brand-alt);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-secondary {
+      background: var(--bg);
+      color: var(--text);
+      border-color: #e2e8f0;
+    }
+
+    .btn-secondary:hover {
+      background: var(--surface);
+      border-color: var(--muted);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .helpful-links {
+      text-align: left;
+      border-top: 1px solid #e2e8f0;
+      padding-top: var(--space-8);
+    }
+
+    .helpful-links h3 {
+      font-family: var(--font-heading);
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: var(--space-4);
+      text-align: center;
+    }
+
+    .link-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .link-list li {
+      padding: var(--space-3) 0;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .link-list li:last-child {
+      border-bottom: none;
+    }
+
+    .help-link {
+      color: var(--brand);
+      text-decoration: none;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      padding: var(--space-2) var(--space-4);
+      border-radius: var(--radius-sm);
+      transition: all 0.2s ease;
+    }
+
+    .help-link:hover {
+      color: var(--brand-alt);
+      background: rgba(37, 99, 235, 0.1);
+      transform: translateX(var(--space-2));
+    }
+
+    .help-link::before {
+      content: '→';
+      margin-right: var(--space-3);
+      opacity: 0;
+      transform: translateX(-var(--space-2));
+      transition: all 0.2s ease;
+    }
+
+    .help-link:hover::before {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      
+      .error-code {
+        font-size: 4rem;
+      }
+      
+      .error-title {
+        font-size: 2rem;
+      }
+      
+      .error-description {
+        font-size: 1rem;
+      }
+      
+      .container {
+        padding: 0 var(--space-4);
+      }
+      
+      .error-content {
+        padding: var(--space-12);
+      }
+      
+      .error-actions {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .btn {
+        width: 100%;
+        max-width: 200px;
+      }
+    }
+  </style>
+</body>
+</html>
